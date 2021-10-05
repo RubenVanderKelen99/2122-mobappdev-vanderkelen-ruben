@@ -1,0 +1,11 @@
+User: id, name*, surName*, password*, phone*, countryCode*
+Payment: id, type*, email, cardNumber, user(rel)
+Driver: id, user(rel), priceClass(rel), active*, shiftEnd*
+PriceClass: id, minprice, maxPrice
+Ride: id, user(rel), driver(rel), active*, completed*, distance*, promo(rel)
+Promo: id, code*, active*
+PromoUsed: id, user(rel), promo(rel)
+Transaction: id, paymentDetails(rel), price*, status*
+
+Status beter eigen tabel?
+PromoUsed tabel om gebruikte promos bij te houden nuttig?
