@@ -2,16 +2,16 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, Button } from 'react-native';
 // In a React Native application
-import Parse from "parse/react-native.js";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Parse from 'parse/react-native';
 
 
 //Initializing the SDK
 Parse.setAsyncStorage(AsyncStorage);
 //Paste below the Back4App Application ID AND the JavaScript KEY
-Parse.initialize('ubXN5OEnvNKWCrDHIx20SpeWrHkWizuB4Ue3cyoy', '92WYjKgyN8VScCjQtX0GEbqp4doU6kqpj0rrGHDT');
+Parse.initialize('ubXN5OEnvNKWCrDHIx20SpeWrHkWizuB4Ue3cyoy','92WYjKgyN8VScCjQtX0GEbqp4doU6kqpj0rrGHDT');
 //Point to Back4App Parse API address
-Parse.serverURL = 'https://parseapi.back4app.com/parse';
+Parse.serverURL = 'https://parseapi.back4app.com';
 
 const App = () => {
     const [user, setUser] = useState(new Parse.Object('User'));
@@ -36,8 +36,25 @@ const App = () => {
             console.log(newUser.get('countryCode'));
             console.log(newUser.get('email'));
             //save it on Back4App Data Store
-            await newUser.save();
-            console.log('Status', 'Succes');
+            //await newUser.save();
+            //console.log('Status', 'Succes');
+            fetch('https://parseapi.back4app.com/classes/User', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Parse-Application-Id': '92WYjKgyN8VScCjQtX0GEbqp4doU6kqpj0rrGHDT',
+                'X-Parse-REST-API-Key': 'ubXN5OEnvNKWCrDHIx20SpeWrHkWizuB4Ue3cyoy'
+            },
+            body: JSON.stringify({
+                username: 'MarkDoe',
+                name: 'Mark',
+                surName: 'Doe',
+                password: 'Azerty123',
+                phone: '111222333',
+                countryCode: 'BE',
+                email: 'MarkDoe@odisee.be'
+            })
+            });
         } catch (error) {
             console.log('Error saving new user: ', error);
         }
@@ -50,7 +67,7 @@ const App = () => {
         //run the query to retrieve all objects on Person class, optionally you can add your filters
         let queryResult = await query.find();
         console.log(query);
-        //the resul is an arry of objects. Pick the first result
+        //the result is an array of objects. Pick the first result
         const currentUser = queryResult[0];
         //access the Parse Object attributes
         console.log('User id: ', currentUser.get('id'));

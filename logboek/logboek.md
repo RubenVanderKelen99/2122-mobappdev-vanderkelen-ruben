@@ -11,17 +11,18 @@ Research van ReactNative, NativeBase en installatie project hiervan.
 Leren werken met Android Studio.
 
 #### Week 3
-
-Gedaan
-Problemen
+-Gedaan
+User test uitgevoerd met Stijn Rogiest voor Moise VanKeymeulen.
+Veel tijd verloren aan het proberen verbinden met de Parse API van Back4App +/- 8 uur (zie problemen).
+Toestemming gevraagd aan docent om over te schakelen op Firebase.
+-Problemen
 1. Bij het toevoegen van Back4App is het niet mogelijk om het commando cd ios & pod-install uit te voeren.
 2. Ik kan niet verbinden met de parse-server van Back4App.
    Ik krijg: Possible Unhandled Promise Rejection (id: 1) en Error: XMLHttpRequest failed: "Unable to connect to the Parse API".
-Opgelost
+-Opgelost
 1. pod-install is enkel nodig voor het developen in ios en dit laat ik momenteel achterwege.
-2. geprobeerd: nieuwe app aanmaken op Back4App, Parse server downgraden naar vorige versie
-
-Bronnen
+2. geprobeerd: nieuwe app aanmaken op Back4App, nieuwe gebruiker aanmaken op Back4App, Parse-server downgraden naar vorige versie, werken met request headers
+-Bronnen
 - https://www.back4app.com/docs/react-native/parse-sdk/react-native-sdk
 - https://www.back4app.com/docs/android/login-android-tutorial
 - https://www.npmjs.com/package/@parse/react-native
