@@ -7,14 +7,11 @@
     "start": "react-native start"
   },
   "dependencies": {
-    "@parse/react-native": "0.0.1-alpha.15",
-    "@react-native-async-storage/async-storage": "^1.15.9",
     "expo": "~42.0.1",
     "expo-splash-screen": "~0.11.2",
     "expo-status-bar": "~1.0.4",
     "expo-updates": "~0.8.1",
     "native-base": "^3.2.0",
-    "parse": "^3.3.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "~0.63.4",
