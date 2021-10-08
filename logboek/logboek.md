@@ -16,6 +16,7 @@ User test uitgevoerd met Stijn Rogiest en Moise VanKeymeulen.
 Veel tijd verloren aan het proberen verbinden met de Parse API van Back4App +/- 8 uur (zie problemen).
 Toestemming gevraagd aan docent om over te schakelen op Firebase.
 Dit voorstel werd goedgekeurd, nu overgeschakeld naar Firebase als backend.
+Installatie & setup React-Native Firebase.
 #### Problemen
 1. Bij het toevoegen van Back4App is het niet mogelijk om het commando cd ios & pod-install uit te voeren.
 2. Ik kan niet verbinden met de parse-server van Back4App.
@@ -41,3 +42,4 @@ Dit voorstel werd goedgekeurd, nu overgeschakeld naar Firebase als backend.
 - https://www.freecodecamp.org/news/the-firestore-tutorial-for-2020-learn-by-example/
 - https://firebase.google.com/docs/guides
 - https://firebase.google.com/docs/samples
+- https://www.freecodecamp.org/news/react-native-firebase-tutorial/

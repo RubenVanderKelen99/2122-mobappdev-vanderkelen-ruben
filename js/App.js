@@ -2,16 +2,15 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, Button } from 'react-native';
 
-const App = () => {
-
+function App() {
     return (
-        <SafeAreaView>
-            <View>
-                <Text>Test</Text>
-                <Button title='Login'/>
-            </View>
-        </SafeAreaView>
+    <SafeAreaView style={styles.container}>
+        <View>
+            <Text>Welcome</Text>
+        </View>
+    </SafeAreaView>
     );
+
 }
 
 export default App;
