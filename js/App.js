@@ -16,7 +16,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{headerTitleAlign: 'center'}}>
         { user ? (
           <Stack.Screen name="Home">
             {props => <HomeScreen {...props} extraData={user} />}

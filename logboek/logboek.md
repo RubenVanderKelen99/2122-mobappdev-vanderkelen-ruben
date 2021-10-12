@@ -61,3 +61,4 @@ None of these files exist:
 1. Index.js moest een andere naam hebben: index.js.
 #### Bronnen
 - https://www.freecodecamp.org/news/react-native-firebase-tutorial/
+- https://reactnavigation.org/docs/screen-options/
