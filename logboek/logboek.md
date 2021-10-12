@@ -12,7 +12,7 @@ Leren werken met Android Studio.
 
 ### Week 3
 #### Gedaan
-User test uitgevoerd met Stijn Rogiest en Moise VanKeymeulen.
+User test uitgevoerd met Stijn Rogiest en Moise VanKeymeulen. Verslag hierover gemaakt en prototype aangepast op basis van User tests.
 Veel tijd verloren aan het proberen verbinden met de Parse API van Back4App +/- 8 uur (zie problemen).
 Toestemming gevraagd aan docent om over te schakelen op Firebase.
 Dit voorstel werd goedgekeurd, nu overgeschakeld naar Firebase als backend.
@@ -30,6 +30,7 @@ Installatie & setup React-Native Firebase.
 3. foutieve codeblocken verwijden uit app-level build.gradle (2122-mobappdev-vanderkelen-ruben/app/build.gradle), buildscript en allprojects had ik hier ingezet, maar
    dit moest in het project-level build.gradle d.i. (2122-mobappdev-vanderkelen-ruben/build.gradle).
 4. Ik moest de android SDK Home Environment Variable instellen in Windows, variable name = ANDROID_HOME & value = C:\Users\Ruben\AppData\Local\Android\Sdk, na een restart werkt dit.
+   Edit: de error is terug maar zorgt voor geen problemen tijdens het builden.
 #### Bronnen
 - https://www.back4app.com/docs/react-native/parse-sdk/react-native-sdk
 - https://www.back4app.com/docs/android/login-android-tutorial
@@ -42,4 +43,21 @@ Installatie & setup React-Native Firebase.
 - https://www.freecodecamp.org/news/the-firestore-tutorial-for-2020-learn-by-example/
 - https://firebase.google.com/docs/guides
 - https://firebase.google.com/docs/samples
+- https://reactnative.dev/docs/safeareaview
+
+### Week 4
+#### Gedaan
+Tutorial freecodecamp gevolgd:
+- Firebase correct instellen.
+- routering opzetten (werken met screens).
+- eerste versie van user authentication via Firebase.
+#### Problemen
+1. Bij het importeren van de screens in App.js krijg ik volgende error:
+Error: Unable to resolve module ./screens from C:\Users\Ruben\Desktop\Mobile App Development\2122-mobappdev-vanderkelen-ruben\js\App.js:
+None of these files exist:
+* js\screens(.native|.android.ts|.native.ts|.ts|.android.tsx|.native.tsx|.tsx|.android.js|.native.js|.js|.android.jsx|.native.jsx|.jsx|.android.json|.native.json|.json)
+* js\screens\index(.native|.android.ts|.native.ts|.ts|.android.tsx|.native.tsx|.tsx|.android.js|.native.js|.js|.android.jsx|.native.jsx|.jsx|.android.json|.native.json|.json)
+#### Opgelost
+1. Index.js moest een andere naam hebben: index.js.
+#### Bronnen
 - https://www.freecodecamp.org/news/react-native-firebase-tutorial/
