@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native'
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import styles from './styles';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { firebase } from '../../firebase/config'
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import styles from './styles'
 
 export default function RegistrationScreen({navigation}) {
     const [fullName, setFullName] = useState('')
@@ -9,12 +11,56 @@ export default function RegistrationScreen({navigation}) {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
 
-    const onFooterLinkPress = () => {
-        navigation.navigate('Login')
-    }
+      const onFooterLinkPress = () => {
+            navigation.navigate('Login')
+        }
 
     const onRegisterPress = () => {
+            if (password !== confirmPassword) {
+                alert("Passwords don't match.")
+                return
+            }
+
+            /*firebase
+                .auth()
+                .createUserWithEmailAndPassword(email, password)
+                .then((response) => {
+                    const uid = response.user.uid
+                    const data = {
+                        id: uid,
+                        email,
+                        fullName,
+                    };
+                        const usersRef = firebase.firestore().collection('users')
+                        usersRef
+                        .doc(uid)
+                        .set(data)
+                        .then(() => {
+                            navigation.navigate('Home', {user: data})
+                        })
+                        .catch((error) => {
+                            alert(error)
+                        });
+                })
+                .catch((error) => {
+                    alert(error)
+                });
+            }*/
+
+            const auth = getAuth();
+            createUserWithEmailAndPassword(auth, email, password)
+              .then(response => {
+               console.log(response)
+               })
+              .then((userCredential) => {
+                const user = userCredential.user;
+                console.log(user);
+              })
+              .catch((error) => {
+                alert(error)
+              });
     }
+
 
     return (
         <View style={styles.container}>

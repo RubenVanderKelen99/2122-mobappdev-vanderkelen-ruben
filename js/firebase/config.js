@@ -1,6 +1,6 @@
-import * as firebase from 'firebase';
-import '@firebase/auth';
-import '@firebase/firestore';
+import *  as firebase from 'firebase/app';
+import 'firebase/firestore';
+import { auth, getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 
 const firebaseConfig = {
     apiKey: "AIzaSyAPCybVHg4Q8p_mZNzBEjX9S_RmhhnnkdU",
@@ -12,8 +12,6 @@ const firebaseConfig = {
     measurementId: "G-23LJCBZWFS"
 };
 
-if (!firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig);
-}
+firebase.initializeApp(firebaseConfig);
 
 export { firebase };
