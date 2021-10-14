@@ -62,3 +62,14 @@ None of these files exist:
 #### Bronnen
 - https://www.freecodecamp.org/news/react-native-firebase-tutorial/
 - https://reactnavigation.org/docs/screen-options/
+
+### To-do
+- Communicatie met de back-end,
+- LoginScreen: User Authentication,
+- RegistrationScreen: User Authentication,
+- Homescreen: Hamburgermenu, Locatieservices (huidige locatie tonen, plaats zoeken, route plannen, andere gebruikers weergeven),
+- Menu: Onderdelen weergeven & linken,
+- UserDetailsScreen: Details gebruiker weergeven, aanpasvelden,
+- DriverDetailsScreen: Informatie gekozen chauffeur weergeven,
+- CreateRideScreen: Tussenstop toevoegen, Locatieservices (plaats zoeken, routeplannen),
+...
