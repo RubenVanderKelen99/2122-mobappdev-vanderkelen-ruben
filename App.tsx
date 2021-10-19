@@ -40,9 +40,7 @@ export default function App() {
       <NavigationContainer>
            <Stack.Navigator screenOptions={{headerTitleAlign: 'center'}}>
              { signedIn ? (
-               <Stack.Screen name="Home">
-                 {props => <HomeScreen {...props} extraData={user} />}
-               </Stack.Screen>
+               <Stack.Screen name="Home" component={HomeScreen} />
              ) : (
                <>
                  <Stack.Screen name="Login" component={LoginScreen} />

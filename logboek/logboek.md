@@ -65,22 +65,38 @@ None of these files exist:
 
 ### Week 5
 #### Gedaan
+Na nog veel proberen werkt de connectie met Firebase nog niet => files verwijderen/opnieuw beginnen.
 Tutorial medium.com gevolgd:
 - Firebase correct instellen.
-- Verbinding maken met Firestore en weergeven dynamische data.
+- verbinding maken met Firestore en weergeven dynamische data.
+- routering opzetten (werken met screens) d.m.v. ReactNavigation.
+- forms met validatie en doorgeven van data.
+- user authentication via firebase (registreren/aanmelden).
+- persistentie user
+Validatie email-adres: juiste formaat abc@def.xyz.
+Validatie wachtwoord en controle-wachtwoord: sterk genoeg (8 karakters, 1 grote letter, 1 kleine letter en 1 getal) en komen overeen.
+Sign out functionaliteit (voorlopig) op homescreen.
 #### Problemen
 1. LoginScreen: Er wordt geen data doorgegeven bij het submitten van de form.
+2. Errors Firebase worden nergens opgevangen.
 #### Opgelost
 1. Syntax moest aangepast worden: **van** render={({ onChange, onBlur, value }) => ( **naar**  render={({ **field:** { onChange, onBlur, value } }) => (
+2. ---
 #### Bronnen
 - https://medium.com/swlh/lets-create-mobile-app-with-react-native-and-firebase-6967a7946408
+- https://reactnavigation.org/docs/stack-navigator/
 - https://react-hook-form.com/get-started/
+- https://www.section.io/engineering-education/password-strength-checker-javascript/
+- https://www.thepolyglotdeveloper.com/2015/05/use-regex-to-test-password-strength-in-javascript/
 
 ### To-do
-- Communicatie met de back-end,
+### Week 6
 - LoginScreen: User Authentication,
 - RegistrationScreen: User Authentication,
-- Homescreen: Hamburgermenu, Locatieservices (huidige locatie tonen, plaats zoeken, route plannen, andere gebruikers weergeven),
+- Homescreen: Hamburgermenu, Locatieservices (huidige locatie tonen, plaats zoeken,
+
+### Week 7/8/...
+ route plannen, andere gebruikers weergeven),
 - Menu: Onderdelen weergeven & linken,
 - UserDetailsScreen: Details gebruiker weergeven, aanpasvelden,
 - DriverDetailsScreen: Informatie gekozen chauffeur weergeven,

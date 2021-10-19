@@ -2,11 +2,22 @@ import React from 'react'
 import { View, Text } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import { TextInput, Button } from 'react-native-paper';
+import {decode, encode} from 'base-64'
+if (!global.btoa) {  global.btoa = encode };
+if (!global.atob) { global.atob = decode };
+import { auth } from '../../firebase';
 import styles from '../styles';
 
 const LoginScreen = ({ navigation }) => {
     const { control, formState: { errors }, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+    const { email, password } = data;
+    console.log(data);
+        auth
+            .signInWithEmailAndPassword(
+            email.trim().toLowerCase(), encode(password)
+        );
+    };
 
     return (
         <View style={styles.authFormContainer}>
@@ -14,6 +25,7 @@ const LoginScreen = ({ navigation }) => {
                 control={control}
                 rules={{
                     required: 'Email is required to login',
+                    validate: (value) => /\S+@\S+\.\S+/.test(value) || 'Please enter a valid email, example: abc@domain.com',
                 }}
                 render={({ field: { onChange, onBlur, value } }) => (
                     <TextInput
@@ -28,13 +40,13 @@ const LoginScreen = ({ navigation }) => {
                 )}
                 name="email"
                 defaultValue=""
-              />
+            />
 
-              <View style={styles.errorMsg}>
+            <View style={styles.errorMsg}>
                 {errors.email && <Text style={styles.errorText}>{errors.email.message}</Text>}
-              </View>
+            </View>
 
-              <Controller
+            <Controller
                 control={control}
                 rules={{
                 required: "Password is required to login",
@@ -52,37 +64,37 @@ const LoginScreen = ({ navigation }) => {
                 )}
                 name="password"
                 defaultValue=""
-              />
+            />
 
-              <View style={styles.errorMsg}>
+            <View style={styles.errorMsg}>
                 {errors.password && <Text style={styles.errorText}>{errors.password.message}</Text>}
-              </View>
+            </View>
 
-              <Button
+            <Button
                 mode="contained"
                 compact={false}
                 onPress={handleSubmit(onSubmit)}
                 icon="account-arrow-right"
                 style={styles.submitButton}
-              >
+            >
                 Sign in
-              </Button>
+            </Button>
 
-              <View style={styles.switchScreenText}>
+            <View style={styles.switchScreenText}>
                 <Text> Don't have an account yet? </Text>
-              </View>
+            </View>
 
-              <Button
+            <Button
                 mode="outlined"
                 style={styles.switchBtn}
                 icon="account-plus"
                 compact
                 onPress={() => navigation.navigate('Registration')}
-              >
+            >
                 Register Account
-              </Button>
-            </View>
-          )
-        };
+            </Button>
+        </View>
+    )
+};
 
 export default LoginScreen;
