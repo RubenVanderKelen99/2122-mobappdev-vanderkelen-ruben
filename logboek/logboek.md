@@ -63,6 +63,19 @@ None of these files exist:
 - https://www.freecodecamp.org/news/react-native-firebase-tutorial/
 - https://reactnavigation.org/docs/screen-options/
 
+### Week 5
+#### Gedaan
+Tutorial medium.com gevolgd:
+- Firebase correct instellen.
+- Verbinding maken met Firestore en weergeven dynamische data.
+#### Problemen
+1. LoginScreen: Er wordt geen data doorgegeven bij het submitten van de form.
+#### Opgelost
+1. Syntax moest aangepast worden: **van** render={({ onChange, onBlur, value }) => ( **naar**  render={({ **field:** { onChange, onBlur, value } }) => (
+#### Bronnen
+- https://medium.com/swlh/lets-create-mobile-app-with-react-native-and-firebase-6967a7946408
+- https://react-hook-form.com/get-started/
+
 ### To-do
 - Communicatie met de back-end,
 - LoginScreen: User Authentication,
