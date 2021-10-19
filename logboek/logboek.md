@@ -74,11 +74,12 @@ Tutorial medium.com gevolgd:
 - routering opzetten (werken met screens) d.m.v. ReactNavigation.
 - forms met validatie en doorgeven van data.
 - user authentication via firebase (registreren/aanmelden).
-- persistentie user
-<br/>
+- persistentie user <br/>
 Validatie email-adres: juiste formaat abc@def.xyz. <br/>
 Validatie wachtwoord en controle-wachtwoord: sterk genoeg (8 karakters, 1 grote letter, 1 kleine letter en 1 getal) en komen overeen. <br/>
-Sign out functionaliteit (voorlopig) op homescreen.
+Sign out functionaliteit (voorlopig) op homescreen. <br/>
+Opslaan gebruikersdata in firestore database en toevoegen persistentie gebruiker.
+
 #### Problemen
 1. LoginScreen: Er wordt geen data doorgegeven bij het submitten van de form.
 2. Errors Firebase worden nergens opgevangen.
@@ -106,7 +107,7 @@ render={({ **field:** { onChange, onBlur, value } }) => (
 
 ### To-do
 ### Week 6
-- User authentication: phone verification en login,
+- User authentication: phone verification en login + extra data gebruiker opslaan in firestore,
 - Homescreen: Locatieservices (huidige locatie tonen, plaats zoeken,
 - Hamburgermenu: Onderdelen weergeven & linken,
 
