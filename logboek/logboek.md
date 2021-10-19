@@ -5,17 +5,17 @@
 Prototype in Figma gemaakt die de volgende pagina's bevat: Aanmelden, Verificatie identiteit, Home, Rit Aanmaken (met en zonder tussenstop), Rit bevestigen, Menu (Sidebar), Betalingen, Reisgeschiedenis en Promoties.
 
 ### Week 2
-Verder afwerken van het prototype in Figma en inplannen user testen hiervan.
-Database design en uitwerking eerste versie in Back4App.
-Research van ReactNative, NativeBase en installatie project hiervan.
+Verder afwerken van het prototype in Figma en inplannen user testen hiervan. <br/>
+Database design en uitwerking eerste versie in Back4App. <br/>
+Research van ReactNative, NativeBase en installatie project hiervan. <br/>
 Leren werken met Android Studio.
 
 ### Week 3
 #### Gedaan
-User test uitgevoerd met Stijn Rogiest en Moise VanKeymeulen. Verslag hierover gemaakt en prototype aangepast op basis van User tests.
-Veel tijd verloren aan het proberen verbinden met de Parse API van Back4App +/- 8 uur (zie problemen).
-Toestemming gevraagd aan docent om over te schakelen op Firebase.
-Dit voorstel werd goedgekeurd, nu overgeschakeld naar Firebase als backend.
+User test uitgevoerd met Stijn Rogiest en Moise VanKeymeulen. Verslag hierover gemaakt en prototype aangepast op basis van User tests. <br/>
+Veel tijd verloren aan het proberen verbinden met de Parse API van Back4App +/- 8 uur (zie problemen). <br/>
+Toestemming gevraagd aan docent om over te schakelen op Firebase. <br/>
+Dit voorstel werd goedgekeurd, nu overgeschakeld naar Firebase als backend. <br/>
 Installatie & setup React-Native Firebase.
 #### Problemen
 1. Bij het toevoegen van Back4App is het niet mogelijk om het commando cd ios & pod-install uit te voeren.
@@ -53,10 +53,12 @@ Tutorial freecodecamp gevolgd:
 - eerste versie van user authentication via Firebase.
 #### Problemen
 1. Bij het importeren van de screens in App.js krijg ik volgende error:
+```
 Error: Unable to resolve module ./screens from C:\Users\Ruben\Desktop\Mobile App Development\2122-mobappdev-vanderkelen-ruben\js\App.js:
 None of these files exist:
 * js\screens(.native|.android.ts|.native.ts|.ts|.android.tsx|.native.tsx|.tsx|.android.js|.native.js|.js|.android.jsx|.native.jsx|.jsx|.android.json|.native.json|.json)
 * js\screens\index(.native|.android.ts|.native.ts|.ts|.android.tsx|.native.tsx|.tsx|.android.js|.native.js|.js|.android.jsx|.native.jsx|.jsx|.android.json|.native.json|.json)
+```
 #### Opgelost
 1. Index.js moest een andere naam hebben: index.js.
 #### Bronnen
@@ -65,7 +67,7 @@ None of these files exist:
 
 ### Week 5
 #### Gedaan
-Na nog veel proberen werkt de connectie met Firebase nog niet => files verwijderen/opnieuw beginnen.
+Na nog veel proberen werkt de connectie met Firebase nog niet => files verwijderen/opnieuw beginnen. <br/>
 Tutorial medium.com gevolgd:
 - Firebase correct instellen.
 - verbinding maken met Firestore en weergeven dynamische data.
@@ -73,15 +75,28 @@ Tutorial medium.com gevolgd:
 - forms met validatie en doorgeven van data.
 - user authentication via firebase (registreren/aanmelden).
 - persistentie user
-Validatie email-adres: juiste formaat abc@def.xyz.
-Validatie wachtwoord en controle-wachtwoord: sterk genoeg (8 karakters, 1 grote letter, 1 kleine letter en 1 getal) en komen overeen.
+<br/>
+Validatie email-adres: juiste formaat abc@def.xyz. <br/>
+Validatie wachtwoord en controle-wachtwoord: sterk genoeg (8 karakters, 1 grote letter, 1 kleine letter en 1 getal) en komen overeen. <br/>
 Sign out functionaliteit (voorlopig) op homescreen.
 #### Problemen
 1. LoginScreen: Er wordt geen data doorgegeven bij het submitten van de form.
 2. Errors Firebase worden nergens opgevangen.
 #### Opgelost
-1. Syntax moest aangepast worden: **van** render={({ onChange, onBlur, value }) => ( **naar**  render={({ **field:** { onChange, onBlur, value } }) => (
-2. ---
+1. Syntax moest aangepast worden: **van**
+```
+render={({ onChange, onBlur, value }) => (
+```
+**naar**
+```
+render={({ **field:** { onChange, onBlur, value } }) => (
+```
+2. Overal waar er een firebase oproep gedaan word staat er:
+```
+.catch((error) => {
+    alert(error)
+});
+```
 #### Bronnen
 - https://medium.com/swlh/lets-create-mobile-app-with-react-native-and-firebase-6967a7946408
 - https://reactnavigation.org/docs/stack-navigator/
@@ -91,13 +106,12 @@ Sign out functionaliteit (voorlopig) op homescreen.
 
 ### To-do
 ### Week 6
-- LoginScreen: User Authentication,
-- RegistrationScreen: User Authentication,
-- Homescreen: Hamburgermenu, Locatieservices (huidige locatie tonen, plaats zoeken,
+- User authentication: phone verification en login,
+- Homescreen: Locatieservices (huidige locatie tonen, plaats zoeken,
+- Hamburgermenu: Onderdelen weergeven & linken,
 
 ### Week 7/8/...
- route plannen, andere gebruikers weergeven),
-- Menu: Onderdelen weergeven & linken,
+- Homescreen: Locatieservices verder uitwerken (route plannen, andere gebruikers weergeven),
 - UserDetailsScreen: Details gebruiker weergeven, aanpasvelden,
 - DriverDetailsScreen: Informatie gekozen chauffeur weergeven,
 - CreateRideScreen: Tussenstop toevoegen, Locatieservices (plaats zoeken, routeplannen),

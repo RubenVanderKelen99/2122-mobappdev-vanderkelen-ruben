@@ -11,30 +11,28 @@ const Stack = createStackNavigator();
 
 export default function App() {
     const [signedIn, setSignedIn] = useState(false);
+    const [user, setUser] = useState(null);
 
-    auth.onAuthStateChanged((user) => {
-        if (user) {
-          setSignedIn(true);
-        } else {
-          setSignedIn(false);
-        }
-      });
-
-    /* verbinding maken met Firebase
-        const [test, setTest] = useState([]);
-        useEffect(() => {
-            const ref = db.collection('test');    ref.onSnapshot((query) => {
-                const objs = [];
-                query.forEach((doc) => {
-                  objs.push({
-                    id: doc.id,
-                    ...doc.data(),
-                  });
-                });
-                setTest(objs);
-              });
-        }, []) */
-
+    useEffect(() => {
+        const usersRef = db.collection('users');
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                usersRef
+                    .doc(user.uid)
+                    .get()
+                    .then((document) => {
+                        const userData = document.data()
+                        setUser(userData)
+                        setSignedIn(true)
+                    })
+                .catch((error) => {
+                    alert(error)
+                })
+            } else {
+                setSignedIn(false)
+            }
+         });
+    }, []);
 
   return (
       <NavigationContainer>

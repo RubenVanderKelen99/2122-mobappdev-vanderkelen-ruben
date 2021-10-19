@@ -6,6 +6,7 @@ import {decode, encode} from 'base-64'
 if (!global.btoa) {  global.btoa = encode };
 if (!global.atob) { global.atob = decode };
 import { auth } from '../../firebase';
+import { db } from '../../firebase';
 import styles from '../styles';
 
 const RegistrationScreen = ({ navigation }) => {
@@ -16,16 +17,32 @@ const RegistrationScreen = ({ navigation }) => {
     (?=.*[0-9]) minstens 1 cijfer
     (?=.{8,}) minstens 8 karakters lang
     */
+
     const { control, formState: { errors }, handleSubmit, watch, register } = useForm();
     const password = useRef({});
     password.current = watch('password', '');
+
     const onSubmit = (data) => {
         const { email, password } = data;
-        console.log(data);
         auth
-        .createUserWithEmailAndPassword(
-        email.trim().toLowerCase(), encode(password)
-        );
+            .createUserWithEmailAndPassword(email.trim().toLowerCase(), encode(password))
+            .then((response) => {
+                const uid = response.user.uid
+                const data = {
+                    id: uid,
+                    email
+            };
+            const usersRef = db.collection('users')
+            usersRef
+                .doc(uid)
+                .set(data)
+                .catch((error) => {
+                    alert(error)
+                });
+            })
+        .catch((error) => {
+            alert(error)
+        });
     }
 
     return (

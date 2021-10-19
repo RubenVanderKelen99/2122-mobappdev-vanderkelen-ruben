@@ -6,6 +6,7 @@ import {decode, encode} from 'base-64'
 if (!global.btoa) {  global.btoa = encode };
 if (!global.atob) { global.atob = decode };
 import { auth } from '../../firebase';
+import { db } from '../../firebase';
 import styles from '../styles';
 
 const LoginScreen = ({ navigation }) => {
@@ -14,9 +15,27 @@ const LoginScreen = ({ navigation }) => {
     const { email, password } = data;
     console.log(data);
         auth
-            .signInWithEmailAndPassword(
-            email.trim().toLowerCase(), encode(password)
-        );
+            .signInWithEmailAndPassword(email.trim().toLowerCase(), encode(password))
+            .then((response) => {
+                const uid = response.user.uid
+                const usersRef = db.collection('users')
+                usersRef
+                    .doc(uid)
+                    .get()
+                    .then(firestoreDocument => {
+                        if (!firestoreDocument.exists) {
+                            console.log("User does not exist anymore.")
+                            return;
+                        }
+                        const user = firestoreDocument.data()
+                    })
+                    .catch(error => {
+                        alert(error)
+                    });
+            })
+        .catch(error => {
+            alert(error)
+        })
     };
 
     return (
