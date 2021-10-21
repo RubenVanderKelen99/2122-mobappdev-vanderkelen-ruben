@@ -124,13 +124,16 @@ Invariant Violation: requireNativeComponent: "DatePickerManager" was not found i
 ```
 Invariant Violation: A date or time should be specified as `value`.
 ```
+3. Het is niet mogelijk om aan Picker een label mee te geven, dus deze wordt gewoon meegetoont in de lijst.
 #### Opgelost
 1. Expo ondersteunt geen native modules en react-native-date-picker is er zo een, overgeschakeld naar @react-native-community/datetimepicker.
 2. In de OnChange functie moet er gekeken worden welk type evenment het is: selected -> setDate, dismissed -> doe niets
+3. Via native-base zou dit mogelijk zijn?
 #### Bronnen
 - https://docs.expo.dev/versions/latest/sdk/date-time-picker/
 - https://github.com/react-native-datetimepicker/datetimepicker#timepickerandroid
 - https://react-hook-form.com/api/useform/register
+- https://github.com/react-native-picker/picker
 - https://reactnavigation.org/docs/params/
 - https://www.positronx.io/react-native-stack-navigator-passing-getting-params-to-screen/
 - https://reactnative.dev/docs/keyboardavoidingview

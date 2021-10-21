@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { View, Text } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import { TextInput, Button } from 'react-native-paper';
-import DateTimePicker from '@react-native-community/datetimepicker';
+import { Picker } from '@react-native-picker/picker';
 import { auth } from '../../firebase';
 import { db } from '../../firebase';
 import styles from '../styles';
@@ -100,6 +100,34 @@ const CompleteProfileScreen = ({ navigation }) => {
             </View>
 
             <Controller
+                      control={control}
+                      render={({ value }) => (
+                        <View>
+                          <Picker
+                            selectedValue={value}
+                            mode='dropdown'
+                          >
+                            <Picker.Item value='' label='Month' />
+                            <Picker.Item label="January" value="01" />
+                            <Picker.Item label="February" value="02" />
+                            <Picker.Item label="March" value="03" />
+                            <Picker.Item label="April" value="04" />
+                            <Picker.Item label="May" value="05" />
+                            <Picker.Item label="June" value="06" />
+                            <Picker.Item label="July" value="07" />
+                            <Picker.Item label="August" value="08" />
+                            <Picker.Item label="September" value="09" />
+                            <Picker.Item label="October" value="10" />
+                            <Picker.Item label="November" value="11" />
+                            <Picker.Item label="December" value="12" />
+                          </Picker>
+                        </View>
+                      )}
+                      name="language"
+                    />
+
+
+            <Controller
                 control={control}
                 rules={{
                     required: 'Please enter a day',
@@ -115,7 +143,7 @@ const CompleteProfileScreen = ({ navigation }) => {
                         mode="outlined"
                         keyboardType='numeric'
                         maxLength={2}
-                        placeholder="DD"
+                        placeholder="Day"
                         onBlur={onBlur}
                         onChangeText={onChange}
                         value={value}
@@ -141,7 +169,7 @@ const CompleteProfileScreen = ({ navigation }) => {
                         mode="outlined"
                         keyboardType='numeric'
                         maxLength={4}
-                        placeholder="YYYY"
+                        placeholder="Year"
                         onBlur={onBlur}
                         onChangeText={onChange}
                         value={value}
