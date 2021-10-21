@@ -16,14 +16,23 @@ const HomeScreen = ({ navigation }) => {
             <Text>Home Screen</Text>
             <View style={styles.authFormContainer}>
                 <Button
-                mode="contained"
-                compact={false}
-                onPress={() => signOut()}
-                icon="account-arrow-left"
-                style={styles.submitButton}
+                    mode="contained"
+                    compact={false}
+                    onPress={() => signOut()}
+                    icon="account-arrow-left"
+                    style={styles.submitButton}
                 >
                     Sign out
                 </Button>
+                 <Button
+                     mode="contained"
+                     compact={false}
+                     onPress={() => navigation.navigate('CompleteProfile')}
+                     icon="account-arrow-left"
+                     style={styles.submitButton}
+                 >
+                    Complete profile
+                  </Button>
            </View>
         </View>
 )

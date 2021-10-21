@@ -13,7 +13,7 @@ const LoginScreen = ({ navigation }) => {
     const { control, formState: { errors }, handleSubmit } = useForm();
     const onSubmit = data => {
     const { email, password } = data;
-    console.log(data);
+    //console.log(data);
         auth
             .signInWithEmailAndPassword(email.trim().toLowerCase(), encode(password))
             .then((response) => {

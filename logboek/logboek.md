@@ -83,6 +83,7 @@ Opslaan gebruikersdata in firestore database en toevoegen persistentie gebruiker
 #### Problemen
 1. LoginScreen: Er wordt geen data doorgegeven bij het submitten van de form.
 2. Errors Firebase worden nergens opgevangen.
+3. AVD wilt niet opstarten wanneer ik op power klik.
 #### Opgelost
 1. Syntax moest aangepast worden: **van**
 ```
@@ -98,6 +99,7 @@ render={({ **field:** { onChange, onBlur, value } }) => (
     alert(error)
 });
 ```
+3. AVD manager -> Actions -> Cold Boot Now
 #### Bronnen
 - https://medium.com/swlh/lets-create-mobile-app-with-react-native-and-firebase-6967a7946408
 - https://reactnavigation.org/docs/stack-navigator/
@@ -105,15 +107,39 @@ render={({ **field:** { onChange, onBlur, value } }) => (
 - https://www.section.io/engineering-education/password-strength-checker-javascript/
 - https://www.thepolyglotdeveloper.com/2015/05/use-regex-to-test-password-strength-in-javascript/
 
+### Week 6
+#### Gedaan
+Werkende datetimepicker gerealiseerd.
+CompleteProfileScreen: hierop wordt extra data van de gebruiker opgevraagd (email, naam, achternaam, geboortedatum, land) <br/>
+en deze wordt dan doorgegeven aan Firestore.
+#### Problemen
+1. De module react-native-date-picker geeft volgende error:
+```
+Invariant Violation: requireNativeComponent: "DatePickerManager" was not found in the UIManager.
+```
+#### Opgelost
+1. Expo ondersteunt geen native modules en react-native-date-picker is er zo een, overgeschakeld naar @react-native-community/datetimepicker
+#### Bronnen
+- https://docs.expo.dev/versions/latest/sdk/date-time-picker/
+- https://github.com/react-native-datetimepicker/datetimepicker#timepickerandroid
+- https://reactnavigation.org/docs/params/
+- https://www.positronx.io/react-native-stack-navigator-passing-getting-params-to-screen/
+- https://reactnative.dev/docs/keyboardavoidingview
+- https://reactnative.dev/docs/scrollview
+- https://stackoverflow.com/questions/40438986/keyboardavoidingview-with-scrollview
+
 ### To-do
 ### Week 6
-- User authentication: phone verification en login + extra data gebruiker opslaan in firestore,
 - Homescreen: Locatieservices (huidige locatie tonen, plaats zoeken,
-- Hamburgermenu: Onderdelen weergeven & linken,
+- Hamburgermenu: Onderdelen weergeven & linken
+- Alle interfaces maken en routering
+vraag: vanaf waar moet password encrypted zijn?
 
 ### Week 7/8/...
+- User authentication: **phone verification als registratie** dit word de main method en login
 - Homescreen: Locatieservices verder uitwerken (route plannen, andere gebruikers weergeven),
 - UserDetailsScreen: Details gebruiker weergeven, aanpasvelden,
 - DriverDetailsScreen: Informatie gekozen chauffeur weergeven,
 - CreateRideScreen: Tussenstop toevoegen, Locatieservices (plaats zoeken, routeplannen),
+- Data synchronisatie wanneer offline
 ...

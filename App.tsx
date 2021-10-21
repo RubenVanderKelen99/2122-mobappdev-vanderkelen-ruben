@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { LoginScreen, HomeScreen, RegistrationScreen } from './js/screens'
+import { LoginScreen, HomeScreen, RegistrationScreen, CompleteProfileScreen } from './js/screens'
 import { db } from './js/firebase';
 import { auth } from './js/firebase';
 
@@ -34,16 +34,20 @@ export default function App() {
          });
     }, []);
 
+
   return (
       <NavigationContainer>
            <Stack.Navigator screenOptions={{headerTitleAlign: 'center'}}>
              { signedIn ? (
-               <Stack.Screen name="Home" component={HomeScreen} />
+                <>
+                    <Stack.Screen name="Home" component={HomeScreen} />
+                    <Stack.Screen name="CompleteProfile" component={CompleteProfileScreen} />
+                </>
              ) : (
-               <>
-                 <Stack.Screen name="Login" component={LoginScreen} />
-                 <Stack.Screen name="Registration" component={RegistrationScreen} />
-               </>
+                <>
+                    <Stack.Screen name="Registration" component={RegistrationScreen} />
+                    <Stack.Screen name="Login" component={LoginScreen} />
+                </>
              )}
            </Stack.Navigator>
       </NavigationContainer>
