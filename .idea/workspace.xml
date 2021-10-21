@@ -12,17 +12,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Update logboek.md">
-      <changelist_data name="ruben.vanderkelen@student.odisee.be" email="" />
-      <change afterPath="$PROJECT_DIR$/js/screens/CompleteProfileScreen/CompleteProfileScreen.js" afterDir="false" />
+    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Werkende DateTimePicker en eerste versie CompleteProfileScreen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/LoginScreen/LoginScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/LoginScreen/LoginScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/CompleteProfileScreen/CompleteProfileScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/CompleteProfileScreen/CompleteProfileScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logboek/logboek.md" beforeDir="false" afterPath="$PROJECT_DIR$/logboek/logboek.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634653532607</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Werkende DateTimePicker en eerste versie CompleteProfileScreen">
+      <created>1634812176518</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1634812176518</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,6 +281,7 @@
     <MESSAGE value="User authenticatie (Login, Registratie en Logout), validatie/formchecking inputvelden (email, wachtwoord en controle-wachtwoord)" />
     <MESSAGE value="Opslaan gebruikersdata in firestore database en toevoegen persistentie gebruiker" />
     <MESSAGE value="Update logboek.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update logboek.md" />
+    <MESSAGE value="Werkende DateTimePicker en eerste versie CompleteProfileScreen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Werkende DateTimePicker en eerste versie CompleteProfileScreen" />
   </component>
 </project>

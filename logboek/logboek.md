@@ -109,19 +109,28 @@ render={({ **field:** { onChange, onBlur, value } }) => (
 
 ### Week 6
 #### Gedaan
-Werkende datetimepicker gerealiseerd.
-CompleteProfileScreen: hierop wordt extra data van de gebruiker opgevraagd (email, naam, achternaam, geboortedatum, land) <br/>
-en deze wordt dan doorgegeven aan Firestore.
+Werkende datetimepicker gerealiseerd. Deze werd later weer verwijdert wegens te ongebruiksvriendelijk (te klein, niet praktisch: maand, jaar zoeken). <br/>
+CompleteProfileScreen: hierop wordt extra data van de gebruiker opgevraagd (email, naam, achternaam, geboortedatum, land), <br/>
+deze wordt gevalideerd, eventuele errors worden weergegeven en indien correct wordt de data doorgegeven aan Firestore. <br/>
+Validatie email-adres: juiste formaat abc@def.xyz. <br/>
+Validatie geboortedatum: dag: enkel cijfers, aantal cijfers >=2, correcte dag: 1-31 (later wil ik dit laten afhangen van maand). <br/>
+Validatie geboortejaar: jaar: enkel cijfers, aantal cijfers = 4, correct jaar: 1900-2020 (later wil ik via huidig jaar controleren of leeftijd >=18). <br/>
 #### Problemen
 1. De module react-native-date-picker geeft volgende error:
 ```
 Invariant Violation: requireNativeComponent: "DatePickerManager" was not found in the UIManager.
 ```
+2. Wanneer er in de DateTimePicker op cancel wordt geklikt krijg ik:
+```
+Invariant Violation: A date or time should be specified as `value`.
+```
 #### Opgelost
-1. Expo ondersteunt geen native modules en react-native-date-picker is er zo een, overgeschakeld naar @react-native-community/datetimepicker
+1. Expo ondersteunt geen native modules en react-native-date-picker is er zo een, overgeschakeld naar @react-native-community/datetimepicker.
+2. In de OnChange functie moet er gekeken worden welk type evenment het is: selected -> setDate, dismissed -> doe niets
 #### Bronnen
 - https://docs.expo.dev/versions/latest/sdk/date-time-picker/
 - https://github.com/react-native-datetimepicker/datetimepicker#timepickerandroid
+- https://react-hook-form.com/api/useform/register
 - https://reactnavigation.org/docs/params/
 - https://www.positronx.io/react-native-stack-navigator-passing-getting-params-to-screen/
 - https://reactnative.dev/docs/keyboardavoidingview

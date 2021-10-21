@@ -9,7 +9,7 @@ import styles from '../styles';
 
 /*
 Hierop moet komen:
-email
+email x
 name x
 surName x
 geboortedatum
@@ -21,19 +21,38 @@ isDriver: false
 const CompleteProfileScreen = ({ navigation }) => {
 
     const { control, formState: { errors }, handleSubmit } = useForm();
-    const [date, setDate] = useState(new Date());
-
 
     const onSubmit = (data) => {
             console.log(data);
     }
 
-    const onChange = (event, selectedDate) => {
-        setDate(selectedDate);
-    };
-
     return (
         <View style={styles.authFormContainer}>
+
+            <Controller
+                control={control}
+                    rules={{
+                        required: 'Please enter a email',
+                        validate: (value) => /\S+@\S+\.\S+/.test(value) || 'Please enter a valid email, example: abc@domain.com',
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput
+                            label="Email"
+                            mode="outlined"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                            style={styles.formInput}
+                        />
+                    )}
+                    name="email"
+                    defaultValue=""
+            />
+
+            <View style={styles.errorMsg}>
+                {errors.email && <Text style={styles.errorText}>{errors.email.message}</Text>}
+            </View>
+
             <Controller
                 control={control}
                 rules={{
@@ -80,13 +99,63 @@ const CompleteProfileScreen = ({ navigation }) => {
                 {errors.surName && <Text style={styles.errorText}>{errors.surName.message}</Text>}
             </View>
 
-            <DateTimePicker
-                      testID="dateTimePicker"
-                      value={date}
-                      mode="date"
-                      display="calendar"
-                      onChange={onChange}
+            <Controller
+                control={control}
+                rules={{
+                    required: 'Please enter a day',
+                    validate: {
+                        isNumber: value => /^[0-9]*$/.test(value) || 'Please enter numbers only',
+                        //checkLength: value => value.length > 3 || 'Please enter a valid day',
+                        minimum: value => value >= 1 || 'Please enter a valid day',
+                        maximum: value  => value <= 31 || 'Please enter a valid day', //kijken afhankelijk van de maand
+                        },
+                }}
+                render={({ field: { onChange, onBlur, value } }) => (
+                    <TextInput
+                        mode="outlined"
+                        keyboardType='numeric'
+                        maxLength={2}
+                        placeholder="DD"
+                        onBlur={onBlur}
+                        onChangeText={onChange}
+                        value={value}
+                        style={styles.formInput}
+                    />
+                )}
+                    name="birthDay"
             />
+
+            <Controller
+                control={control}
+                rules={{
+                    required: 'Please enter a year',
+                    validate: {
+                    isNumber: value => /^[0-9]*$/.test(value) || 'Please enter numbers only',
+                    checkLength: value => value.length === 4 || 'Please enter a valid year',
+                    minimum: value => value >= 1900 || 'Please enter a valid year',
+                    maximum: value  => value <= 2020 || 'Please enter a valid year', //updaten met huidig jaar zodat dit altijd persoon van 18+ is
+                    },
+                }}
+                render={({ field: { onChange, onBlur, value } }) => (
+                    <TextInput
+                        mode="outlined"
+                        keyboardType='numeric'
+                        maxLength={4}
+                        placeholder="YYYY"
+                        onBlur={onBlur}
+                        onChangeText={onChange}
+                        value={value}
+                        style={styles.formInput}
+                    />
+                )}
+                name="birthYear"
+            />
+
+             <View style={styles.errorMsg}>
+                {errors.birthDay && <Text style={styles.errorText}>{errors.birthDay.message}</Text>}
+                {errors.birthYear && <Text style={styles.errorText}>{errors.birthYear.message}</Text>}
+             </View>
+
 
             <Button
                 mode="contained"

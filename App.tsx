@@ -37,19 +37,19 @@ export default function App() {
 
   return (
       <NavigationContainer>
-           <Stack.Navigator screenOptions={{headerTitleAlign: 'center'}}>
-             { signedIn ? (
+        <Stack.Navigator screenOptions={{headerTitleAlign: 'center'}}>
+            { signedIn ? (
                 <>
                     <Stack.Screen name="Home" component={HomeScreen} />
                     <Stack.Screen name="CompleteProfile" component={CompleteProfileScreen} />
                 </>
-             ) : (
+            ) : (
                 <>
                     <Stack.Screen name="Registration" component={RegistrationScreen} />
                     <Stack.Screen name="Login" component={LoginScreen} />
                 </>
-             )}
-           </Stack.Navigator>
+            )}
+        </Stack.Navigator>
       </NavigationContainer>
-       );
-     }
+  );
+}
