@@ -117,6 +117,7 @@ Validatie email-adres: juiste formaat abc@def.xyz. <br/>
 Validatie geboortedatum: dag: enkel cijfers, aantal cijfers >=2, correcte dag: 1-31 (later wil ik dit laten afhangen van maand). <br/>
 Validatie geboortedatum: jaar: enkel cijfers, aantal cijfers = 4, correct jaar: 1900-2020 (later wil ik via huidig jaar controleren of leeftijd >=18). <br/>
 Validatie geboortedatum: maand: er werd een maand gekozen, correcte maand: 1-12. <br/>
+Implementeren Keyboardavoidingview samen met ScrollView. <br/>
 #### Problemen
 1. De module react-native-date-picker geeft volgende error:
 ```
@@ -127,10 +128,16 @@ Invariant Violation: requireNativeComponent: "DatePickerManager" was not found i
 Invariant Violation: A date or time should be specified as `value`.
 ```
 3. Het is niet mogelijk om aan Picker een label mee te geven, dus deze wordt gewoon meegetoont in de lijst.
+4. Error bij het implementeren van ScrollView:
+```
+Warning: React.createElement: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, o
+r you might have mixed up default and named imports.
+```
 #### Opgelost
 1. Expo ondersteunt geen native modules en react-native-date-picker is er zo een, overgeschakeld naar @react-native-community/datetimepicker.
-2. In de OnChange functie moet er gekeken worden welk type evenment het is: selected -> setDate, dismissed -> doe niets
-3. Via native-base zou dit mogelijk zijn? maar dit geeft andere errors
+2. In de OnChange functie moet er gekeken worden welk type evenment het is: selected -> setDate, dismissed -> doe niets.
+3. Via native-base zou dit mogelijk zijn? maar dit geeft andere errors.
+4. Scroll**view** moest Scroll**View** zijn.
 #### Bronnen
 - https://docs.expo.dev/versions/latest/sdk/date-time-picker/
 - https://github.com/react-native-datetimepicker/datetimepicker#timepickerandroid
@@ -140,12 +147,12 @@ Invariant Violation: A date or time should be specified as `value`.
 - https://github.com/xcarpentier/react-native-country-picker-modal
 - https://reactnavigation.org/docs/params/
 - https://www.positronx.io/react-native-stack-navigator-passing-getting-params-to-screen/
-- https://reactnative.dev/docs/keyboardavoidingview
 - https://reactnative.dev/docs/scrollview
+- https://reactnative.dev/docs/keyboardavoidingview
 - https://stackoverflow.com/questions/40438986/keyboardavoidingview-with-scrollview
 
 ### To-do
-### Week 6
+### Week 7
 - Scrollview + Keyboardavoidingview combineren
 - Homescreen: Locatieservices (huidige locatie tonen, plaats zoeken,
 - Hamburgermenu: Onderdelen weergeven & linken

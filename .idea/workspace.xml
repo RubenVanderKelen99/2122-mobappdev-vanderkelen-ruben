@@ -12,12 +12,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="CompleteProfileScreen: dropdown maand met Picker v1">
+    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="CompleteProfileScreen: dropdown maand met Picker v2, Countrypicker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/screens/CompleteProfileScreen/CompleteProfileScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/CompleteProfileScreen/CompleteProfileScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/LoginScreen/LoginScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/LoginScreen/LoginScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/RegistrationScreen/RegistrationScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/RegistrationScreen/RegistrationScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logboek/logboek.md" beforeDir="false" afterPath="$PROJECT_DIR$/logboek/logboek.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634828795574</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="CompleteProfileScreen: dropdown maand met Picker v2, Countrypicker">
+      <created>1634897760904</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1634897760904</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,6 +314,7 @@
     <MESSAGE value="Werkende DateTimePicker en eerste versie CompleteProfileScreen" />
     <MESSAGE value="CompleteProfileScreen: forms met validatie/formchecking" />
     <MESSAGE value="CompleteProfileScreen: dropdown maand met Picker v1" />
-    <option name="LAST_COMMIT_MESSAGE" value="CompleteProfileScreen: dropdown maand met Picker v1" />
+    <MESSAGE value="CompleteProfileScreen: dropdown maand met Picker v2, Countrypicker" />
+    <option name="LAST_COMMIT_MESSAGE" value="CompleteProfileScreen: dropdown maand met Picker v2, Countrypicker" />
   </component>
 </project>

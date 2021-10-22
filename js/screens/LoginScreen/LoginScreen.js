@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView, KeyboardAvoidingView } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import { TextInput, Button } from 'react-native-paper';
 import {decode, encode} from 'base-64'
@@ -39,80 +39,85 @@ const LoginScreen = ({ navigation }) => {
     };
 
     return (
-        <View style={styles.authFormContainer}>
-            <Controller
-                control={control}
-                rules={{
-                    required: 'Email is required to login',
-                    validate: (value) => /\S+@\S+\.\S+/.test(value) || 'Please enter a valid email, example: abc@domain.com',
-                }}
-                render={({ field: { onChange, onBlur, value } }) => (
-                    <TextInput
-                        label="Email"
-                        mode="outlined"
-                        onBlur={onBlur}
-                        onChangeText={onChange}
-                        value={value}
-                        style={styles.formInput}
+        <KeyboardAvoidingView style={{ flex: 1, flexDirection: 'column',justifyContent: 'center'}}
+        behavior="height" enabled keyboardVerticalOffset={100}>
+            <ScrollView>
+                <View style={styles.authFormContainer}>
+                    <Controller
+                        control={control}
+                        rules={{
+                            required: 'Email is required to login',
+                            validate: (value) => /\S+@\S+\.\S+/.test(value) || 'Please enter a valid email, example: abc@domain.com',
+                        }}
+                        render={({ field: { onChange, onBlur, value } }) => (
+                            <TextInput
+                                label="Email"
+                                mode="outlined"
+                                onBlur={onBlur}
+                                onChangeText={onChange}
+                                value={value}
+                                style={styles.formInput}
 
+                            />
+                        )}
+                        name="email"
+                        defaultValue=""
                     />
-                )}
-                name="email"
-                defaultValue=""
-            />
 
-            <View style={styles.errorMsg}>
-                {errors.email && <Text style={styles.errorText}>{errors.email.message}</Text>}
-            </View>
+                    <View style={styles.errorMsg}>
+                        {errors.email && <Text style={styles.errorText}>{errors.email.message}</Text>}
+                    </View>
 
-            <Controller
-                control={control}
-                rules={{
-                required: "Password is required to login",
-                }}
-                render={({ field: { onChange, onBlur, value } }) => (
-                    <TextInput
-                        label="Password"
-                        mode="outlined"
-                        secureTextEntry
-                        onBlur={onBlur}
-                        onChangeText={onChange}
-                        value={value}
-                        style={styles.formInput}
+                    <Controller
+                        control={control}
+                        rules={{
+                        required: "Password is required to login",
+                        }}
+                        render={({ field: { onChange, onBlur, value } }) => (
+                            <TextInput
+                                label="Password"
+                                mode="outlined"
+                                secureTextEntry
+                                onBlur={onBlur}
+                                onChangeText={onChange}
+                                value={value}
+                                style={styles.formInput}
+                            />
+                        )}
+                        name="password"
+                        defaultValue=""
                     />
-                )}
-                name="password"
-                defaultValue=""
-            />
 
-            <View style={styles.errorMsg}>
-                {errors.password && <Text style={styles.errorText}>{errors.password.message}</Text>}
-            </View>
+                    <View style={styles.errorMsg}>
+                        {errors.password && <Text style={styles.errorText}>{errors.password.message}</Text>}
+                    </View>
 
-            <Button
-                mode="contained"
-                compact={false}
-                onPress={handleSubmit(onSubmit)}
-                icon="account-arrow-right"
-                style={styles.submitButton}
-            >
-                Sign in
-            </Button>
+                    <Button
+                        mode="contained"
+                        compact={false}
+                        onPress={handleSubmit(onSubmit)}
+                        icon="account-arrow-right"
+                        style={styles.submitButton}
+                    >
+                        Sign in
+                    </Button>
 
-            <View style={styles.switchScreenText}>
-                <Text> Don't have an account yet? </Text>
-            </View>
+                    <View style={styles.switchScreenText}>
+                        <Text> Don't have an account yet? </Text>
+                    </View>
 
-            <Button
-                mode="outlined"
-                style={styles.switchBtn}
-                icon="account-plus"
-                compact
-                onPress={() => navigation.navigate('Registration')}
-            >
-                Register Account
-            </Button>
-        </View>
+                    <Button
+                        mode="outlined"
+                        style={styles.switchBtn}
+                        icon="account-plus"
+                        compact
+                        onPress={() => navigation.navigate('Registration')}
+                    >
+                        Register Account
+                    </Button>
+                </View>
+            </ScrollView>
+        </KeyboardAvoidingView>
     )
 };
 
