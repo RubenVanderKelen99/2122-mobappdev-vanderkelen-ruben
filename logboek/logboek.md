@@ -109,12 +109,14 @@ render={({ **field:** { onChange, onBlur, value } }) => (
 
 ### Week 6
 #### Gedaan
-Werkende datetimepicker gerealiseerd. Deze werd later weer verwijdert wegens te ongebruiksvriendelijk (te klein, niet praktisch: maand, jaar zoeken). <br/>
-CompleteProfileScreen: hierop wordt extra data van de gebruiker opgevraagd (email, naam, achternaam, geboortedatum, land), <br/>
+Logica CompleteProfileScreen: hierop wordt extra data van de gebruiker opgevraagd (email, naam, achternaam, geboortedatum, land), <br/>
 deze wordt gevalideerd, eventuele errors worden weergegeven en indien correct wordt de data doorgegeven aan Firestore. <br/>
+Werkende datetimepicker gerealiseerd. Deze werd later weer verwijdert wegens te ongebruiksvriendelijk (te klein, niet praktisch: maand, jaar zoeken). <br/>
+Picker wordt gebruikt om maand te selecteren en CountryPicker om een land te selecteren. <br/>
 Validatie email-adres: juiste formaat abc@def.xyz. <br/>
 Validatie geboortedatum: dag: enkel cijfers, aantal cijfers >=2, correcte dag: 1-31 (later wil ik dit laten afhangen van maand). <br/>
-Validatie geboortejaar: jaar: enkel cijfers, aantal cijfers = 4, correct jaar: 1900-2020 (later wil ik via huidig jaar controleren of leeftijd >=18). <br/>
+Validatie geboortedatum: jaar: enkel cijfers, aantal cijfers = 4, correct jaar: 1900-2020 (later wil ik via huidig jaar controleren of leeftijd >=18). <br/>
+Validatie geboortedatum: maand: er werd een maand gekozen, correcte maand: 1-12. <br/>
 #### Problemen
 1. De module react-native-date-picker geeft volgende error:
 ```
@@ -128,12 +130,14 @@ Invariant Violation: A date or time should be specified as `value`.
 #### Opgelost
 1. Expo ondersteunt geen native modules en react-native-date-picker is er zo een, overgeschakeld naar @react-native-community/datetimepicker.
 2. In de OnChange functie moet er gekeken worden welk type evenment het is: selected -> setDate, dismissed -> doe niets
-3. Via native-base zou dit mogelijk zijn?
+3. Via native-base zou dit mogelijk zijn? maar dit geeft andere errors
 #### Bronnen
 - https://docs.expo.dev/versions/latest/sdk/date-time-picker/
 - https://github.com/react-native-datetimepicker/datetimepicker#timepickerandroid
 - https://react-hook-form.com/api/useform/register
 - https://github.com/react-native-picker/picker
+- https://docs.nativebase.io/3.0.0-next.40/installation
+- https://github.com/xcarpentier/react-native-country-picker-modal
 - https://reactnavigation.org/docs/params/
 - https://www.positronx.io/react-native-stack-navigator-passing-getting-params-to-screen/
 - https://reactnative.dev/docs/keyboardavoidingview
@@ -142,6 +146,7 @@ Invariant Violation: A date or time should be specified as `value`.
 
 ### To-do
 ### Week 6
+- Scrollview + Keyboardavoidingview combineren
 - Homescreen: Locatieservices (huidige locatie tonen, plaats zoeken,
 - Hamburgermenu: Onderdelen weergeven & linken
 - Alle interfaces maken en routering
