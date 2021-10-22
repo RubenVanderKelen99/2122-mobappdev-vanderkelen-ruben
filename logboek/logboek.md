@@ -153,7 +153,6 @@ r you might have mixed up default and named imports.
 
 ### To-do
 ### Week 7
-- Scrollview + Keyboardavoidingview combineren
 - Homescreen: Locatieservices (huidige locatie tonen, plaats zoeken,
 - Hamburgermenu: Onderdelen weergeven & linken
 - Alle interfaces maken en routering
