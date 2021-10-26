@@ -151,6 +151,24 @@ r you might have mixed up default and named imports.
 - https://reactnative.dev/docs/keyboardavoidingview
 - https://stackoverflow.com/questions/40438986/keyboardavoidingview-with-scrollview
 
+### Week 7
+#### Gedaan
+UI Login, Registratie scherm.
+Implementatie functionaliteit toon/verberg wachtwoord.
+#### Problemen
+1. Bij het weergeven van een Image krijg ik volgende error:
+```
+Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have
+mixed up default and named imports.
+
+Check the render method of `RegistrationScreen`.
+```
+#### Opgelost
+1. Ik het de image foutief onder react geimporteerd en dit moest onder react-native.
+#### Bronnen
+- https://callstack.github.io/react-native-paper/icons.html
+- https://reactnative.dev/docs/text
+
 ### To-do
 ### Week 7
 - Homescreen: Locatieservices (huidige locatie tonen, plaats zoeken,

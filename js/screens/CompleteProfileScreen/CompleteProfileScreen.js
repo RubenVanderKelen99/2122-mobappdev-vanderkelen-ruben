@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, KeyboardAvoidingView } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import { TextInput, Button } from 'react-native-paper';
@@ -50,8 +50,8 @@ const CompleteProfileScreen = ({ navigation }) => {
                             }}
                             render={({ field: { onChange, onBlur, value } }) => (
                                 <TextInput
-                                    label="Email"
-                                    mode="outlined"
+                                    placeholder="Email"
+                                    mode="flat"
                                     onBlur={onBlur}
                                     onChangeText={onChange}
                                     value={value}
@@ -73,8 +73,9 @@ const CompleteProfileScreen = ({ navigation }) => {
                         }}
                         render={({ field: { onChange, onBlur, value } }) => (
                             <TextInput
-                                label="Name"
-                                mode="outlined"
+                                placeholder="Name"
+                                mode="flat"
+                                autoCapitalize="words"
                                 onBlur={onBlur}
                                 onChangeText={onChange}
                                 value={value}
@@ -96,8 +97,9 @@ const CompleteProfileScreen = ({ navigation }) => {
                         }}
                        render={({ field: { onChange, onBlur, value } }) => (
                             <TextInput
-                            label="Surname"
-                            mode="outlined"
+                            placeholder="Surname"
+                            mode="flat"
+                            autoCapitalize="words"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -153,7 +155,7 @@ const CompleteProfileScreen = ({ navigation }) => {
                         }}
                         render={({ field: { onChange, onBlur, value } }) => (
                             <TextInput
-                                mode="outlined"
+                                mode="flat"
                                 keyboardType='numeric'
                                 maxLength={2}
                                 placeholder="Day"

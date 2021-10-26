@@ -1,5 +1,5 @@
-import React, { useRef } from 'react'
-import { View, Text, ScrollView, KeyboardAvoidingView } from 'react-native';
+import React, { useRef, useState } from 'react';
+import { View, Image, Text, ScrollView, KeyboardAvoidingView } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import { TextInput, Button } from 'react-native-paper';
 import {decode, encode} from 'base-64'
@@ -17,10 +17,21 @@ const RegistrationScreen = ({ navigation }) => {
     (?=.*[0-9]) minstens 1 cijfer
     (?=.{8,}) minstens 8 karakters lang
     */
-
     const { control, formState: { errors }, handleSubmit, watch, register } = useForm();
     const password = useRef({});
+    const [showPassword, setShowPassword] = useState(false);
+    const [icon, setIcon] = useState('eye');
     password.current = watch('password', '');
+
+    function showPasswordToggle() {
+        setShowPassword(!showPassword);
+        if(showPassword) {
+            setIcon('eye');
+        }
+        else {
+            setIcon('eye-off');
+        }
+    }
 
     const onSubmit = (data) => {
         const { email, password } = data;
@@ -50,6 +61,11 @@ const RegistrationScreen = ({ navigation }) => {
         behavior="height" enabled keyboardVerticalOffset={100}>
             <ScrollView>
                 <View style={styles.authFormContainer}>
+                    <Image
+                        style={styles.smallLogo}
+                        source={require('../../../assets/logo.png')}
+                    />
+
                     <Controller
                         control={control}
                         rules={{
@@ -58,8 +74,9 @@ const RegistrationScreen = ({ navigation }) => {
                         }}
                         render={({ field: { onChange, onBlur, value } }) => (
                             <TextInput
-                                label="Email"
-                                mode="outlined"
+                                placeholder="Email"
+                                mode="flat"
+                                left={<TextInput.Icon name="email-open" color="#6200EE" />}
                                 onBlur={onBlur}
                                 onChangeText={onChange}
                                 value={value}
@@ -83,9 +100,11 @@ const RegistrationScreen = ({ navigation }) => {
                         }}
                         render={({ field: { onChange, onBlur, value } }) => (
                             <TextInput
-                                label="Password"
-                                mode="outlined"
-                                secureTextEntry
+                                placeholder="Password"
+                                mode="flat"
+                                left={<TextInput.Icon name="lock" color="#6200EE" />}
+                                right={<TextInput.Icon name={icon} color="#898A8D" onPress={() => showPasswordToggle()}/>}
+                                secureTextEntry={!showPassword}
                                 onBlur={onBlur}
                                 onChangeText={onChange}
                                 value={value}
@@ -108,13 +127,15 @@ const RegistrationScreen = ({ navigation }) => {
                         }}
                         render={({ field: { onChange, onBlur, value } }) => (
                             <TextInput
-                                label="Confirm Password"
-                                mode="outlined"
-                                secureTextEntry
+                                placeholder="Confirm Password"
+                                mode="flat"
+                                left={<TextInput.Icon name="lock-plus" color="#6200EE" />}
+                                right={<TextInput.Icon name={icon} color="#898A8D" onPress={() => showPasswordToggle()}/>}
+                                secureTextEntry={!showPassword}
                                 onBlur={onBlur}
                                 onChangeText={onChange}
                                 value={value}
-                                 style={styles.formInput}
+                                style={styles.formInput}
                             />
                         )}
                         name="confirmPass"
@@ -135,19 +156,9 @@ const RegistrationScreen = ({ navigation }) => {
                         Register Account
                     </Button>
 
-                    <View style={styles.switchScreenText}>
-                        <Text> Already have an account? </Text>
+                    <View style={styles.redirectText}>
+                        <Text>Already have an account? <Text style={styles.redirectUnderlineText} onPress={() => navigation.navigate('Login')}>Sign in</Text></Text>
                     </View>
-
-                    <Button
-                        mode="outlined"
-                        style={styles.switchBtn}
-                        icon="account-arrow-right"
-                        compact
-                        onPress={() => navigation.navigate('Login')}
-                    >
-                        Login
-                    </Button>
                 </View>
             </ScrollView>
         </KeyboardAvoidingView>

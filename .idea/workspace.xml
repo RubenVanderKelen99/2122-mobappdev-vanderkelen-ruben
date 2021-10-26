@@ -12,10 +12,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Implementatie KeyboardAvoidingView + ScrollView">
-      <change afterPath="$PROJECT_DIR$/assets/Logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logboek/figma/Logo.png" afterDir="false" />
+    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Upload Logo.png">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/CompleteProfileScreen/CompleteProfileScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/CompleteProfileScreen/CompleteProfileScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/LoginScreen/LoginScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/LoginScreen/LoginScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/RegistrationScreen/RegistrationScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/RegistrationScreen/RegistrationScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/styles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logboek/logboek.md" beforeDir="false" afterPath="$PROJECT_DIR$/logboek/logboek.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,12 +64,15 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Ruben\Desktop\Mobile App Development\2122-mobappdev-vanderkelen-ruben\assets" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ruben\Desktop\Mobile App Development\2122-mobappdev-vanderkelen-ruben\assets" />
+      <recent name="C:\Users\Ruben\Desktop\Mobile App Development\2122-mobappdev-vanderkelen-ruben\js\localAssets" />
       <recent name="C:\Users\Ruben\Desktop\Mobile App Development\2122-mobappdev-vanderkelen-ruben\js\screens\Registration" />
       <recent name="C:\Users\Ruben\Desktop\Mobile App Development\2122-mobappdev-vanderkelen-ruben\js\screens\Login" />
       <recent name="C:\Users\Ruben\Desktop\Mobile App Development\2122-mobappdev-vanderkelen-ruben\js\screens\Home" />
-      <recent name="C:\Users\Ruben\Desktop\Mobile App Development\2122-mobappdev-vanderkelen-ruben\android\app\build\generated\source\buildConfig" />
-      <recent name="C:\Users\Ruben\Desktop\Mobile App Development\2122-mobappdev-vanderkelen-ruben\logboek" />
     </key>
   </component>
   <component name="RunManager" selected="Gradle.C:/Users/Ruben/Desktop/Mobile App Development/2122-mobappdev-vanderkelen-ruben/android/app/build.gradle">
@@ -274,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634903498739</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Upload Logo.png">
+      <created>1634907561792</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1634907561792</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,6 +334,7 @@
     <MESSAGE value="CompleteProfileScreen: dropdown maand met Picker v1" />
     <MESSAGE value="CompleteProfileScreen: dropdown maand met Picker v2, Countrypicker" />
     <MESSAGE value="Implementatie KeyboardAvoidingView + ScrollView" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementatie KeyboardAvoidingView + ScrollView" />
+    <MESSAGE value="Upload Logo.png" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upload Logo.png" />
   </component>
 </project>
