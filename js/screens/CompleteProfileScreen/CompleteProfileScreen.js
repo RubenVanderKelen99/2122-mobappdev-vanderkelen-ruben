@@ -14,7 +14,7 @@ email x
 name x
 surName x
 geboortedatum (dag, maand, jaar) x
-country(Code)
+country(Code) x
 Ook meegeven:
 isDriver: false
 */

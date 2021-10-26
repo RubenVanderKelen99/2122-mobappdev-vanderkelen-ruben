@@ -153,7 +153,8 @@ r you might have mixed up default and named imports.
 
 ### Week 7
 #### Gedaan
-UI Login, Registratie scherm.
+LoginScreen, RegistrationScreen: styling.
+HomeScreen: styling, UI rounded buttons menu en my-location via react-native-elements.
 Implementatie functionaliteit toon/verberg wachtwoord.
 #### Problemen
 1. Bij het weergeven van een Image krijg ik volgende error:
@@ -168,6 +169,8 @@ Check the render method of `RegistrationScreen`.
 #### Bronnen
 - https://callstack.github.io/react-native-paper/icons.html
 - https://reactnative.dev/docs/text
+- https://reactnativeelements.com/
+- https://reactnativeelements.com/docs/icon
 
 ### To-do
 ### Week 7
@@ -177,7 +180,6 @@ Check the render method of `RegistrationScreen`.
 vraag: vanaf waar moet password encrypted zijn?
 
 ### Week 7/8/...
-- User authentication: **phone verification als registratie** dit word de main method en login
 - Homescreen: Locatieservices verder uitwerken (route plannen, andere gebruikers weergeven),
 - UserDetailsScreen: Details gebruiker weergeven, aanpasvelden,
 - DriverDetailsScreen: Informatie gekozen chauffeur weergeven,

@@ -44,11 +44,23 @@ const styles = StyleSheet.create({
         paddingTop: 20,
         paddingLeft: 10,
         alignItems:'center',
+        fontFamily:'Roboto',
+        fontSize: 18,
     },
     redirectUnderlineText: {
         textDecorationLine:'underline',
         color:PURPLE,
-        alignContent: 'center',
+        alignContent:'center',
+    },
+    roundButton: {
+        borderWidth:1,
+        borderColor:'rgba(0,0,0,0.2)',
+        alignItems:'center',
+        justifyContent:'center',
+        width:50,
+        height:50,
+        backgroundColor:'#fff',
+        borderRadius:50,
     }
 });
 

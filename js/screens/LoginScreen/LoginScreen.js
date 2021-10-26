@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, KeyboardAvoidingView } from 'react-native';
+import { View, Image, Text, ScrollView, KeyboardAvoidingView } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import { TextInput, Button } from 'react-native-paper';
 import {decode, encode} from 'base-64'
@@ -56,6 +56,11 @@ const LoginScreen = ({ navigation }) => {
         behavior="height" enabled keyboardVerticalOffset={100}>
             <ScrollView>
                 <View style={styles.authFormContainer}>
+                    <Image
+                    style={styles.smallLogo}
+                    source={require('../../../assets/logo.png')}
+                    />
+
                     <Controller
                         control={control}
                         rules={{
