@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, KeyboardAvoidingView } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, KeyboardAvoidingView } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import { TextInput, Button } from 'react-native-paper';
 import { Picker } from '@react-native-picker/picker';
@@ -37,9 +37,9 @@ const CompleteProfileScreen = ({ navigation }) => {
     }
 
     return (
-        <KeyboardAvoidingView style={{ flex: 1, flexDirection: 'column',justifyContent: 'center'}}
+        <KeyboardAvoidingView style={styles.container}
         behavior="height" enabled keyboardVerticalOffset={100}>
-            <ScrollView>
+            <ScrollView style={styles.scrollContainer}>
                 <View style={styles.authFormContainer}>
 
                     <Controller
@@ -235,15 +235,18 @@ const CompleteProfileScreen = ({ navigation }) => {
                         {errors.country && <Text style={styles.errorText}>{errors.country.message}</Text>}
                      </View>
 
-                    <Button
+                     <Button
                         mode="contained"
                         compact={false}
                         onPress={handleSubmit(onSubmit)}
                         icon="account-arrow-right"
+                        color="orange"
+                        labelStyle={{ color: "white", fontSize: 16 }}
                         style={styles.submitButton}
-                    >
+                     >
                         Complete profile
-                    </Button>
+                     </Button>
+
 
                 </View>
             </ScrollView>

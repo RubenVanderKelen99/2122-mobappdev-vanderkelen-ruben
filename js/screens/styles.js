@@ -1,13 +1,19 @@
 import { StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
 
-const PURPLE='#6200EE'
+const ORANGE='#FFA500'
 
 const styles = StyleSheet.create({
-    authFormContainer: {
+    container: {
         flex: 1,
-        flexDirection:'column',
-        alignContent:'center',
+        flexDirection: 'column',
+        alignItems: 'center',
+    },
+    scrollContainer: {
+        width: '100%',
+        maxWidth: 500,
+    },
+    authFormContainer: {
         paddingTop: Constants.statusBarHeight,
     },
     smallLogo: {
@@ -30,7 +36,6 @@ const styles = StyleSheet.create({
         marginRight: 40,
         height: 50,
         borderRadius: 30,
-        alignItems:'center',
         justifyContent:'center',
     },
     errorMsg: {
@@ -49,7 +54,7 @@ const styles = StyleSheet.create({
     },
     redirectUnderlineText: {
         textDecorationLine:'underline',
-        color:PURPLE,
+        color:ORANGE,
         alignContent:'center',
     },
     roundButton: {

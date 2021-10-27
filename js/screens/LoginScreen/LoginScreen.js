@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Image, Text, ScrollView, KeyboardAvoidingView } from 'react-native';
+import { View, Image, Text, TouchableOpacity, ScrollView, KeyboardAvoidingView } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import { TextInput, Button } from 'react-native-paper';
 import {decode, encode} from 'base-64'
@@ -52,9 +52,9 @@ const LoginScreen = ({ navigation }) => {
     };
 
     return (
-        <KeyboardAvoidingView style={{ flex: 1, flexDirection: 'column',justifyContent: 'center'}}
+        <KeyboardAvoidingView style={styles.container}
         behavior="height" enabled keyboardVerticalOffset={100}>
-            <ScrollView>
+            <ScrollView style={styles.scrollContainer}>
                 <View style={styles.authFormContainer}>
                     <Image
                     style={styles.smallLogo}
@@ -71,7 +71,8 @@ const LoginScreen = ({ navigation }) => {
                             <TextInput
                                 placeholder="Email"
                                 mode="flat"
-                                left={<TextInput.Icon name="email-open" color="#6200EE" />}
+                                left={<TextInput.Icon name="email-open" color="orange" />}
+                                theme={{colors: {primary: 'orange'}}}
                                 onBlur={onBlur}
                                 onChangeText={onChange}
                                 value={value}
@@ -95,8 +96,9 @@ const LoginScreen = ({ navigation }) => {
                             <TextInput
                                 placeholder="Password"
                                 mode="flat"
-                                left={<TextInput.Icon name="lock" color="#6200EE" />}
-                                right={<TextInput.Icon name={icon} color="#898A8D" onPress={() => showPasswordToggle()}/>}
+                                left={<TextInput.Icon name="lock" color="orange" />}
+                                right={<TextInput.Icon name={icon} color="gray" onPress={() => showPasswordToggle()}/>}
+                                theme={{colors: {primary: 'orange'}}}
                                 secureTextEntry={!showPassword}
                                 onBlur={onBlur}
                                 onChangeText={onChange}
@@ -113,10 +115,12 @@ const LoginScreen = ({ navigation }) => {
                     </View>
 
                     <Button
-                        onPress={handleSubmit(onSubmit)}
                         mode="contained"
                         compact={false}
+                        onPress={handleSubmit(onSubmit)}
                         icon="account-arrow-right"
+                        color="orange"
+                        labelStyle={{ color: "white", fontSize: 16 }}
                         style={styles.submitButton}
                     >
                         Sign in

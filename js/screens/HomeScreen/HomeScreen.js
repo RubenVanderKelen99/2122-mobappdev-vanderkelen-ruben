@@ -13,21 +13,20 @@ const HomeScreen = ({ navigation }) => {
     }
 
     return (
-        <KeyboardAvoidingView style={{ flex: 1, flexDirection: 'column',justifyContent: 'center'}}
+        <KeyboardAvoidingView style={styles.container}
         behavior="height" enabled keyboardVerticalOffset={100}>
-            <ScrollView>
-                <Text>Home Screen</Text>
+            <ScrollView style={styles.scrollContainer}>
                 <View style={styles.authFormContainer}>
                     <TouchableOpacity
                         style={styles.roundButton}
                     >
-                        <Icon name={"menu"} size={30} color="#01a699" />
+                        <Icon name={"menu"} size={30} color="gray" />
                     </TouchableOpacity>
 
                     <TouchableOpacity
                         style={styles.roundButton}
                     >
-                        <Icon name={"my-location"} type='material' size={30} color="#01a699" />
+                        <Icon name={"my-location"} type='material' size={30} color="gray" />
                     </TouchableOpacity>
 
                     <Button
@@ -35,6 +34,8 @@ const HomeScreen = ({ navigation }) => {
                         compact={false}
                         onPress={() => signOut()}
                         icon="account-arrow-left"
+                        color="orange"
+                        labelStyle={{ color: "white", fontSize: 16 }}
                         style={styles.submitButton}
                     >
                         Sign out
@@ -44,6 +45,8 @@ const HomeScreen = ({ navigation }) => {
                         compact={false}
                         onPress={() => navigation.navigate('CompleteProfile')}
                         icon="account-arrow-left"
+                        color="orange"
+                        labelStyle={{ color: "white", fontSize: 16 }}
                         style={styles.submitButton}
                     >
                         Complete profile

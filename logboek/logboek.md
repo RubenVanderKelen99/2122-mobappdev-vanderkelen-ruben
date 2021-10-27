@@ -171,6 +171,7 @@ Check the render method of `RegistrationScreen`.
 - https://reactnative.dev/docs/text
 - https://reactnativeelements.com/
 - https://reactnativeelements.com/docs/icon
+- https://reactnative.dev/docs/touchableopacity
 
 ### To-do
 ### Week 7
