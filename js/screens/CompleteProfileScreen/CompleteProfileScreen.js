@@ -38,7 +38,7 @@ const CompleteProfileScreen = ({ navigation }) => {
 
     return (
         <KeyboardAvoidingView style={styles.container}
-        behavior="height" enabled keyboardVerticalOffset={100}>
+        behavior="height" enabled keyboardVerticalOffset={50}>
             <ScrollView style={styles.scrollContainer}>
                 <View style={styles.authFormContainer}>
 

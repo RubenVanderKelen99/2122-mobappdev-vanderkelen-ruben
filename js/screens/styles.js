@@ -18,10 +18,17 @@ const styles = StyleSheet.create({
     },
     smallLogo: {
         flex: 1,
-        height: 140,
-        width: 140,
+        height: 160,
+        width: 160,
         alignSelf: "center",
-        margin: 30,
+        marginTop: 30,
+        marginBottom: 10,
+    },
+    heading: {
+        alignSelf: 'center',
+        fontFamily:'Roboto',
+        fontWeight: '500',
+        fontSize: 24,
     },
     formInput: {
         alignContent: 'center',

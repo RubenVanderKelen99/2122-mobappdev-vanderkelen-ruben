@@ -165,7 +165,7 @@ mixed up default and named imports.
 Check the render method of `RegistrationScreen`.
 ```
 #### Opgelost
-1. Ik het de image foutief onder react geimporteerd en dit moest onder react-native.
+1. Ik had de Image foutief onder react geimporteerd en dit moest onder react-native.
 #### Bronnen
 - https://callstack.github.io/react-native-paper/icons.html
 - https://reactnative.dev/docs/text
@@ -173,8 +173,31 @@ Check the render method of `RegistrationScreen`.
 - https://reactnativeelements.com/docs/icon
 - https://reactnative.dev/docs/touchableopacity
 
+### Week 8
+#### Gedaan
+
+Implementatie functionaliteit toon/verberg wachtwoord.
+#### Problemen
+1. Expo wilt niet meer opstarten:
+```
+Error: error:0308010C:digital envelope routines::unsupported
+```
+#### Opgelost
+1. Blijkbaar heeft dit te maken met een incompatibele node versie: <br/>
+Om dit op te lossen waren er verschillende stappen:
+- nvm voor windows installeren: uninstall node.js, verwijderen oude files
+- installeren nvm-windows van github
+- huidige lts versie node installeren: nvm install lts
+- huidige lts versie node in gebruik nemen: nvm use lts
+- globale utilities herinstalleren: yarn, expo
+- opstarten project/expo: werkt
+#### Bronnen
+- https://stackoverflow.com/questions/69692842/error0308010cdigital-envelope-routinesunsupported
+- https://github.com/nvm-sh/nvm
+- https://nodejs.org/en/about/releases/
+
 ### To-do
-### Week 7
+### Week 8
 - Homescreen: Locatieservices (huidige locatie tonen, plaats zoeken,
 - Hamburgermenu: Onderdelen weergeven & linken
 - Alle interfaces maken en routering

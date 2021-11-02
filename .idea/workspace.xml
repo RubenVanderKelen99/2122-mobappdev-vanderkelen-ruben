@@ -12,17 +12,16 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="UI rounded buttons voor menu en my-location">
-      <change afterPath="$PROJECT_DIR$/assets/map-placeholder.png" afterDir="false" />
+    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="UI LoginScreen &amp; RegistatrieScreen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/screens/CompleteProfileScreen/CompleteProfileScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/CompleteProfileScreen/CompleteProfileScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/screens/LoginScreen/LoginScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/LoginScreen/LoginScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/screens/RegistrationScreen/RegistrationScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/RegistrationScreen/RegistrationScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/screens/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/styles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logboek/figma/Logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/logboek/figma/Logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logboek/logboek.md" beforeDir="false" afterPath="$PROJECT_DIR$/logboek/logboek.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -304,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635251412681</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="UI LoginScreen &amp; RegistatrieScreen">
+      <created>1635336977253</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1635336977253</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,7 +334,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Aanmaken nieuwe React Native App" />
     <MESSAGE value="Update Logboek week 2" />
     <MESSAGE value="Installatie van NativeBase" />
     <MESSAGE value="Verbinding maken met backend (API van Back4App) - werkt niet" />
@@ -353,6 +358,7 @@
     <MESSAGE value="Upload Logo.png" />
     <MESSAGE value="UI LoginScreen &amp; RegistatrieScreen, functionaliteit tonen/verbergen wachtwoord" />
     <MESSAGE value="UI rounded buttons voor menu en my-location" />
-    <option name="LAST_COMMIT_MESSAGE" value="UI rounded buttons voor menu en my-location" />
+    <MESSAGE value="UI LoginScreen &amp; RegistatrieScreen" />
+    <option name="LAST_COMMIT_MESSAGE" value="UI LoginScreen &amp; RegistatrieScreen" />
   </component>
 </project>

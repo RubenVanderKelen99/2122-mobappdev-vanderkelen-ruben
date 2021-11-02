@@ -58,14 +58,14 @@ const RegistrationScreen = ({ navigation }) => {
 
     return (
         <KeyboardAvoidingView style={styles.container}
-        behavior="height" enabled keyboardVerticalOffset={100}>
+        behavior="height" enabled keyboardVerticalOffset={50}>
             <ScrollView  style={styles.scrollContainer}>
                 <View style={styles.authFormContainer}>
                     <Image
                         style={styles.smallLogo}
                         source={require('../../../assets/logo.png')}
                     />
-
+                    <Text style={styles.heading}> Registration </Text>
                     <Controller
                         control={control}
                         rules={{

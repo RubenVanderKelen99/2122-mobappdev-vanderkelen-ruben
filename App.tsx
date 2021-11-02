@@ -37,7 +37,7 @@ export default function App() {
 
   return (
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{headerTitleAlign: 'center'}}>
+        <Stack.Navigator screenOptions={{headerShown: false}}>
             { signedIn ? (
                 <>
                     <Stack.Screen name="Home" component={HomeScreen} />
