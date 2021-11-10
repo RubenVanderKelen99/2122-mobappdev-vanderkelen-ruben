@@ -196,14 +196,25 @@ Om dit op te lossen waren er verschillende stappen:
 - https://github.com/nvm-sh/nvm
 - https://nodejs.org/en/about/releases/
 
+### Week 9
+#### Gedaan
+De setup van stack navigator was nog niet volledig goed: bepaalde dependecies/imports
+ontbraken.
+#### Problemen
+1. ontbrekende dependencies/imports Stack Nav.
+#### Opgelost
+1. toevoegen dependencies//imports
+#### Bronne
+- https://reactnavigation.org/docs/getting-started/
+
 ### To-do
-### Week 8
+### Week 10
 - Homescreen: Locatieservices (huidige locatie tonen, plaats zoeken,
 - Hamburgermenu: Onderdelen weergeven & linken
 - Alle interfaces maken en routering
 vraag: vanaf waar moet password encrypted zijn?
 
-### Week 7/8/...
+### Week 11/12/...
 - Homescreen: Locatieservices verder uitwerken (route plannen, andere gebruikers weergeven),
 - UserDetailsScreen: Details gebruiker weergeven, aanpasvelden,
 - DriverDetailsScreen: Informatie gekozen chauffeur weergeven,
