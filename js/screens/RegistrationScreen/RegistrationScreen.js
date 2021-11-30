@@ -43,13 +43,6 @@ const RegistrationScreen = ({ navigation }) => {
                     id: uid,
                     email
             };
-            const usersRef = db.collection('users')
-            usersRef
-                .doc(uid)
-                .set(data)
-                .catch((error) => {
-                    alert(error)
-                });
             })
         .catch((error) => {
             alert(error)

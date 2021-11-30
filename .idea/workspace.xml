@@ -12,9 +12,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Fix Expo">
+    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Stack Navigator Setup fix (import react-native-gesture-handler + install @react-native-masked-view/masked-view)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/RegistrationScreen/RegistrationScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/RegistrationScreen/RegistrationScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logboek/logboek.md" beforeDir="false" afterPath="$PROJECT_DIR$/logboek/logboek.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
@@ -54,7 +57,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Stage/HokaAppV4/android" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Stage/HokaAppV4" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -72,7 +75,7 @@
       <recent name="C:\Users\Ruben\Desktop\Mobile App Development\2122-mobappdev-vanderkelen-ruben\js\screens\Home" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.C:/Users/Ruben/Desktop/Mobile App Development/2122-mobappdev-vanderkelen-ruben/android/app/build.gradle">
+  <component name="RunManager" selected="Gradle.C:/Users/Ruben/Desktop/Mobile App Development/2122-mobappdev-vanderkelen-ruben">
     <configuration name="C:/Users/Ruben/Desktop/Mobile App Development/2122-mobappdev-vanderkelen-ruben" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -111,11 +114,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Gradle.C:/Users/Ruben/Desktop/Mobile App Development/2122-mobappdev-vanderkelen-ruben/android/app/build.gradle" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -129,6 +127,7 @@
       <option name="presentableId" value="Default" />
       <updated>1633440641246</updated>
       <workItem from="1633611686487" duration="81000" />
+      <workItem from="1637921785275" duration="5000" />
     </task>
     <task id="LOCAL-00001" summary="Aanmaken nieuwe React Native App">
       <created>1633442924051</created>
@@ -312,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635849291003</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Stack Navigator Setup fix (import react-native-gesture-handler + install @react-native-masked-view/masked-view)">
+      <created>1635943485394</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1635943485395</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,7 +342,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Installatie van NativeBase" />
     <MESSAGE value="Verbinding maken met backend (API van Back4App) - werkt niet" />
     <MESSAGE value="Verbinding maken met backend (API van Back4App) - werkt nog steeds niet" />
     <MESSAGE value="Verwijderen Back4App code en dependencies" />
@@ -361,6 +366,7 @@
     <MESSAGE value="UI rounded buttons voor menu en my-location" />
     <MESSAGE value="UI LoginScreen &amp; RegistatrieScreen" />
     <MESSAGE value="Fix Expo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix Expo" />
+    <MESSAGE value="Stack Navigator Setup fix (import react-native-gesture-handler + install @react-native-masked-view/masked-view)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Stack Navigator Setup fix (import react-native-gesture-handler + install @react-native-masked-view/masked-view)" />
   </component>
 </project>

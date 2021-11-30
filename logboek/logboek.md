@@ -175,7 +175,6 @@ Check the render method of `RegistrationScreen`.
 
 ### Week 8
 #### Gedaan
-
 Implementatie functionaliteit toon/verberg wachtwoord.
 #### Problemen
 1. Expo wilt niet meer opstarten:
@@ -204,8 +203,17 @@ ontbraken.
 1. ontbrekende dependencies/imports Stack Nav.
 #### Opgelost
 1. toevoegen dependencies//imports
-#### Bronne
+#### Bronnen
 - https://reactnavigation.org/docs/getting-started/
+
+### Week 10
+#### Gedaan
+Setup en implementatie van drawer navigation.
+Nesten drawer navigator in stack navigator.
+#### Problemen
+#### Opgelost
+#### Bronnen
+- https://reactnavigation.org/docs/drawer-navigator/
 
 ### To-do
 ### Week 10

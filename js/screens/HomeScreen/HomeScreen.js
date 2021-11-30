@@ -19,6 +19,7 @@ const HomeScreen = ({ navigation }) => {
                 <View style={styles.authFormContainer}>
                     <TouchableOpacity
                         style={styles.roundButton}
+                        onPress={() => navigation.openDrawer()}
                     >
                         <Icon name={"menu"} size={30} color="gray" />
                     </TouchableOpacity>

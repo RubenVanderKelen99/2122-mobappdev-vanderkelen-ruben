@@ -4,9 +4,21 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { LoginScreen, HomeScreen, RegistrationScreen, CompleteProfileScreen } from './js/screens'
 import { db } from './js/firebase';
 import { auth } from './js/firebase';
+
+const Drawer = createDrawerNavigator();
+
+function DrawerStack() {
+    return (
+        <Drawer.Navigator screenOptions={{headerShown: false}}>
+            <Drawer.Screen name="Home" component={HomeScreen} />
+            <Drawer.Screen name="CompleteProfile" component={CompleteProfileScreen} />
+        </Drawer.Navigator>
+    );
+}
 
 const Stack = createStackNavigator();
 
@@ -41,8 +53,7 @@ export default function App() {
         <Stack.Navigator screenOptions={{headerShown: false}}>
             { signedIn ? (
                 <>
-                    <Stack.Screen name="Home" component={HomeScreen} />
-                    <Stack.Screen name="CompleteProfile" component={CompleteProfileScreen} />
+                    <Stack.Screen name="Home" component={DrawerStack} />
                 </>
             ) : (
                 <>
