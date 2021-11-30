@@ -5,7 +5,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { LoginScreen, HomeScreen, RegistrationScreen, CompleteProfileScreen } from './js/screens'
+import { LoginScreen, HomeScreen, RegistrationScreen, CompleteProfileScreen, HistoryScreen, PromotionsScreen, FAQScreen, AboutScreen } from './js/screens'
 import { db } from './js/firebase';
 import { auth } from './js/firebase';
 
@@ -14,8 +14,11 @@ const Drawer = createDrawerNavigator();
 function DrawerStack() {
     return (
         <Drawer.Navigator screenOptions={{headerShown: false}}>
-            <Drawer.Screen name="Home" component={HomeScreen} />
-            <Drawer.Screen name="CompleteProfile" component={CompleteProfileScreen} />
+            <Drawer.Screen name="Rit plannen" component={HomeScreen} />
+            <Drawer.Screen name="Geschiedenis" component={HistoryScreen} />
+            <Drawer.Screen name="Promoties" component={PromotionsScreen} />
+            <Drawer.Screen name="FAQ" component={FAQScreen} />
+            <Drawer.Screen name="Over ons" component={AboutScreen} />
         </Drawer.Navigator>
     );
 }
