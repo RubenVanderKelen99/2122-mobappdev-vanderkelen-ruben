@@ -12,14 +12,16 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Implementatie drawer navigation">
-      <change afterPath="$PROJECT_DIR$/js/screens/AboutScreen/AboutScreen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/screens/FAQScreen/FAQScreen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/screens/HistoryScreen/HistoryScreen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/screens/PromotionsScreen/PromotionsScreen.js" afterDir="false" />
+    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Aanmaak nieuwe schermen, Routering van drawer navigation afgewerkt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/AboutScreen/AboutScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/AboutScreen/AboutScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/FAQScreen/FAQScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/FAQScreen/FAQScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/HistoryScreen/HistoryScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/HistoryScreen/HistoryScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/LoginScreen/LoginScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/LoginScreen/LoginScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/PromotionsScreen/PromotionsScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/PromotionsScreen/PromotionsScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/RegistrationScreen/RegistrationScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/RegistrationScreen/RegistrationScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logboek/logboek.md" beforeDir="false" afterPath="$PROJECT_DIR$/logboek/logboek.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -325,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638266112563</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Aanmaak nieuwe schermen, Routering van drawer navigation afgewerkt">
+      <created>1638267627110</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1638267627110</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +358,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Verbinding maken met backend (API van Back4App) - werkt nog steeds niet" />
     <MESSAGE value="Verwijderen Back4App code en dependencies" />
     <MESSAGE value="Installatie &amp; setup React-Native Firebase" />
     <MESSAGE value=" Setup React-Native Firebase &amp; aanmaken routering" />
@@ -374,6 +382,7 @@
     <MESSAGE value="Fix Expo" />
     <MESSAGE value="Stack Navigator Setup fix (import react-native-gesture-handler + install @react-native-masked-view/masked-view)" />
     <MESSAGE value="Implementatie drawer navigation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementatie drawer navigation" />
+    <MESSAGE value="Aanmaak nieuwe schermen, Routering van drawer navigation afgewerkt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aanmaak nieuwe schermen, Routering van drawer navigation afgewerkt" />
   </component>
 </project>

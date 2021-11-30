@@ -58,7 +58,7 @@ const RegistrationScreen = ({ navigation }) => {
                         style={styles.smallLogo}
                         source={require('../../../assets/logo.png')}
                     />
-                    <Text style={styles.heading}> Registration </Text>
+                    <Text style={styles.title}> Registration </Text>
                     <Controller
                         control={control}
                         rules={{

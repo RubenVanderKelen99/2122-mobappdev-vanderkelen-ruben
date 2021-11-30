@@ -61,7 +61,7 @@ const LoginScreen = ({ navigation }) => {
                     source={require('../../../assets/logo.png')}
                     />
 
-                    <Text style={styles.heading}> Login </Text>
+                    <Text style={styles.title}> Login </Text>
 
                     <Controller
                         control={control}

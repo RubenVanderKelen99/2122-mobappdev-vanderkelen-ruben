@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         marginTop: 30,
         marginBottom: 10,
     },
-    heading: {
+    title: {
         alignSelf: 'center',
         fontFamily:'Roboto',
         fontWeight: '500',
@@ -73,7 +73,23 @@ const styles = StyleSheet.create({
         height:50,
         backgroundColor:'#fff',
         borderRadius:50,
-    }
+    },
+    headerContainer: {
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+    },
+    headerBackButton: {
+        alignSelf: 'flex-start',
+        marginLeft: 10,
+        marginRight: 20,
+    },
+    headerTitle: {
+        alignSelf: 'flex-end',
+        fontFamily:'Roboto',
+        fontWeight: 'bold',
+        fontSize: 22,
+    },
 });
 
 export default styles;

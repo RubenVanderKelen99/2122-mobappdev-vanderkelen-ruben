@@ -208,18 +208,20 @@ ontbraken.
 
 ### Week 10
 #### Gedaan
-Setup en implementatie van drawer navigation.
-Nesten drawer navigator in stack navigator.
+Setup en implementatie van drawer navigation. <br/>
+Nesten drawer navigator in stack navigator. <br/>
+Aanmaken nieuwe screens: History, Promotions, FAQ & About. Routering naar deze schermen via drawer navigator.
+Toevoegen back button/header aan nieuwe screens.
 #### Problemen
 #### Opgelost
 #### Bronnen
 - https://reactnavigation.org/docs/drawer-navigator/
+- https://www.youtube.com/watch?v=ayxRtBHw754
 
 ### To-do
-### Week 10
+### Week 11
 - Homescreen: Locatieservices (huidige locatie tonen, plaats zoeken,
-- Hamburgermenu: Onderdelen weergeven & linken
-- Alle interfaces maken en routering
+- Hamburgermenu: costum style via https://www.youtube.com/watch?v=ayxRtBHw754
 vraag: vanaf waar moet password encrypted zijn?
 
 ### Week 11/12/...
