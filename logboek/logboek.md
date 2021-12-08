@@ -210,21 +210,38 @@ ontbraken.
 #### Gedaan
 Setup en implementatie van drawer navigation. <br/>
 Nesten drawer navigator in stack navigator. <br/>
-Aanmaken nieuwe screens: History, Promotions, FAQ & About. Routering naar deze schermen via drawer navigator.
-Toevoegen back button/header aan nieuwe screens.
+Aanmaken nieuwe screens: History, Promotions, FAQ & About. Routering naar deze schermen via drawer navigator. <br/>
+Toevoegen back button/header aan nieuwe screens. <br/>
 #### Problemen
+Geen problemen ondervonden.
 #### Opgelost
+Geen problemen ondervonden.
 #### Bronnen
 - https://reactnavigation.org/docs/drawer-navigator/
 - https://www.youtube.com/watch?v=ayxRtBHw754
 
-### To-do
 ### Week 11
+#### Gedaan
+Nieuwe file aangemaakt drawerContent. <br/>
+Tutorial youtube gevold om drawerContent aan te maken. <br/>
+Implementatie logica drawerContent in drawer navigatie. <br/>
+UI FAQ pagina. <br/>
+#### Problemen
+Geen problemen ondervonden.
+#### Opgelost
+Geen problemen ondervonden.
+#### Bronnen
+- https://reactnavigation.org/docs/drawer-navigator/
+- https://www.youtube.com/watch?v=ayxRtBHw754
+- https://medium.com/backticks-tildes/customizing-react-navigation-drawer-cf60c01a296a
+
+### To-do
+### Week 12
 - Homescreen: Locatieservices (huidige locatie tonen, plaats zoeken,
 - Hamburgermenu: costum style via https://www.youtube.com/watch?v=ayxRtBHw754
 vraag: vanaf waar moet password encrypted zijn?
 
-### Week 11/12/...
+### Week 13/14/...
 - Homescreen: Locatieservices verder uitwerken (route plannen, andere gebruikers weergeven),
 - UserDetailsScreen: Details gebruiker weergeven, aanpasvelden,
 - DriverDetailsScreen: Informatie gekozen chauffeur weergeven,

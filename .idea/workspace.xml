@@ -12,15 +12,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Aanmaak nieuwe schermen, Routering van drawer navigation afgewerkt">
+    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Toevoegen back button/header aan AboutScreen.js, FAQScreen.js, HistoryScreen.js &amp; PromotionsScreen.js">
+      <change afterPath="$PROJECT_DIR$/js/drawerContent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/AboutScreen/AboutScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/AboutScreen/AboutScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/FAQScreen/FAQScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/FAQScreen/FAQScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/HistoryScreen/HistoryScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/HistoryScreen/HistoryScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/LoginScreen/LoginScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/LoginScreen/LoginScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/PromotionsScreen/PromotionsScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/PromotionsScreen/PromotionsScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/RegistrationScreen/RegistrationScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/RegistrationScreen/RegistrationScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/styles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logboek/logboek.md" beforeDir="false" afterPath="$PROJECT_DIR$/logboek/logboek.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +53,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Stage/HokaAppV4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -334,7 +328,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638267627110</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Toevoegen back button/header aan AboutScreen.js, FAQScreen.js, HistoryScreen.js &amp; PromotionsScreen.js">
+      <created>1638273648434</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1638273648434</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -358,7 +359,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Verwijderen Back4App code en dependencies" />
     <MESSAGE value="Installatie &amp; setup React-Native Firebase" />
     <MESSAGE value=" Setup React-Native Firebase &amp; aanmaken routering" />
     <MESSAGE value="Implementatie UI HomeScreen, LoginScreen &amp; RegistratieScreen" />
@@ -383,6 +383,7 @@
     <MESSAGE value="Stack Navigator Setup fix (import react-native-gesture-handler + install @react-native-masked-view/masked-view)" />
     <MESSAGE value="Implementatie drawer navigation" />
     <MESSAGE value="Aanmaak nieuwe schermen, Routering van drawer navigation afgewerkt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aanmaak nieuwe schermen, Routering van drawer navigation afgewerkt" />
+    <MESSAGE value="Toevoegen back button/header aan AboutScreen.js, FAQScreen.js, HistoryScreen.js &amp; PromotionsScreen.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="Toevoegen back button/header aan AboutScreen.js, FAQScreen.js, HistoryScreen.js &amp; PromotionsScreen.js" />
   </component>
 </project>
