@@ -235,13 +235,24 @@ Geen problemen ondervonden.
 - https://www.youtube.com/watch?v=ayxRtBHw754
 - https://medium.com/backticks-tildes/customizing-react-navigation-drawer-cf60c01a296a
 
-### To-do
 ### Week 12
+#### Gedaan
+UI FAQ pagina verder uitgewerkt d.m.v. Accordion List van React Native Paper.<br/>
+#### Problemen
+Geen problemen ondervonden.
+#### Opgelost
+Geen problemen ondervonden.
+#### Bronnen
+- https://callstack.github.io/react-native-paper/list-accordion.html
+- https://callstack.github.io/react-native-paper/list-item.html
+
+### To-do
+### Week 13
 - Homescreen: Locatieservices (huidige locatie tonen, plaats zoeken,
 - Hamburgermenu: costum style via https://www.youtube.com/watch?v=ayxRtBHw754
 vraag: vanaf waar moet password encrypted zijn?
 
-### Week 13/14/...
+### Week 14/15/...
 - Homescreen: Locatieservices verder uitwerken (route plannen, andere gebruikers weergeven),
 - UserDetailsScreen: Details gebruiker weergeven, aanpasvelden,
 - DriverDetailsScreen: Informatie gekozen chauffeur weergeven,
