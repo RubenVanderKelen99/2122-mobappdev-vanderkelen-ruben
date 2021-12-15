@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import Constants from 'expo-constants';
 
 const ORANGE='#FFA500'
@@ -90,6 +90,10 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 22,
     },
+    map: {
+        width: Dimensions.get('window').width,
+        height: (Dimensions.get('window').height/2),
+    }
 });
 
 export default styles;

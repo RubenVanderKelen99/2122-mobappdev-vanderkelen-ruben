@@ -1,12 +1,37 @@
-import React from 'react';
-import { Text, TouchableOpacity, View, ScrollView, KeyboardAvoidingView } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Text, TouchableOpacity, View, ScrollView, KeyboardAvoidingView, Dimensions } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import { Button } from 'react-native-paper';
 import { Icon } from 'react-native-elements';
 import { auth } from '../../firebase';
+import MapView from 'react-native-maps';
+import * as Location from 'expo-location';
 import styles from '../styles';
 
 const HomeScreen = ({ navigation }) => {
+
+    const [locationData, setLocation] = useState(null);
+    const [errorMsg, setErrorMsg] = useState('');
+    const [latitude, setLatitude] = useState(0);
+    const [longitude, setLongitude] = useState(0);
+
+    useEffect(() => {
+     (async () => {
+       let { status } = await Location.requestForegroundPermissionsAsync();
+       if (status !== 'granted') {
+         setErrorMsg('Permission to access location was denied');
+         return;
+       }
+
+       let location = await Location.getCurrentPositionAsync({});
+       setLocation(location);
+       setLatitude(location.coords.latitude);
+       setLongitude(location.coords.longitude);
+
+       console.log(location);
+     })();
+    }, []);
+
     const signOut = () => {
         auth
             .signOut()
@@ -29,6 +54,16 @@ const HomeScreen = ({ navigation }) => {
                     >
                         <Icon name={"my-location"} type='material' size={30} color="gray" />
                     </TouchableOpacity>
+
+                    <MapView
+                    style={styles.map}
+                    initialRegion={{
+                        latitude: 51.0622,
+                        longitude: 3.7074,
+                        latitudeDelta: 0.015,
+                        longitudeDelta: 0.121,
+                    }}
+                    />
 
                     <Button
                         mode="contained"

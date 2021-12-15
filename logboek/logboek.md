@@ -238,6 +238,7 @@ Geen problemen ondervonden.
 ### Week 12
 #### Gedaan
 UI FAQ pagina verder uitgewerkt d.m.v. Accordion List van React Native Paper.<br/>
+Weergeven van kaart op de homepage.
 #### Problemen
 Geen problemen ondervonden.
 #### Opgelost
@@ -245,6 +246,8 @@ Geen problemen ondervonden.
 #### Bronnen
 - https://callstack.github.io/react-native-paper/list-accordion.html
 - https://callstack.github.io/react-native-paper/list-item.html
+- https://docs.expo.dev/versions/latest/sdk/map-view/
+- https://docs.expo.dev/versions/latest/sdk/location/#usage
 
 ### To-do
 ### Week 13
