@@ -37,6 +37,14 @@ const styles = StyleSheet.create({
         marginLeft: 40,
         marginRight: 40,
     },
+    formInputPromo: {
+        alignContent: 'center',
+        overflow:'hidden',
+        backgroundColor:'transparent',
+        marginLeft: 40,
+        marginRight: 40,
+        textAlign: 'center',
+    },
     submitButton: {
         marginTop: 30,
         marginLeft: 40,

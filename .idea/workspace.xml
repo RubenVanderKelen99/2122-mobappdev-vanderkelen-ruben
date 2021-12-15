@@ -12,9 +12,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="MapView en gebruikerslocatie op HomeScreen.js">
+    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="gebruikerslocatie correct weergeven op MapView">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/PromotionsScreen/PromotionsScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/PromotionsScreen/PromotionsScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/styles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logboek/logboek.md" beforeDir="false" afterPath="$PROJECT_DIR$/logboek/logboek.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -356,7 +357,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639530980762</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="gebruikerslocatie correct weergeven op MapView">
+      <created>1639575643079</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1639575643079</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,7 +388,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Upload usertest-stijn.mp4" />
     <MESSAGE value="Laatste commit met niet werkende User Authentication" />
     <MESSAGE value="Aanmaak nieuw expo project" />
     <MESSAGE value="Verbinding maken met firestore database" />
@@ -405,6 +412,7 @@
     <MESSAGE value="Implementatie logica van drawer navigation in drawerContent.js" />
     <MESSAGE value="FAQScreen.js met List.Accordion" />
     <MESSAGE value="MapView en gebruikerslocatie op HomeScreen.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="MapView en gebruikerslocatie op HomeScreen.js" />
+    <MESSAGE value="gebruikerslocatie correct weergeven op MapView" />
+    <option name="LAST_COMMIT_MESSAGE" value="gebruikerslocatie correct weergeven op MapView" />
   </component>
 </project>

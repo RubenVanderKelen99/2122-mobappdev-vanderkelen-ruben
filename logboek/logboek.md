@@ -239,6 +239,7 @@ Geen problemen ondervonden.
 #### Gedaan
 UI FAQ pagina verder uitgewerkt d.m.v. Accordion List van React Native Paper.<br/>
 Weergeven van kaart en huidige gebruikerslocatie op de homepage. <br/>
+UI Promotiecode pagina. <br/>
 #### Problemen
 1. De initialregion van de MapView wordt niet correct ingesteld omdat de latitude/longtitude variabelen nog undefined zijn. Deze worden dus niet correct ingesteld in de useEffect().
 #### Opgelost
@@ -251,13 +252,13 @@ Weergeven van kaart en huidige gebruikerslocatie op de homepage. <br/>
 - https://medium.com/geekculture/track-user-location-in-react-native-204bc489ed6b
 
 ### To-do
-### Week 13
-- Homescreen: Locatieservices (huidige locatie tonen, plaats zoeken,
-- Hamburgermenu: costum style via https://www.youtube.com/watch?v=ayxRtBHw754
-vraag: vanaf waar moet password encrypted zijn?
+### NU
+- UI van alle resterende pagina's
+- process van app op playstore zetten starten
+- firestore database security rules aanpassen
 
-### Week 14/15/...
-- Homescreen: Locatieservices verder uitwerken (route plannen, andere gebruikers weergeven),
+### Week 13/14/15/...
+- Homescreen: Locatieservices verder uitwerken (route plannen, zones weergeven),
 - UserDetailsScreen: Details gebruiker weergeven, aanpasvelden,
 - DriverDetailsScreen: Informatie gekozen chauffeur weergeven,
 - CreateRideScreen: Tussenstop toevoegen, Locatieservices (plaats zoeken, routeplannen),
