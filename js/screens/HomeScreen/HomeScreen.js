@@ -12,29 +12,32 @@ const HomeScreen = ({ navigation }) => {
 
     const [locationData, setLocation] = useState(null);
     const [errorMsg, setErrorMsg] = useState('');
-    const [latitude, setLatitude] = useState(0);
-    const [longitude, setLongitude] = useState(0);
+    const [currentLatitude, setCurrentLatitude] = useState(50.8468);
+    const [currentLongitude, setCurrentLongitude] = useState(4.3524);
 
     useEffect(() => {
      (async () => {
-       let { status } = await Location.requestForegroundPermissionsAsync();
-       if (status !== 'granted') {
-         setErrorMsg('Permission to access location was denied');
-         return;
-       }
+        let { status } = await Location.requestForegroundPermissionsAsync();
+        if (status !== 'granted') {
+            setErrorMsg('Permission to access location was denied');
+            return;
+        }
 
-       let location = await Location.getCurrentPositionAsync({});
-       setLocation(location);
-       setLatitude(location.coords.latitude);
-       setLongitude(location.coords.longitude);
-
-       console.log(location);
+        let location = await Location.getCurrentPositionAsync({});
+        setLocation(location);
+        setCurrentLatitude(location.coords.latitude);
+        setCurrentLongitude(location.coords.longitude);
      })();
     }, []);
 
     const signOut = () => {
         auth
             .signOut()
+    }
+
+    const toUserLocation = () => {
+        console.log(currentLatitude);
+        console.log(currentLongitude);
     }
 
     return (
@@ -51,19 +54,23 @@ const HomeScreen = ({ navigation }) => {
 
                     <TouchableOpacity
                         style={styles.roundButton}
+                        onPress={() => toUserLocation()}
                     >
                         <Icon name={"my-location"} type='material' size={30} color="gray" />
                     </TouchableOpacity>
 
-                    <MapView
-                    style={styles.map}
-                    initialRegion={{
-                        latitude: 51.0622,
-                        longitude: 3.7074,
-                        latitudeDelta: 0.015,
-                        longitudeDelta: 0.121,
-                    }}
-                    />
+                    {locationData !== null &&
+                        <MapView
+                        style={styles.map}
+                        initialRegion={{
+                            latitude: currentLatitude,
+                            longitude: currentLongitude,
+                            latitudeDelta: 0.1,
+                            longitudeDelta: 0.15,
+                        }}
+                        showsUserLocation={true}
+                        />
+                    }
 
                     <Button
                         mode="contained"

@@ -12,13 +12,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="FAQScreen.js met List.Accordion">
+    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="MapView en gebruikerslocatie op HomeScreen.js">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/styles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logboek/logboek.md" beforeDir="false" afterPath="$PROJECT_DIR$/logboek/logboek.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -352,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639525036819</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="MapView en gebruikerslocatie op HomeScreen.js">
+      <created>1639530980762</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1639530980762</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -376,7 +380,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Implementatie UI HomeScreen, LoginScreen &amp; RegistratieScreen" />
     <MESSAGE value="Upload usertest-stijn.mp4" />
     <MESSAGE value="Laatste commit met niet werkende User Authentication" />
     <MESSAGE value="Aanmaak nieuw expo project" />
@@ -401,6 +404,7 @@
     <MESSAGE value="Toevoegen back button/header aan AboutScreen.js, FAQScreen.js, HistoryScreen.js &amp; PromotionsScreen.js" />
     <MESSAGE value="Implementatie logica van drawer navigation in drawerContent.js" />
     <MESSAGE value="FAQScreen.js met List.Accordion" />
-    <option name="LAST_COMMIT_MESSAGE" value="FAQScreen.js met List.Accordion" />
+    <MESSAGE value="MapView en gebruikerslocatie op HomeScreen.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="MapView en gebruikerslocatie op HomeScreen.js" />
   </component>
 </project>

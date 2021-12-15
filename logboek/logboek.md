@@ -238,16 +238,17 @@ Geen problemen ondervonden.
 ### Week 12
 #### Gedaan
 UI FAQ pagina verder uitgewerkt d.m.v. Accordion List van React Native Paper.<br/>
-Weergeven van kaart op de homepage.
+Weergeven van kaart en huidige gebruikerslocatie op de homepage. <br/>
 #### Problemen
-Geen problemen ondervonden.
+1. De initialregion van de MapView wordt niet correct ingesteld omdat de latitude/longtitude variabelen nog undefined zijn. Deze worden dus niet correct ingesteld in de useEffect().
 #### Opgelost
-Geen problemen ondervonden.
+1. Door het toepassen van conditional rendering op de MapView word deze pas getoond nadat de lat/lon correct werden ingesteld (setState).
 #### Bronnen
 - https://callstack.github.io/react-native-paper/list-accordion.html
 - https://callstack.github.io/react-native-paper/list-item.html
 - https://docs.expo.dev/versions/latest/sdk/map-view/
 - https://docs.expo.dev/versions/latest/sdk/location/#usage
+- https://medium.com/geekculture/track-user-location-in-react-native-204bc489ed6b
 
 ### To-do
 ### Week 13
