@@ -41,63 +41,50 @@ const HomeScreen = ({ navigation }) => {
     }
 
     return (
-        <KeyboardAvoidingView style={styles.container}
-        behavior="height" enabled keyboardVerticalOffset={50}>
-            <ScrollView style={styles.scrollContainer}>
-                <View style={styles.authFormContainer}>
-                    <TouchableOpacity
-                        style={styles.roundButton}
-                        onPress={() => navigation.openDrawer()}
-                    >
-                        <Icon name={"menu"} size={30} color="gray" />
-                    </TouchableOpacity>
+        <View style={styles.container}>
+            <View style={styles.mapViewContainer}>
+                <TouchableOpacity
+                    style={styles.roundButtonMenu}
+                    onPress={() => navigation.openDrawer()}
+                >
+                <Icon name={"menu"} size={30} color="gray" />
+                </TouchableOpacity>
 
-                    <TouchableOpacity
-                        style={styles.roundButton}
-                        onPress={() => toUserLocation()}
-                    >
-                        <Icon name={"my-location"} type='material' size={30} color="gray" />
-                    </TouchableOpacity>
+                <TouchableOpacity
+                style={styles.roundButtonLocation}
+                onPress={() => toUserLocation()}
+                >
+                <Icon name={"my-location"} type='material' size={30} color="gray" />
+                </TouchableOpacity>
 
-                    {locationData !== null &&
-                        <MapView
-                        style={styles.map}
-                        initialRegion={{
-                            latitude: currentLatitude,
-                            longitude: currentLongitude,
-                            latitudeDelta: 0.1,
-                            longitudeDelta: 0.15,
-                        }}
-                        showsUserLocation={true}
-                        />
-                    }
+                {locationData !== null &&
+                <MapView
+                style={styles.map}
+                initialRegion={{
+                latitude: currentLatitude,
+                longitude: currentLongitude,
+                latitudeDelta: 0.1,
+                longitudeDelta: 0.15,
+                }}
+                showsUserLocation={true}
+                />
+                }
+            </View>
 
-                    <Button
-                        mode="contained"
-                        compact={false}
-                        onPress={() => signOut()}
-                        icon="account-arrow-left"
-                        color="orange"
-                        labelStyle={{ color: "white", fontSize: 16 }}
-                        style={styles.submitButton}
-                    >
-                        Sign out
-                    </Button>
-                    <Button
-                        mode="contained"
-                        compact={false}
-                        onPress={() => navigation.navigate('CompleteProfile')}
-                        icon="account-arrow-left"
-                        color="orange"
-                        labelStyle={{ color: "white", fontSize: 16 }}
-                        style={styles.submitButton}
-                    >
-                        Complete profile
-                    </Button>
-                </View>
-            </ScrollView>
-        </KeyboardAvoidingView>
-)
+            <Button
+            mode="contained"
+            compact={false}
+            onPress={() => signOut()}
+            icon="account-arrow-left"
+            color="orange"
+            labelStyle={{ color: "white", fontSize: 16 }}
+            style={styles.submitButton}
+            >
+            Sign out
+            </Button>
+
+        </View>
+    )
 };
 
 export default HomeScreen;

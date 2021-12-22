@@ -251,16 +251,31 @@ UI Promotiecode pagina. <br/>
 - https://docs.expo.dev/versions/latest/sdk/location/#usage
 - https://medium.com/geekculture/track-user-location-in-react-native-204bc489ed6b
 
+### Week 13
+#### Gedaan
+UI mapview.<br/>
+Aanpassen security rules firestore database.<br/>
+Inlezen data uit firestore database met nieuwe security rules.<br/>
+#### Problemen
+1. Wanneer zIndex toegepast wordt op de buttons zal de kaart maar zo groot zijn als de buttons zelf.
+#### Opgelost
+1. De verschillende views waarin de mapView inzit voorzaken dit, deze zijn nu aangepast en het probleem is opgelost.
+#### Bronnen
+- https://docs.expo.dev/versions/latest/sdk/map-view/
+- https://reactnative.dev/docs/layout-props#bottom
+- https://www.youtube.com/watch?v=BQBUUJb0n8Q
+- https://firebase.google.com/docs/rules
+- https://firebase.google.com/docs/firestore/security/get-started
+
 ### To-do
 ### NU
 - UI van alle resterende pagina's
 - process van app op playstore zetten starten
 - firestore database security rules aanpassen
 
-### Week 13/14/15/...
+### Week 14/15/...
 - Homescreen: Locatieservices verder uitwerken (route plannen, zones weergeven),
 - UserDetailsScreen: Details gebruiker weergeven, aanpasvelden,
-- DriverDetailsScreen: Informatie gekozen chauffeur weergeven,
 - CreateRideScreen: Tussenstop toevoegen, Locatieservices (plaats zoeken, routeplannen),
 - Data synchronisatie wanneer offline
 ...

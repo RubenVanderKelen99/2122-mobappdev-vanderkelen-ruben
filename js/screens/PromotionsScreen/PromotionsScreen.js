@@ -28,17 +28,17 @@ const PromotionsScreen = ({ navigation }) => {
                         >
                             <Icon name={"arrow-back"} size={25} color={'#4F4F4F'} style={styles.headerBackButton}/>
                         </TouchableOpacity>
-                        <Text style={styles.headerTitle}> Promoties </Text>
+                        <Text style={styles.headerTitle}> Promotions </Text>
                     </View>
 
                     <Controller
                             control={control}
                             rules={{
-                                required: 'Please enter a promotioncode',
+                                required: 'Please enter a promocode',
                             }}
                             render={({ field: { onChange, onBlur, value } }) => (
                                 <TextInput
-                                    placeholder="Promotiecode"
+                                    placeholder="Promocode"
                                     mode="flat"
                                     theme={{colors: {primary: 'orange'}}}
                                     onBlur={onBlur}

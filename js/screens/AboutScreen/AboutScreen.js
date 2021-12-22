@@ -18,7 +18,7 @@ const AboutScreen = ({ navigation }) => {
                         >
                             <Icon name={"arrow-back"} size={25} color={'#4F4F4F'} style={styles.headerBackButton}/>
                         </TouchableOpacity>
-                        <Text style={styles.headerTitle}> Over ons </Text>
+                        <Text style={styles.headerTitle}> About us </Text>
                     </View>
                 </View>
             </ScrollView>

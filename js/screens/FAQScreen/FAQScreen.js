@@ -22,26 +22,26 @@ const FAQScreen = ({ navigation }) => {
                         <Text style={styles.headerTitle}> FAQ </Text>
                     </View>
                     <List.Section>
-                        <List.Accordion theme={{ colors: { primary: 'orange' }}} title="Vraag 1">
+                        <List.Accordion theme={{ colors: { primary: 'orange' }}} title="Question 1">
                             <List.Item
                             titleNumberOfLines={10}
-                            title="Antwoord: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            title="Answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             Aenean ante urna, dignissim quis velit mattis, lacinia consectetur eros. Fusce diam nibh, finibus quis lectus at, mattis varius massa.
                             Aliquam rutrum urna sagittis, malesuada enim sed, sodales risus. Maecenas finibus commodo varius. Nam in placerat turpis, sed scelerisque mi. " />
                         </List.Accordion>
 
-                        <List.Accordion theme={{ colors: { primary: 'orange' }}} title="Vraag 2">
+                        <List.Accordion theme={{ colors: { primary: 'orange' }}} title="Question 2">
                             <List.Item
                             titleNumberOfLines={10}
-                            title="Antwoord: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            title="Answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             Aenean ante urna, dignissim quis velit mattis, lacinia consectetur eros. Fusce diam nibh, finibus quis lectus at, mattis varius massa.
                             Aliquam rutrum urna sagittis, malesuada enim sed, sodales risus. Maecenas finibus commodo varius. Nam in placerat turpis, sed scelerisque mi. " />
                         </List.Accordion>
 
-                        <List.Accordion theme={{ colors: { primary: 'orange' }}} title="Vraag 3">
+                        <List.Accordion theme={{ colors: { primary: 'orange' }}} title="Question 3">
                             <List.Item
                             titleNumberOfLines={10}
-                            title="Antwoord: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            title="Answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             Aenean ante urna, dignissim quis velit mattis, lacinia consectetur eros. Fusce diam nibh, finibus quis lectus at, mattis varius massa.
                             Aliquam rutrum urna sagittis, malesuada enim sed, sodales risus. Maecenas finibus commodo varius. Nam in placerat turpis, sed scelerisque mi. " />
                         </List.Accordion>

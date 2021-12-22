@@ -12,8 +12,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="gebruikerslocatie correct weergeven op MapView">
+    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="UI PromotionsScreen.js">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/AboutScreen/AboutScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/AboutScreen/AboutScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/FAQScreen/FAQScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/FAQScreen/FAQScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/HistoryScreen/HistoryScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/HistoryScreen/HistoryScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/screens/PromotionsScreen/PromotionsScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/PromotionsScreen/PromotionsScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/screens/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/styles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logboek/logboek.md" beforeDir="false" afterPath="$PROJECT_DIR$/logboek/logboek.md" afterDir="false" />
@@ -364,7 +369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639575643079</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="UI PromotionsScreen.js">
+      <created>1639579962720</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1639579962720</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,7 +400,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Laatste commit met niet werkende User Authentication" />
     <MESSAGE value="Aanmaak nieuw expo project" />
     <MESSAGE value="Verbinding maken met firestore database" />
     <MESSAGE value="Implementatie UI LoginScreen &amp; RegistratieScreen, opzetten routering, Forms met validatie via react-hook-form" />
@@ -413,6 +424,7 @@
     <MESSAGE value="FAQScreen.js met List.Accordion" />
     <MESSAGE value="MapView en gebruikerslocatie op HomeScreen.js" />
     <MESSAGE value="gebruikerslocatie correct weergeven op MapView" />
-    <option name="LAST_COMMIT_MESSAGE" value="gebruikerslocatie correct weergeven op MapView" />
+    <MESSAGE value="UI PromotionsScreen.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="UI PromotionsScreen.js" />
   </component>
 </project>

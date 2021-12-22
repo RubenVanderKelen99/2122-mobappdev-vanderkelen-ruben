@@ -14,11 +14,11 @@ const Drawer = createDrawerNavigator();
 function DrawerStack() {
     return (
         <Drawer.Navigator screenOptions={{headerShown: false}}>
-            <Drawer.Screen name="Rit plannen" component={HomeScreen} />
-            <Drawer.Screen name="Geschiedenis" component={HistoryScreen} />
-            <Drawer.Screen name="Promoties" component={PromotionsScreen} />
+            <Drawer.Screen name="Home" component={HomeScreen} />
+            <Drawer.Screen name="History" component={HistoryScreen} />
+            <Drawer.Screen name="Promotions" component={PromotionsScreen} />
             <Drawer.Screen name="FAQ" component={FAQScreen} />
-            <Drawer.Screen name="Over ons" component={AboutScreen} />
+            <Drawer.Screen name="About us" component={AboutScreen} />
         </Drawer.Navigator>
     );
 }
@@ -56,7 +56,7 @@ export default function App() {
         <Stack.Navigator screenOptions={{headerShown: false}}>
             { signedIn ? (
                 <>
-                    <Stack.Screen name="Home" component={DrawerStack} />
+                    <Stack.Screen name="Main" component={DrawerStack} />
                 </>
             ) : (
                 <>

@@ -16,6 +16,10 @@ const styles = StyleSheet.create({
     authFormContainer: {
         paddingTop: Constants.statusBarHeight,
     },
+    mapViewContainer: {
+        width: Dimensions.get('window').width,
+        height: (Dimensions.get('window').height/2),
+    },
     smallLogo: {
         flex: 1,
         height: 160,
@@ -72,7 +76,14 @@ const styles = StyleSheet.create({
         color:ORANGE,
         alignContent:'center',
     },
-    roundButton: {
+    map: {
+        width: Dimensions.get('window').width,
+        height: (Dimensions.get('window').height/2),
+        position: 'absolute',
+        top: 0,
+        left: 0,
+    },
+    roundButtonMenu: {
         borderWidth:1,
         borderColor:'rgba(0,0,0,0.2)',
         alignItems:'center',
@@ -81,6 +92,24 @@ const styles = StyleSheet.create({
         height:50,
         backgroundColor:'#fff',
         borderRadius:50,
+        position: 'absolute',
+        top: 25,
+        left: 5,
+        zIndex: 1,
+    },
+    roundButtonLocation: {
+        borderWidth:1,
+        borderColor:'rgba(0,0,0,0.2)',
+        alignItems:'center',
+        justifyContent:'center',
+        width:50,
+        height:50,
+        backgroundColor:'#fff',
+        borderRadius:50,
+        position: 'absolute',
+        bottom: 5,
+        right: 5,
+        zIndex: 1,
     },
     headerContainer: {
         flexDirection: 'row',
@@ -98,10 +127,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 22,
     },
-    map: {
-        width: Dimensions.get('window').width,
-        height: (Dimensions.get('window').height/2),
-    }
 });
 
 export default styles;
