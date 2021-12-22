@@ -258,12 +258,20 @@ Aanpassen security rules firestore database.<br/>
 Inlezen data uit firestore database met nieuwe security rules.<br/>
 #### Problemen
 1. Wanneer zIndex toegepast wordt op de buttons zal de kaart maar zo groot zijn als de buttons zelf.
+2. Het is niet mogelijk om de mapview rechstreeks aan te spreken:
+```   
+TypeError: undefined is not an object (evaluating '_this.mapView')
+```
 #### Opgelost
 1. De verschillende views waarin de mapView inzit voorzaken dit, deze zijn nu aangepast en het probleem is opgelost.
+2. Door gebruik te maken van een ref en na aanpassen van de aan te roepen methode (mapViewRef.animateToRegion -> mapViewRef.current.animateToRegion) werkt dit wel.
 #### Bronnen
 - https://docs.expo.dev/versions/latest/sdk/map-view/
 - https://reactnative.dev/docs/layout-props#bottom
 - https://www.youtube.com/watch?v=BQBUUJb0n8Q
+- https://github.com/react-native-maps/react-native-maps/blob/master/docs/mapview.md
+- https://reactjs.org/docs/refs-and-the-dom.html
+- https://pretagteam.com/question/reactnativehow-to-use-map-and-ref-together
 - https://firebase.google.com/docs/rules
 - https://firebase.google.com/docs/firestore/security/get-started
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, createRef } from 'react';
 import { Text, TouchableOpacity, View, ScrollView, KeyboardAvoidingView, Dimensions } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import { Button } from 'react-native-paper';
@@ -14,6 +14,8 @@ const HomeScreen = ({ navigation }) => {
     const [errorMsg, setErrorMsg] = useState('');
     const [currentLatitude, setCurrentLatitude] = useState(50.8468);
     const [currentLongitude, setCurrentLongitude] = useState(4.3524);
+
+    const mapViewRef = createRef();
 
     useEffect(() => {
      (async () => {
@@ -36,8 +38,15 @@ const HomeScreen = ({ navigation }) => {
     }
 
     const toUserLocation = () => {
-        console.log(currentLatitude);
-        console.log(currentLongitude);
+        let currentRegion={
+            latitude: currentLatitude,
+            longitude: currentLongitude,
+            latitudeDelta: 0.1,
+            longitudeDelta: 0.15,
+        }
+        //console.log(currentRegion);
+        //console.log(mapViewRef);
+        mapViewRef.current.animateToRegion(currentRegion, 1000);
     }
 
     return (
@@ -67,6 +76,8 @@ const HomeScreen = ({ navigation }) => {
                 longitudeDelta: 0.15,
                 }}
                 showsUserLocation={true}
+                showsMyLocationButton={false}
+                ref={mapViewRef}
                 />
                 }
             </View>
