@@ -12,9 +12,19 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Layout van UI mapview">
+    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Implementatie logica toUserLocation methode">
+      <change afterPath="$PROJECT_DIR$/assets/adaptive-icon1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icon1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/playstore/app-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/playstore/feature-graphic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/playstore/feature-graphic1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/playstore/feature-graphic2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/playstore/feature-graphic3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/playstore/privacy-policy.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/splash1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pc-api-8335892221988097473-56-cc18bcc4fad4.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logboek/logboek.md" beforeDir="false" afterPath="$PROJECT_DIR$/logboek/logboek.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +63,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Stage/HokaAppV4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -124,6 +134,7 @@
       <updated>1633440641246</updated>
       <workItem from="1633611686487" duration="81000" />
       <workItem from="1637921785275" duration="5000" />
+      <workItem from="1640535056965" duration="52000" />
     </task>
     <task id="LOCAL-00001" summary="Aanmaken nieuwe React Native App">
       <created>1633442924051</created>
@@ -377,7 +388,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640160656798</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Implementatie logica toUserLocation methode">
+      <created>1640162323978</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1640162323978</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,7 +419,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Verbinding maken met firestore database" />
     <MESSAGE value="Implementatie UI LoginScreen &amp; RegistratieScreen, opzetten routering, Forms met validatie via react-hook-form" />
     <MESSAGE value="User authenticatie (Login, Registratie en Logout), validatie/formchecking inputvelden (email, wachtwoord en controle-wachtwoord)" />
     <MESSAGE value="Opslaan gebruikersdata in firestore database en toevoegen persistentie gebruiker" />
@@ -426,6 +443,7 @@
     <MESSAGE value="gebruikerslocatie correct weergeven op MapView" />
     <MESSAGE value="UI PromotionsScreen.js" />
     <MESSAGE value="Layout van UI mapview" />
-    <option name="LAST_COMMIT_MESSAGE" value="Layout van UI mapview" />
+    <MESSAGE value="Implementatie logica toUserLocation methode" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementatie logica toUserLocation methode" />
   </component>
 </project>

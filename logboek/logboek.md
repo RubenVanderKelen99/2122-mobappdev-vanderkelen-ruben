@@ -253,7 +253,7 @@ UI Promotiecode pagina. <br/>
 
 ### Week 13
 #### Gedaan
-UI mapview.<br/>
+UI mapview & logica toUserLocation.<br/>
 Aanpassen security rules firestore database.<br/>
 Inlezen data uit firestore database met nieuwe security rules.<br/>
 #### Problemen
@@ -275,15 +275,36 @@ TypeError: undefined is not an object (evaluating '_this.mapView')
 - https://firebase.google.com/docs/rules
 - https://firebase.google.com/docs/firestore/security/get-started
 
+### Week 14
+#### Gedaan
+Expo account integratie a.d.h.v. youtube tutorial.
+Genereren app bundle: app.json file aanpassen, keystores laten aanmaken (madLift4You.jks) & app bundle.
+Google play store account aanmaken (playstore account: rubenvdk, email: vanderkelenruben@gmail.com).
+Genereren api key google play store account (pc-api-8335892221988097473-56-cc18bcc4fad4.json).
+Primaire winkelvermelding: naam, beschrijving, icon toevoegen & Play store graphics.
+App op playstore zetten (status: wordt beoordeeld).
+#### Problemen
+Geen problemen ondervonden.
+#### Opgelost
+Geen problemen ondervonden.
+#### Bronnen
+- https://www.youtube.com/watch?v=z8XYPm8Lgsc
+- https://www.youtube.com/watch?v=7DQbbTQpUjQ
+- https://www.youtube.com/watch?v=2KTtvwAvV4I
+- https://www.youtube.com/watch?v=oC7XwWRyCd0
+- https://www.youtube.com/watch?v=zY1fQWCetXw
+- https://www.youtube.com/watch?v=cQrIateTW_0
+- https://www.youtube.com/watch?v=nFCWY-BwTBQ
+
 ### To-do
 ### NU
 - UI van alle resterende pagina's
-- process van app op playstore zetten starten
-- firestore database security rules aanpassen
+- firestore database esecurity rules aanpassen
+- Bij updaten: version code in app.json naar 2 (1 -> 2)
 
 ### Week 14/15/...
 - Homescreen: Locatieservices verder uitwerken (route plannen, zones weergeven),
 - UserDetailsScreen: Details gebruiker weergeven, aanpasvelden,
 - CreateRideScreen: Tussenstop toevoegen, Locatieservices (plaats zoeken, routeplannen),
-- Data synchronisatie wanneer offline
+- Beveiligde authenticatie en autorisatie: OAuth2, OpenID Connect, JWT etc. (vereiste)
 ...

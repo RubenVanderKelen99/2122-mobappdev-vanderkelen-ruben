@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "pc-api-8335892221988097473-56",
+  "private_key_id": "cc18bcc4fad4544399e513063b0754b662cc6e24",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCdTze6Giel3v1s\nGByUhxzNfi7xc/uKMQ0RZr4t5k89mJar8BdtKkpUsqKq/GqMvbnZlTXSkZDrEzd4\nxA0fZKuARxmSE14XwtgBOxJqjE7KZj+GlXvcMRUS4pIlieKUWSfLSu4FvD6uf+gb\nBf9/O+ikOzCQN49bOEM6qlhnIqppA/OkiBhdm+q2WBnogyu0Lq4Fk2one38gfq+k\n3yvBLu3Y3S8D5hgFO/2duaEeVodM2+fHanAxuoC5HvP8Hwfqt44k0W0o8tt+H7bL\nh9xyEbxbhQrVuHB8O0SeIKFlddnx4dmM4kvJBERq+JMxNLWjlI4rwGgObyp+hyh7\nCYD9IpR/AgMBAAECggEAD8L8s+5j85g0ryx5TJ5/Ec3nWTUESpPgmdJAEuxFG0hb\nLG4Zgswed38Qkm5JJMHrybPMGUWRjiQ2Rijqoa8eCfPVyY+cOWhB6VmoXjmhuWDm\nU49NwkG+uU4vU4iNxcxrEtD2qWdzpltVf8Oplm+Dv1TY6FJQ0FSCU/H2epr8FRpy\niM6auBFW/Ln0D5fH+6VxObvebbrwFPrEtfEp+9Sqxniwm54qcMuwFmkeghWxPheX\nGh/GwGA4iF4nDQ0whWlWKhGSafmhd8Np9nWyKsjCW7UIKSsqb6ht3cluh+z8RtbW\nn3Buewz2qy/QzexrrCED6Id9l54QB+3T2FyEwzUSVQKBgQDNfgIvG3p0nFccw8lH\nUPnVieiq+thkeZo0LvixNx4+MIyy5XvcNFAQbfvQGyKA/ARRBqPDh5bFM1Vo+NUH\nOzuXbBifePm/YBG0ZrZZKRUjBnAScXprAxSZb22Fr2AfN7O8+WyR6kcIt14NI4Uv\nIT+f46to+rGhh/W3GXPi3BLSxQKBgQDD+XM8aIKIowCMfgd4iUdoaWEEs5xs5UaL\nJOSNQLAnPauSbRjZPfqv6qGTDmJirnQW8wiQtLSvZQM0xLUh+bL9PGMYDQfFTNyb\nBysd3UqamcdzxhB2YgSsEheK7HgpGlCEnkG93ec2WstufyoXyaEgg1MnikVCFl3V\npSvsJnyucwKBgBi4a/LWz2hv1lrzgqc9qpBxwreu7ZFIv7A/ZlOLWewJUyPCT6Ax\n+t+/G2fxm7kAmFRXBCRlj1Gx1ziFlrsD+StCKcQlfYX0PK0DHjSjqJNKFvlhBWUS\nPcwnh3lpm5qlzM2TA+iZ0mnOBVZ3S3JcAZdugBRk9DGGdZzNRw+ngewxAoGAL0nU\nGrGFPf9HNJ98ogNOLc2v0XiduFEi0pSWaddAKlfhPLYClvkzsptFXbzM1M8PyDHg\n0Topl2EigussYgRkwmJ97uHGDD/dw7LZHp21UNTmofMbKdXBFtxOvgENha2J3FZr\nuqr/Dcie6gzZVWAb90J5IENnLulCvzjZ/mPTFi0CgYAu0YvarsdB/EWNMk8FpuEh\nd3k+D0wqP+kYojO2ngLvzkseM0ukBPZOdW+iDv+NmEBBleTvqQFBJ5k8m1maDWXN\np3BgCpSWv+LeVwenBEpvP0ppu6u0cO3kWIqgkbmpVi7dJMOziNtxZtZI9kk7n84X\ncg0FAgU1Lx3fxQVxXH5Xkg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "lift4you-service@pc-api-8335892221988097473-56.iam.gserviceaccount.com",
+  "client_id": "114218771457393944770",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/lift4you-service%40pc-api-8335892221988097473-56.iam.gserviceaccount.com"
+}
