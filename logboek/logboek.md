@@ -277,12 +277,12 @@ TypeError: undefined is not an object (evaluating '_this.mapView')
 
 ### Week 14
 #### Gedaan
-Expo account integratie a.d.h.v. youtube tutorial.
-Genereren app bundle: app.json file aanpassen, keystores laten aanmaken (madLift4You.jks) & app bundle.
-Google play store account aanmaken (playstore account: rubenvdk, email: vanderkelenruben@gmail.com).
-Genereren api key google play store account (pc-api-8335892221988097473-56-cc18bcc4fad4.json).
-Primaire winkelvermelding: naam, beschrijving, icon toevoegen & Play store graphics.
-App op playstore zetten (status: wordt beoordeeld).
+Expo account integratie a.d.h.v. youtube tutorial. <br/>
+Genereren app bundle: app.json file aanpassen, keystores laten aanmaken (madLift4You.jks) & app bundle. <br/>
+Google play store account aanmaken (playstore account: rubenvdk, email: vanderkelenruben@gmail.com). <br/>
+Genereren api key google play store account (pc-api-8335892221988097473-56-cc18bcc4fad4.json). <br/>
+Primaire winkelvermelding: naam, beschrijving, icon toevoegen & Play store graphics. <br/>
+App op playstore zetten (status: wordt beoordeeld). <br/>
 #### Problemen
 Geen problemen ondervonden.
 #### Opgelost
@@ -296,15 +296,60 @@ Geen problemen ondervonden.
 - https://www.youtube.com/watch?v=cQrIateTW_0
 - https://www.youtube.com/watch?v=nFCWY-BwTBQ
 
-### To-do
-### NU
-- UI van alle resterende pagina's
-- firestore database esecurity rules aanpassen
-- Bij updaten: version code in app.json naar 2 (1 -> 2)
+### Week 15
+#### Gedaan
+UI Homepage verder uitgewerkt.
+#### Problemen
+#### Opgelost
+#### Bronnen
 
-### Week 14/15/...
-- Homescreen: Locatieservices verder uitwerken (route plannen, zones weergeven),
-- UserDetailsScreen: Details gebruiker weergeven, aanpasvelden,
-- CreateRideScreen: Tussenstop toevoegen, Locatieservices (plaats zoeken, routeplannen),
-- Beveiligde authenticatie en autorisatie: OAuth2, OpenID Connect, JWT etc. (vereiste)
-...
+### Week 16
+#### Gedaan
+UI Homepage verder uitgewerkt.
+#### Problemen
+#### Opgelost
+#### Bronnen
+
+### To-do
+- Bij updaten play store: version code in app.json naar 2 (1 -> 2)
+### Planning
+#### 7 Januari:
+- UI Homepagina laatste versie
+- sidebar menu aanpassingen  
+- toevoegen punten op de kaart
+- werken aan firestore database security rules  
+- mapview bij standalone app correct instellen: https://docs.expo.dev/versions/latest/sdk/map-view/
+#### 8 Januari:
+- verder werken aan firestore database security rules
+- FAQ uit firestore ophalen 
+- userdata in firestore steken
+- zones in firestore steken
+#### 9 Januari:
+- UserDetailsScreen: Details gebruiker weergeven, aanpasvelden
+#### 10 Januari:
+- Admin paneel voor zonebeheerders
+- Zones toevoegen aan zonebeheerder
+- Auto's toevoegen aan zones
+#### 11 Januari:
+- Zones weergeven op kaart
+- afbeeldingen toevoegen aan zones
+- dichtsbijzijnde zones weergeven voor gebruiker
+#### 12 Januari:
+- Zonedata weergeven aan gebruikers
+- Zones opzoeken naargelang locatie
+- filteren bij opzoeken zones
+- Autos weergeven bij geselecteerde zone
+#### 13 Januari:
+- Rit starten vanuit gelesecteerde auto
+- Ritten in firestore steken
+- Reminder voor Ritten in agenda ?
+- Rit bevestigen op tijdstip
+#### 14 Januari:
+- Beveiligde authenticatie en autorisatie: OAuth2, OpenID Connect, JWT etc. (vereiste) nog bekijken
+- Pushnotificaties voor gebeurtenissen (rit start, rit bijna gedaan, ...)
+- updaten naar Playstore (version code in app.json naar 2 (1 -> 2))
+#### 15 Januari:
+- laatste aanpassingen, testen van app/bugfixing
+- data sync nog eens bekijken
+#### 16 Januari:
+- Deadline is om 20u -> finale push naar git
