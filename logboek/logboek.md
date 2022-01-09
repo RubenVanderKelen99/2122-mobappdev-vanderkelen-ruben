@@ -298,14 +298,40 @@ Geen problemen ondervonden.
 
 ### Week 15
 #### Gedaan
-UI Homepage verder uitgewerkt.
+UI Homepage verder uitgewerkt. <br/>
+Afwerking sidebar menu: costum drawer navigation. <br/>
 #### Problemen
+Geen problemen ondervonden.
 #### Opgelost
+Geen problemen ondervonden.
 #### Bronnen
+- https://www.youtube.com/watch?v=ayxRtBHw754
 
 ### Week 16
 #### Gedaan
-UI Homepage verder uitgewerkt.
+Datastructuuren firestore database kiezen. <br/>
+Werken aan firestore database security rules. <br/>
+Data uit firestore database ophalen en weergeven (FAQ-pagina). <br/>
+#### Problemen
+1. De functie push() werkt niet om data te pushen naar een state array.
+```   
+TypeError: setFaqs.push is not a function. (In 'setFaqs.push(doc.data())', 'setFaqs.push' is undefined)]
+```
+2. Het is niet mogelijk om een for-loop in JSX te gebruiken er moet dus op een andere manier door de array geloopd worden.
+#### Opgelost
+1. Door gebruik te maken van concat() lukt dit wel
+``` 
+setFaqs(faqs => faqs.concat(doc.data()))
+```
+2. De map() functie kan hiervoor gebruikt worden in react native.
+#### Bronnen
+- https://firebase.google.com/docs/firestore/manage-data/structure-data
+- https://stackoverflow.com/questions/67918324/firebase-cloud-firestore-security-rules-only-allow-read-not-write
+- https://javascript.plainenglish.io/how-to-add-to-an-array-in-react-state-3d08ddb2e1dc
+- https://reactjs.org/docs/lists-and-keys.html
+
+### Week 17
+#### Gedaan
 #### Problemen
 #### Opgelost
 #### Bronnen
@@ -313,43 +339,38 @@ UI Homepage verder uitgewerkt.
 ### To-do
 - Bij updaten play store: version code in app.json naar 2 (1 -> 2)
 ### Planning
-#### 7 Januari:
-- UI Homepagina laatste versie
-- sidebar menu aanpassingen  
+#### 9 Januari:
 - toevoegen punten op de kaart
-- werken aan firestore database security rules  
 - mapview bij standalone app correct instellen: https://docs.expo.dev/versions/latest/sdk/map-view/
-#### 8 Januari:
-- verder werken aan firestore database security rules
-- FAQ uit firestore ophalen 
+#### 10 Januari:
 - userdata in firestore steken
 - zones in firestore steken
-#### 9 Januari:
+- verder werken aan firestore database security rules  
+- app check voor firestore database: https://firebase.google.com/docs/app-check  
 - UserDetailsScreen: Details gebruiker weergeven, aanpasvelden
-#### 10 Januari:
+#### 11 Januari:
 - Admin paneel voor zonebeheerders
 - Zones toevoegen aan zonebeheerder
 - Auto's toevoegen aan zones
-#### 11 Januari:
+#### 12 Januari:
 - Zones weergeven op kaart
 - afbeeldingen toevoegen aan zones
 - dichtsbijzijnde zones weergeven voor gebruiker
-#### 12 Januari:
+#### 13 Januari:
 - Zonedata weergeven aan gebruikers
 - Zones opzoeken naargelang locatie
 - filteren bij opzoeken zones
 - Autos weergeven bij geselecteerde zone
-#### 13 Januari:
+#### 14 Januari:
 - Rit starten vanuit gelesecteerde auto
 - Ritten in firestore steken
 - Reminder voor Ritten in agenda ?
 - Rit bevestigen op tijdstip
-#### 14 Januari:
+#### 15 Januari:
 - Beveiligde authenticatie en autorisatie: OAuth2, OpenID Connect, JWT etc. (vereiste) nog bekijken
 - Pushnotificaties voor gebeurtenissen (rit start, rit bijna gedaan, ...)
 - updaten naar Playstore (version code in app.json naar 2 (1 -> 2))
-#### 15 Januari:
+#### 16 Januari:
 - laatste aanpassingen, testen van app/bugfixing
 - data sync nog eens bekijken
-#### 16 Januari:
 - Deadline is om 20u -> finale push naar git

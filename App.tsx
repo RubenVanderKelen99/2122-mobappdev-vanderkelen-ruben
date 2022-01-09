@@ -8,12 +8,13 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { LoginScreen, HomeScreen, RegistrationScreen, CompleteProfileScreen, HistoryScreen, PromotionsScreen, FAQScreen, AboutScreen } from './js/screens'
 import { db } from './js/firebase';
 import { auth } from './js/firebase';
+import { DrawerContent } from './js/drawerContent';
 
 const Drawer = createDrawerNavigator();
 
 function DrawerStack() {
     return (
-        <Drawer.Navigator screenOptions={{headerShown: false}}>
+        <Drawer.Navigator screenOptions={{headerShown: false}} drawerContent={props => <DrawerContent {...props}/>}>
             <Drawer.Screen name="Home" component={HomeScreen} />
             <Drawer.Screen name="History" component={HistoryScreen} />
             <Drawer.Screen name="Promotions" component={PromotionsScreen} />

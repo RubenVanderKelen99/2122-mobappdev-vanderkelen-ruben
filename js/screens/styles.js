@@ -127,6 +127,30 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 22,
     },
+    drawerWrapper: {
+          flex: 1,
+    },
+    drawerContent: {
+      flex: 1,
+    },
+    drawerUserInfo: {
+      paddingLeft: 20,
+    },
+    drawerUsername: {
+      fontSize: 16,
+      marginTop: 3,
+      fontWeight: 'bold',
+    },
+    drawerMail: {
+      fontSize: 14,
+      lineHeight: 14,
+    },
+    drawerSection: {
+      marginTop: 15,
+    },
+    drawerBottomSection: {
+        marginBottom: 15,
+    },
 });
 
 export default styles;

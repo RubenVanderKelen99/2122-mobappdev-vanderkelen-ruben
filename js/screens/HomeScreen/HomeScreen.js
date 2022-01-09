@@ -18,18 +18,18 @@ const HomeScreen = ({ navigation }) => {
     const mapViewRef = createRef();
 
     useEffect(() => {
-     (async () => {
-        let { status } = await Location.requestForegroundPermissionsAsync();
-        if (status !== 'granted') {
-            setErrorMsg('Permission to access location was denied');
-            return;
-        }
+        (async () => {
+            let { status } = await Location.requestForegroundPermissionsAsync();
+            if (status !== 'granted') {
+                setErrorMsg('Permission to access location was denied');
+                return;
+            }
 
-        let location = await Location.getCurrentPositionAsync({});
-        setLocation(location);
-        setCurrentLatitude(location.coords.latitude);
-        setCurrentLongitude(location.coords.longitude);
-     })();
+            let location = await Location.getCurrentPositionAsync({});
+            setLocation(location);
+            setCurrentLatitude(location.coords.latitude);
+            setCurrentLongitude(location.coords.longitude);
+        })();
     }, []);
 
     const signOut = () => {
@@ -81,18 +81,6 @@ const HomeScreen = ({ navigation }) => {
                 />
                 }
             </View>
-
-            <Button
-            mode="contained"
-            compact={false}
-            onPress={() => signOut()}
-            icon="account-arrow-left"
-            color="orange"
-            labelStyle={{ color: "white", fontSize: 16 }}
-            style={styles.submitButton}
-            >
-            Sign out
-            </Button>
 
         </View>
     )
