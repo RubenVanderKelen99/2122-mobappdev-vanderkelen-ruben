@@ -298,7 +298,7 @@ Geen problemen ondervonden.
 
 ### Week 15
 #### Gedaan
-UI Homepage verder uitgewerkt. <br/>
+UI HomeScreen verder uitgewerkt. <br/>
 Afwerking sidebar menu: costum drawer navigation. <br/>
 #### Problemen
 Geen problemen ondervonden.
@@ -340,6 +340,7 @@ setFaqs(faqs => faqs.concat(doc.data()))
 
 ### Week 17
 #### Gedaan
+UI HomeScreen finale versie. <br/>
 #### Problemen
 1. Bij het weergeven van de FAQ komt er:
 ```    

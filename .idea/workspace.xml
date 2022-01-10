@@ -12,15 +12,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Data uit firestore database ophalen en weergeven (FAQScreen.js)">
-      <change afterPath="$PROJECT_DIR$/assets/playstore/app-icon2.png" afterDir="false" />
+    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Markers toevoegen aan Mapview">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/adaptive-icon1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/adaptive-icon1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/icon1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/icon1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/playstore/app-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/playstore/app-icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logboek/logboek.md" beforeDir="false" afterPath="$PROJECT_DIR$/logboek/logboek.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/styles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +53,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/js/screens" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -418,7 +413,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641763052785</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Markers toevoegen aan Mapview">
+      <created>1641843948888</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1641843948888</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -442,7 +444,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Werkende DateTimePicker en eerste versie CompleteProfileScreen" />
     <MESSAGE value="CompleteProfileScreen: forms met validatie/formchecking" />
     <MESSAGE value="CompleteProfileScreen: dropdown maand met Picker v1" />
     <MESSAGE value="CompleteProfileScreen: dropdown maand met Picker v2, Countrypicker" />
@@ -467,6 +468,7 @@
     <MESSAGE value="Update logboek.md: verdere planning" />
     <MESSAGE value="Afwerking sidebar menu: costum drawer navigation (drawerContent.js)" />
     <MESSAGE value="Data uit firestore database ophalen en weergeven (FAQScreen.js)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Data uit firestore database ophalen en weergeven (FAQScreen.js)" />
+    <MESSAGE value="Markers toevoegen aan Mapview" />
+    <option name="LAST_COMMIT_MESSAGE" value="Markers toevoegen aan Mapview" />
   </component>
 </project>

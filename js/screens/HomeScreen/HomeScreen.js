@@ -108,6 +108,45 @@ const HomeScreen = ({ navigation }) => {
                 }
             </View>
 
+            <TouchableOpacity>
+                <View style={styles.locationRow}>
+                    <View style={styles.locationRowLeft}>
+                        <Icon name="location-pin" type='material' size={30} color="#ABABAB" style={styles.locationIcon}/>
+                        <Text style={styles.locationName}>Dichtste Bestemming 1</Text>
+                    </View>
+                    <View style={styles.locationRowRight}>
+                        <Text style={styles.locationDistance}>XXX,X km</Text>
+                        <Icon name="chevron-right" size={30} style={styles.moreIcon} />
+                    </View>
+                </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+                <View style={styles.locationRow}>
+                    <View style={styles.locationRowLeft}>
+                        <Icon name="location-pin" type='material' size={30} color="#ABABAB" style={styles.locationIcon}/>
+                        <Text style={styles.locationName}>Dichtste Bestemming 2</Text>
+                    </View>
+                    <View style={styles.locationRowRight}>
+                        <Text style={styles.locationDistance}>XXX,X km</Text>
+                        <Icon name="chevron-right" size={30} style={styles.moreIcon} />
+                    </View>
+                </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+                <View style={styles.locationRow}>
+                    <View style={styles.locationRowLeft}>
+                        <Icon name="location-pin" type='material' size={30} color="#ABABAB" style={styles.locationIcon}/>
+                        <Text style={styles.locationName}>Dichtste Bestemming 3</Text>
+                    </View>
+                    <View style={styles.locationRowRight}>
+                        <Text style={styles.locationDistance}>XXX,X km</Text>
+                        <Icon name="chevron-right" size={30} style={styles.moreIcon} />
+                    </View>
+                </View>
+            </TouchableOpacity>
+
         </View>
     )
 };

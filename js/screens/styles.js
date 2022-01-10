@@ -151,6 +151,35 @@ const styles = StyleSheet.create({
     drawerBottomSection: {
         marginBottom: 15,
     },
+    locationRow: {
+        width: Dimensions.get('window').width,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingTop: 30,
+    },
+    locationRowLeft: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginLeft: 20,
+    },
+    locationRowRight: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginRight: 20,
+    },
+    locationName: {
+        fontSize: 18,
+        marginLeft: 5,
+    },
+    locationDistance: {
+        fontSize: 14,
+        fontWeight: 'bold',
+    },
+    locationIcon: {
+    },
+    moreIcon: {
+    },
 });
 
 export default styles;
