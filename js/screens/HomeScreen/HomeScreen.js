@@ -4,7 +4,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { Button } from 'react-native-paper';
 import { Icon } from 'react-native-elements';
 import { auth } from '../../firebase';
-import MapView from 'react-native-maps';
+import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 import styles from '../styles';
 
@@ -16,6 +16,23 @@ const HomeScreen = ({ navigation }) => {
     const [currentLongitude, setCurrentLongitude] = useState(4.3524);
 
     const mapViewRef = createRef();
+
+    const [markers, setMarkers] = useState(
+    [{
+    title: 'test',
+    description: 'description',
+    coordinate: {
+    latitude: 51.04807886707637,
+    longitude: 3.7296714985957045
+    }},
+    {
+    title: 'test2',
+    description: 'description',
+    coordinate: {
+    latitude: 51.05807886707637,
+    longitude: 3.7296714985957045
+    }},
+    ]);
 
     useEffect(() => {
         (async () => {
@@ -78,7 +95,16 @@ const HomeScreen = ({ navigation }) => {
                 showsUserLocation={true}
                 showsMyLocationButton={false}
                 ref={mapViewRef}
-                />
+                >
+                {markers.map((marker, index) => (
+                    <Marker
+                      key={index}
+                      coordinate={marker.coordinate}
+                      title={marker.title}
+                      description={marker.description}
+                    />
+                  ))}
+                </MapView>
                 }
             </View>
 

@@ -312,6 +312,7 @@ Geen problemen ondervonden.
 Datastructuuren firestore database kiezen. <br/>
 Werken aan firestore database security rules. <br/>
 Data uit firestore database ophalen en weergeven (FAQ-pagina). <br/>
+Markers toevoegen aan Mapview. <br/>
 #### Problemen
 1. De functie push() werkt niet om data te pushen naar een state array.
 ```   
@@ -326,23 +327,37 @@ setFaqs(faqs => faqs.concat(doc.data()))
 2. De map() functie kan hiervoor gebruikt worden in react native.
 #### Bronnen
 - https://firebase.google.com/docs/firestore/manage-data/structure-data
+- https://firebase.google.com/docs/firestore/query-data/get-data
+- https://firebase.google.com/docs/firestore/query-data/queries
+- https://firebase.google.com/docs/firestore/security/rules-conditions
+- https://firebase.google.com/docs/firestore/security/rules-structure  
 - https://stackoverflow.com/questions/67918324/firebase-cloud-firestore-security-rules-only-allow-read-not-write
+- https://reactjs.org/docs/lists-and-keys.html  
 - https://javascript.plainenglish.io/how-to-add-to-an-array-in-react-state-3d08ddb2e1dc
-- https://reactjs.org/docs/lists-and-keys.html
+- https://github.com/react-native-maps/react-native-maps  
+- https://github.com/react-native-maps/react-native-maps/blob/master/docs/marker.md
+- https://medium.com/@clarkjohnson_85334/adding-fetched-markers-to-my-react-native-maps-app-5f068c7be14d
 
 ### Week 17
 #### Gedaan
 #### Problemen
+1. Bij het weergeven van de FAQ komt er:
+```    
+Warning: Each child in a list should have a unique "key" prop.
+Check the render method of `FAQScreen`. See https://fb.me/react-warning-keys for more information.
+```
 #### Opgelost
+1. ?
 #### Bronnen
+- https://fb.me/react-warning-keys
 
 ### To-do
 - Bij updaten play store: version code in app.json naar 2 (1 -> 2)
 ### Planning
 #### 9 Januari:
-- toevoegen punten op de kaart
 - mapview bij standalone app correct instellen: https://docs.expo.dev/versions/latest/sdk/map-view/
 #### 10 Januari:
+- toevoegen punten op de kaart
 - userdata in firestore steken
 - zones in firestore steken
 - verder werken aan firestore database security rules  
@@ -368,9 +383,10 @@ setFaqs(faqs => faqs.concat(doc.data()))
 - Rit bevestigen op tijdstip
 #### 15 Januari:
 - Beveiligde authenticatie en autorisatie: OAuth2, OpenID Connect, JWT etc. (vereiste) nog bekijken
+- app check voor firestore database: https://firebase.google.com/docs/app-check
 - Pushnotificaties voor gebeurtenissen (rit start, rit bijna gedaan, ...)
 - updaten naar Playstore (version code in app.json naar 2 (1 -> 2))
 #### 16 Januari:
 - laatste aanpassingen, testen van app/bugfixing
-- data sync nog eens bekijken
+- data sync nog eens bekijken (realm?) voor minder requests
 - Deadline is om 20u -> finale push naar git
