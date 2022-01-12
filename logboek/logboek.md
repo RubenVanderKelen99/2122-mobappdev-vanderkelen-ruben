@@ -341,6 +341,7 @@ setFaqs(faqs => faqs.concat(doc.data()))
 ### Week 17
 #### Gedaan
 UI HomeScreen finale versie. <br/>
+Gebruikersdata opslaan in firestore database. <br/>
 #### Problemen
 1. Bij het weergeven van de FAQ komt er:
 ```    
@@ -351,6 +352,8 @@ Check the render method of `FAQScreen`. See https://fb.me/react-warning-keys for
 1. ?
 #### Bronnen
 - https://fb.me/react-warning-keys
+- https://medium.com/swlh/lets-create-mobile-app-with-react-native-and-firebase-6967a7946408
+- https://stackoverflow.com/questions/61950258/firebase-cloud-database-rules-how-to-retrieve-data-only-where-the-user-id-matc
 
 ### To-do
 - Bij updaten play store: version code in app.json naar 2 (1 -> 2)

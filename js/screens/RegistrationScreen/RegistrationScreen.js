@@ -34,15 +34,24 @@ const RegistrationScreen = ({ navigation }) => {
     }
 
     const onSubmit = (data) => {
-        const { email, password } = data;
+        const { email, username, password } = data;
         auth
             .createUserWithEmailAndPassword(email.trim().toLowerCase(), encode(password))
             .then((response) => {
                 const uid = response.user.uid
                 const data = {
                     id: uid,
-                    email
+                    email,
+                    username,
+                    type: 'user',
             };
+            const usersRef = db.collection('users')
+            usersRef
+                .doc(uid)
+                .set(data)
+                .catch((error) => {
+                    alert(error)
+                });
             })
         .catch((error) => {
             alert(error)
@@ -84,6 +93,36 @@ const RegistrationScreen = ({ navigation }) => {
 
                     <View style={styles.errorMsg}>
                         {errors.email && <Text style={styles.errorText}>{errors.email.message}</Text>}
+                    </View>
+
+                    <Controller
+                        control={control}
+                        rules={{
+                            required: 'Username is required to register',
+                            minLength: {
+                            value: 4,
+                            message: 'Username should be at least 4 characters',
+                            },
+                        }}
+                        render={({ field: { onChange, onBlur, value } }) => (
+                            <TextInput
+                                placeholder="Username"
+                                mode="flat"
+                                left={<TextInput.Icon name="account" color="orange" />}
+                                theme={{colors: {primary: 'orange'}}}
+                                onBlur={onBlur}
+                                onChangeText={onChange}
+                                value={value}
+                                style={styles.formInput}
+
+                            />
+                        )}
+                        name="username"
+                        defaultValue=""
+                    />
+
+                    <View style={styles.errorMsg}>
+                        {errors.username && <Text style={styles.errorText}>{errors.username.message}</Text>}
                     </View>
 
                     <Controller
