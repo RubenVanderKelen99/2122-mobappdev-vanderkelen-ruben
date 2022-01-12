@@ -1,7 +1,7 @@
 import React, { useState, useEffect, createRef } from 'react';
 import { Text, TouchableOpacity, View, ScrollView, KeyboardAvoidingView, Dimensions } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
-import { Button } from 'react-native-paper';
+import { Button, TextInput } from 'react-native-paper';
 import { Icon } from 'react-native-elements';
 import { auth } from '../../firebase';
 import MapView, { Marker } from 'react-native-maps';
@@ -14,6 +14,7 @@ const HomeScreen = ({ navigation }) => {
     const [errorMsg, setErrorMsg] = useState('');
     const [currentLatitude, setCurrentLatitude] = useState(50.8468);
     const [currentLongitude, setCurrentLongitude] = useState(4.3524);
+    const [searchLocation, setSearchLocation] = useState('');
 
     const mapViewRef = createRef();
 
@@ -107,6 +108,22 @@ const HomeScreen = ({ navigation }) => {
                 </MapView>
                 }
             </View>
+
+            <Text style={styles.locationHeaderSub}>Welkom gebruiker</Text>
+            <Text style={styles.locationHeaderMain}>Een locatie zoeken</Text>
+
+            <TouchableOpacity>
+                <TextInput
+                    placeholder='Zoek een stad of een plaats'
+                    style={styles.locationInput}
+                    left={<TextInput.Icon name="map-search" color="orange" />}
+                    theme={{colors: {primary: 'orange'}}}
+                    selectionColor='orange'
+                    onChangeText={text => setSearchLocation(text)}
+                    value={searchLocation}
+                />
+
+            </TouchableOpacity>
 
             <TouchableOpacity>
                 <View style={styles.locationRow}>

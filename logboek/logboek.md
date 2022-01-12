@@ -298,7 +298,7 @@ Geen problemen ondervonden.
 
 ### Week 15
 #### Gedaan
-UI HomeScreen verder uitgewerkt. <br/>
+UI HomeScreenverder uitgewerkt. <br/>
 Afwerking sidebar menu: costum drawer navigation. <br/>
 #### Problemen
 Geen problemen ondervonden.
@@ -355,12 +355,10 @@ Check the render method of `FAQScreen`. See https://fb.me/react-warning-keys for
 ### To-do
 - Bij updaten play store: version code in app.json naar 2 (1 -> 2)
 ### Planning
-#### 9 Januari:
-- mapview bij standalone app correct instellen: https://docs.expo.dev/versions/latest/sdk/map-view/
 #### 10 Januari:
-- toevoegen punten op de kaart
 - userdata in firestore steken
 - zones in firestore steken
+- mapview bij standalone app correct instellen: https://docs.expo.dev/versions/latest/sdk/map-view/  
 - verder werken aan firestore database security rules  
 - app check voor firestore database: https://firebase.google.com/docs/app-check  
 - UserDetailsScreen: Details gebruiker weergeven, aanpasvelden

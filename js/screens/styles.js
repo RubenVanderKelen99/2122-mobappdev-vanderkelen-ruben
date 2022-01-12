@@ -151,12 +151,29 @@ const styles = StyleSheet.create({
     drawerBottomSection: {
         marginBottom: 15,
     },
+    locationHeaderMain: {
+        alignSelf: 'flex-start',
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginLeft: 20,
+    },
+    locationHeaderSub: {
+        alignSelf: 'flex-start',
+        fontSize: 14,
+        marginLeft: 20,
+        marginTop: 20,
+    },
+    locationInput: {
+        height: 40,
+        width: Dimensions.get('window').width - 40,
+        marginTop: 10,
+    },
     locationRow: {
         width: Dimensions.get('window').width,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingTop: 30,
+        marginTop: 25,
     },
     locationRowLeft: {
         flexDirection: 'row',

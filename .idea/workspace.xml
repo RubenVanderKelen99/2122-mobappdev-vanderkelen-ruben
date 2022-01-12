@@ -12,10 +12,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Markers toevoegen aan Mapview">
+    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Verder afwerken UI HomeScreen.js: weergeven dichtsbijzijnde locaties">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/screens/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logboek/logboek.md" beforeDir="false" afterPath="$PROJECT_DIR$/logboek/logboek.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +54,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/js/screens" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Stage/HokaAppV4" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -420,7 +421,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641843948888</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Verder afwerken UI HomeScreen.js: weergeven dichtsbijzijnde locaties">
+      <created>1641854649160</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1641854649160</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,7 +452,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="CompleteProfileScreen: forms met validatie/formchecking" />
     <MESSAGE value="CompleteProfileScreen: dropdown maand met Picker v1" />
     <MESSAGE value="CompleteProfileScreen: dropdown maand met Picker v2, Countrypicker" />
     <MESSAGE value="Implementatie KeyboardAvoidingView + ScrollView" />
@@ -469,6 +476,7 @@
     <MESSAGE value="Afwerking sidebar menu: costum drawer navigation (drawerContent.js)" />
     <MESSAGE value="Data uit firestore database ophalen en weergeven (FAQScreen.js)" />
     <MESSAGE value="Markers toevoegen aan Mapview" />
-    <option name="LAST_COMMIT_MESSAGE" value="Markers toevoegen aan Mapview" />
+    <MESSAGE value="Verder afwerken UI HomeScreen.js: weergeven dichtsbijzijnde locaties" />
+    <option name="LAST_COMMIT_MESSAGE" value="Verder afwerken UI HomeScreen.js: weergeven dichtsbijzijnde locaties" />
   </component>
 </project>
