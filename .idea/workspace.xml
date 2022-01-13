@@ -12,9 +12,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Laatste versie UI HomeScreen.js">
+    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Gebruikersdata opslaan in firestore database (RegistrationScreen.js)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/RegistrationScreen/RegistrationScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/RegistrationScreen/RegistrationScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/AboutScreen/AboutScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/AboutScreen/AboutScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/FAQScreen/FAQScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/FAQScreen/FAQScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/HistoryScreen/HistoryScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/HistoryScreen/HistoryScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/LoginScreen/LoginScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/LoginScreen/LoginScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/PromotionsScreen/PromotionsScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/PromotionsScreen/PromotionsScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logboek/logboek.md" beforeDir="false" afterPath="$PROJECT_DIR$/logboek/logboek.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -434,7 +438,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642014655178</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Gebruikersdata opslaan in firestore database (RegistrationScreen.js)">
+      <created>1642016909643</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1642016909643</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -458,7 +469,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="CompleteProfileScreen: dropdown maand met Picker v2, Countrypicker" />
     <MESSAGE value="Implementatie KeyboardAvoidingView + ScrollView" />
     <MESSAGE value="Upload Logo.png" />
     <MESSAGE value="UI LoginScreen &amp; RegistatrieScreen, functionaliteit tonen/verbergen wachtwoord" />
@@ -483,6 +493,7 @@
     <MESSAGE value="Markers toevoegen aan Mapview" />
     <MESSAGE value="Verder afwerken UI HomeScreen.js: weergeven dichtsbijzijnde locaties" />
     <MESSAGE value="Laatste versie UI HomeScreen.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="Laatste versie UI HomeScreen.js" />
+    <MESSAGE value="Gebruikersdata opslaan in firestore database (RegistrationScreen.js)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gebruikersdata opslaan in firestore database (RegistrationScreen.js)" />
   </component>
 </project>

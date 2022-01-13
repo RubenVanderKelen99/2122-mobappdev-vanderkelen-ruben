@@ -8,6 +8,13 @@ import styles from '../styles';
 
 const HistoryScreen = ({ navigation }) => {
 
+    function navBack() {
+    if (navigation.canGoBack())
+       navigation.goBack()
+    else
+       navigation.navigate('Home')
+    }
+
     return (
         <KeyboardAvoidingView style={styles.container}
         behavior="height" enabled keyboardVerticalOffset={50}>
@@ -15,7 +22,7 @@ const HistoryScreen = ({ navigation }) => {
                 <View style={styles.authFormContainer}>
                     <View style={styles.headerContainer}>
                         <TouchableOpacity
-                            onPress={() => navigation.goBack()}
+                            onPress={() => navBack()}
                         >
                             <Icon name={"arrow-back"} size={25} color={'#4F4F4F'} style={styles.headerBackButton}/>
                         </TouchableOpacity>

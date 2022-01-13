@@ -342,24 +342,75 @@ setFaqs(faqs => faqs.concat(doc.data()))
 #### Gedaan
 UI HomeScreen finale versie. <br/>
 Gebruikersdata opslaan in firestore database. <br/>
+Zones (met auto's & openingsuren) in firestore database steken. <br/>
 #### Problemen
 1. Bij het weergeven van de FAQ komt er:
 ```    
 Warning: Each child in a list should have a unique "key" prop.
 Check the render method of `FAQScreen`. See https://fb.me/react-warning-keys for more information.
 ```
+2. Bij het teruggaan op sommige schermen verschijnt er een error:
+```       
+The action 'GO_BACK' was not handled by any navigator.
+Is there any screen to go back to?
+This is a development-only warning and won't be shown in production.
+```
 #### Opgelost
 1. ?
+2. Eerst controleren of de navigatie terugkan en zo niet: terug naar HomeScreen
+```    
+if (navigation.canGoBack())
+   navigation.goBack()
+else
+   navigation.navigate('home')
+```    
 #### Bronnen
 - https://fb.me/react-warning-keys
 - https://medium.com/swlh/lets-create-mobile-app-with-react-native-and-firebase-6967a7946408
-- https://stackoverflow.com/questions/61950258/firebase-cloud-database-rules-how-to-retrieve-data-only-where-the-user-id-matc
+- https://github.com/react-navigation/react-navigation/issues/8771  
+- https://stackoverflow.com/questions/61950258/firebase-cloud-database-rules-how-to-retrieve-data-only-where-the-user-id-match
+- https://www.youtube.com/watch?v=4N-8RTeQ1fA
+- https://aboutreact.com/react-native-calculate-distance-between-two-locations/
+
+### Database structuur
+Zones -> Cars, Openinghours
+Zone:
+id - number 
+location (lat + lng) - geopoint
+name - string
+
+Cars:
+id - string (auto-generated)
+name - string
+seats - number
+doors - number
+transmission (manual/automatic) - string
+a/c - boolean
+gps - boolean
+trunks - number
+status (true = available, false = in use/unavailable) - boolean
+price (per day) - number
+
+Voorbeelden die hergebruikt kunnen worden:
+Citroën C1
+4
+4
+manual
+true
+false
+1
+true
+49.32
+
+Openinghours:
+Ophalen: Tijdens openingsuren
+Inleveren: 24/7
+
 
 ### To-do
 - Bij updaten play store: version code in app.json naar 2 (1 -> 2)
 ### Planning
 #### 10 Januari:
-- userdata in firestore steken
 - zones in firestore steken
 - mapview bij standalone app correct instellen: https://docs.expo.dev/versions/latest/sdk/map-view/  
 - verder werken aan firestore database security rules  

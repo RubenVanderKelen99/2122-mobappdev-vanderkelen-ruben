@@ -16,6 +16,12 @@ const PromotionsScreen = ({ navigation }) => {
         //console.log(data);
     };
 
+    function navBack() {
+    if (navigation.canGoBack())
+       navigation.goBack()
+    else
+       navigation.navigate('Home')
+    }
 
     return (
         <KeyboardAvoidingView style={styles.container}
@@ -24,7 +30,7 @@ const PromotionsScreen = ({ navigation }) => {
                 <View style={styles.authFormContainer}>
                     <View style={styles.headerContainer}>
                         <TouchableOpacity
-                            onPress={() => navigation.goBack()}
+                            onPress={() => navBack()}
                         >
                             <Icon name={"arrow-back"} size={25} color={'#4F4F4F'} style={styles.headerBackButton}/>
                         </TouchableOpacity>

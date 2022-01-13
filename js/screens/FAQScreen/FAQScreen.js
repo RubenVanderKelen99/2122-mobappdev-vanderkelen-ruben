@@ -23,6 +23,13 @@ const FAQScreen = ({ navigation }) => {
         })();
     }, []);
 
+    function navBack() {
+    if (navigation.canGoBack())
+       navigation.goBack()
+    else
+       navigation.navigate('Home')
+    }
+
 
     return (
         <KeyboardAvoidingView style={styles.container}
@@ -31,7 +38,7 @@ const FAQScreen = ({ navigation }) => {
                 <View style={styles.authFormContainer}>
                     <View style={styles.headerContainer}>
                         <TouchableOpacity
-                            onPress={() => navigation.goBack()}
+                            onPress={() => navBack()}
                         >
                             <Icon name={"arrow-back"} size={25} color={'#4F4F4F'} style={styles.headerBackButton}/>
                         </TouchableOpacity>
