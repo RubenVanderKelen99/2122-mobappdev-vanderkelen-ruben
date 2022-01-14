@@ -382,7 +382,10 @@ longitude: marker.location.longitude
 - https://github.com/react-navigation/react-navigation/issues/8771  
 - https://stackoverflow.com/questions/61950258/firebase-cloud-database-rules-how-to-retrieve-data-only-where-the-user-id-match
 - https://www.youtube.com/watch?v=4N-8RTeQ1fA
+- https://blog.kiprosh.com/react-native-custom-google-maps-with-track-location/
+- https://stackoverflow.com/questions/53120972/how-to-call-loading-function-with-react-useeffect-only-once  
 - https://aboutreact.com/react-native-calculate-distance-between-two-locations/
+- https://www.codegrepper.com/code-examples/javascript/firestore+delete+document+and+subcollection
 
 ### Database structuur
 Zones -> Cars, Openinghours
@@ -420,36 +423,29 @@ Inleveren: 24/7
 ### To-do
 - Bij updaten play store: version code in app.json naar 2 (1 -> 2)
 ### Planning
-#### 10 Januari:
-- zones in firestore steken
-- mapview bij standalone app correct instellen: https://docs.expo.dev/versions/latest/sdk/map-view/  
-- verder werken aan firestore database security rules  
-- app check voor firestore database: https://firebase.google.com/docs/app-check  
-- UserDetailsScreen: Details gebruiker weergeven, aanpasvelden
-#### 11 Januari:
-- Admin paneel voor zonebeheerders
-- Zones toevoegen aan zonebeheerder
-- Auto's toevoegen aan zones
-#### 12 Januari:
-- Zones weergeven op kaart
-- afbeeldingen toevoegen aan zones
-- dichtsbijzijnde zones weergeven voor gebruiker
-#### 13 Januari:
-- Zonedata weergeven aan gebruikers
-- Zones opzoeken naargelang locatie
-- filteren bij opzoeken zones
-- Autos weergeven bij geselecteerde zone
 #### 14 Januari:
-- Rit starten vanuit gelesecteerde auto
-- Ritten in firestore steken
-- Reminder voor Ritten in agenda ?
-- Rit bevestigen op tijdstip
+- zonedata weergeven op homescreen: 3 dichtsbijzijnde zones + extra data bij click op marker
+- zonesScreen maken (zones zoeken, filteren, ...)  
+- mapview bij standalone app correct instellen: https://docs.expo.dev/versions/latest/sdk/map-view/  
+- firestore database security rules
+- Auto's toevoegen aan zones en weergeven (aantal# op Homescreen en lijst op ZoneDetailScreen)
+- dichtsbijzijnde zones weergeven voor gebruiker
+- userdata weergeven op HomeScreen
+- eens bekijken hoe Realm ineen zit en of dit kan helpen
 #### 15 Januari:
+- Transactie starten vanuit gelesecteerde auto
+- Transacties in firestore steken
+- Reminder voor Transacties (ophalen/leveren) in agenda ?
+- Handelingen bevestigen op tijdstip
+- Alle transacties (actief, voltooid, geanulleerd) weergeven op HistoryScreen
 - Beveiligde authenticatie en autorisatie: OAuth2, OpenID Connect, JWT etc. (vereiste) nog bekijken
-- app check voor firestore database: https://firebase.google.com/docs/app-check
-- Pushnotificaties voor gebeurtenissen (rit start, rit bijna gedaan, ...)
 - updaten naar Playstore (version code in app.json naar 2 (1 -> 2))
 #### 16 Januari:
-- laatste aanpassingen, testen van app/bugfixing
 - data sync nog eens bekijken (realm?) voor minder requests
+- laatste aanpassingen, testen van app/bugfixing
 - Deadline is om 20u -> finale push naar git
+#### Als er nog extra tijd is:
+- app check voor firestore database: https://firebase.google.com/docs/app-check
+- Pushnotificaties voor gebeurtenissen (rit start, rit bijna gedaan, ...)
+- UserDetailsScreen: Details gebruiker weergeven, aanpasvelden
+- afbeeldingen toevoegen aan zones
