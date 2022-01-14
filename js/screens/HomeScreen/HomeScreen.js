@@ -7,14 +7,13 @@ import { auth } from '../../firebase';
 import { db } from '../../firebase';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
+import { getDistance } from 'geolib';
 import styles from '../styles';
 
 const HomeScreen = ({ navigation }) => {
 
     const [locationData, setLocation] = useState(null);
     const [errorMsg, setErrorMsg] = useState('');
-    const [currentLatitude, setCurrentLatitude] = useState(50.8468);
-    const [currentLongitude, setCurrentLongitude] = useState(4.3524);
     const [searchLocation, setSearchLocation] = useState('');
 
     const mapViewRef = createRef();
@@ -23,20 +22,6 @@ const HomeScreen = ({ navigation }) => {
 
     useEffect(() => {
         (async () => {
-            const zonesRef = db.collection('zones');
-            const snapshot = await zonesRef.get();
-            //data telkens pushen naar faqs, faqs eerst leegmaken
-            setMarkers(markers => []);
-            var zones = [];
-            snapshot.forEach(doc => {
-                console.log(doc.id, '=>', doc.data());
-                const zoneData = doc.data();
-                zoneData.id = doc.id;
-                //markers.push(zoneData);
-                zones.push(zoneData);
-                setMarkers(markers => markers.concat(zoneData));
-            });
-
             let { status } = await Location.requestForegroundPermissionsAsync();
             if (status !== 'granted') {
                 setErrorMsg('Permission to access location was denied');
@@ -45,20 +30,59 @@ const HomeScreen = ({ navigation }) => {
 
             let location = await Location.getCurrentPositionAsync({});
             setLocation(location);
-            setCurrentLatitude(location.coords.latitude);
-            setCurrentLongitude(location.coords.longitude);
+            let locationUpdate = await Location.watchPositionAsync({accuracy: Location.Accuracy.Balanced, timeInterval: 5000, distanceInterval: 10}, updateUserLocation);
+
+            const zonesRef = db.collection('zones');
+            const snapshot = await zonesRef.get();
+            //data telkens pushen naar markers, markers eerst leegmaken
+            setMarkers(markers => []);
+            var zones = [];
+            var zoneLatitude;
+            var zoneLongitude;
+            var distance;
+            snapshot.forEach(doc => {
+                //console.log(doc.id, '=>', doc.data());
+                const zoneData = doc.data();
+                zoneData.id = doc.id;
+                setMarkers(markers => markers.concat(zoneData));
+            });
+
+            /*setMarkers(markers.concat(zones)
+                .sort((a, b) => a.distance > b.distance ? 1 : -1)
+            );*/
+
+
+            //setMarkers(markers.sort((a,b) => a.distance - b.distance));
+            //console.log(markers);
+
+            return async function cleanup() {
+                console.log('Remove tracking')
+                await locationUpdate.remove();
+            };
+
         })();
     }, []);
 
+    /*
+    // This code is for it to run whenever your variable, timerOn, changes
+    useEffect(() => {
+        console.log(locationData);
+    }, [locationData]); // The second parameters are the variables this useEffect is listening to for changes.
+    */
     const signOut = () => {
         auth
             .signOut()
     }
 
+    const updateUserLocation = async () => {
+    let locationNew = await Location.getCurrentPositionAsync({});
+    setLocation(locationNew);
+    }
+
     const toUserLocation = () => {
         let currentRegion={
-            latitude: currentLatitude,
-            longitude: currentLongitude,
+            latitude: locationData.coords.latitude,
+            longitude: locationData.coords.longitude,
             latitudeDelta: 0.05,
             longitudeDelta: 0.10,
         }
@@ -88,8 +112,8 @@ const HomeScreen = ({ navigation }) => {
                 <MapView
                 style={styles.map}
                 initialRegion={{
-                latitude: currentLatitude,
-                longitude: currentLongitude,
+                latitude: locationData.coords.latitude,
+                longitude: locationData.coords.longitude,
                 latitudeDelta: 0.05,
                 longitudeDelta: 0.10,
                 }}
@@ -129,14 +153,16 @@ const HomeScreen = ({ navigation }) => {
 
             </TouchableOpacity>
 
+            {markers[2] !== undefined &&
+            <ScrollView>
             <TouchableOpacity>
                 <View style={styles.locationRow}>
                     <View style={styles.locationRowLeft}>
                         <Icon name="location-pin" type='material' size={30} color="#ABABAB" style={styles.locationIcon}/>
-                        <Text style={styles.locationName}>Dichtste Bestemming 1</Text>
+                        <Text style={styles.locationName}>{markers[0].name.substring(0, 22)}</Text>
                     </View>
                     <View style={styles.locationRowRight}>
-                        <Text style={styles.locationDistance}>XXX,X km</Text>
+                        <Text style={styles.locationDistance}>{markers[0].distance/1000} km</Text>
                         <Icon name="chevron-right" size={30} style={styles.moreIcon} />
                     </View>
                 </View>
@@ -146,10 +172,10 @@ const HomeScreen = ({ navigation }) => {
                 <View style={styles.locationRow}>
                     <View style={styles.locationRowLeft}>
                         <Icon name="location-pin" type='material' size={30} color="#ABABAB" style={styles.locationIcon}/>
-                        <Text style={styles.locationName}>Dichtste Bestemming 2</Text>
+                        <Text style={styles.locationName}>{markers[1].name.substring(0, 22)}</Text>
                     </View>
                     <View style={styles.locationRowRight}>
-                        <Text style={styles.locationDistance}>XXX,X km</Text>
+                        <Text style={styles.locationDistance}>{markers[1].distance/1000} km</Text>
                         <Icon name="chevron-right" size={30} style={styles.moreIcon} />
                     </View>
                 </View>
@@ -159,14 +185,16 @@ const HomeScreen = ({ navigation }) => {
                 <View style={styles.locationRow}>
                     <View style={styles.locationRowLeft}>
                         <Icon name="location-pin" type='material' size={30} color="#ABABAB" style={styles.locationIcon}/>
-                        <Text style={styles.locationName}>Dichtste Bestemming 3</Text>
+                        <Text style={styles.locationName}>{markers[2].name.substring(0, 22)}</Text>
                     </View>
                     <View style={styles.locationRowRight}>
-                        <Text style={styles.locationDistance}>XXX,X km</Text>
+                        <Text style={styles.locationDistance}>{markers[2].distance/1000} km</Text>
                         <Icon name="chevron-right" size={30} style={styles.moreIcon} />
                     </View>
                 </View>
             </TouchableOpacity>
+            </ScrollView>
+            }
 
         </View>
     )

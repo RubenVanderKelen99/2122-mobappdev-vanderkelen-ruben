@@ -343,7 +343,8 @@ setFaqs(faqs => faqs.concat(doc.data()))
 UI HomeScreen finale versie. <br/>
 Gebruikersdata opslaan in firestore database. <br/>
 Zones (met auto's & openingsuren) in firestore database steken. <br/>
-Zones uit firestore weergeven op de Mapview. <br/>
+Watcher op locatiedata van gebruiker (luisterd naar locatie-updates) met cleanup. <br/>
+Zones uit firestore weergeven op de Mapview, 3 dichtsbijzijnde op HomeScreen. <br/>
 #### Problemen
 1. Bij het weergeven van de FAQ komt er:
 ```    
@@ -360,6 +361,8 @@ This is a development-only warning and won't be shown in production.
 ```     
 Warning: Failed prop type: Invalid prop `coordinate` of type `number` supplied to `MapMarker`, expected `object`.
 ```
+4. Bij het berekenen van de afstand tussen 2 punten (user & zone) met getDistance() van geolib geeft deze NaN weer.
+5. Veel proberen met het zetten van states.
 #### Opgelost
 1. ?
 2. Eerst controleren of de navigatie terugkan en zo niet: terug naar HomeScreen
@@ -376,6 +379,20 @@ latitude: marker.location.latitude,
 longitude: marker.location.longitude
 }}
 ```
+4. De latitude en longitude moeten expliciet opgenoemd worden bij methode-aanroep.
+```
+//d.i. fout:    
+zoneData.distance = getDistance(
+{currentLatitude, currentLongitude},
+{zoneLatitude, zoneLongitude}
+);
+//d.i. juist:
+zoneData.distance = getDistance(
+{latitude: currentLatitude, longitude: currentLongitude},
+{latitude: zoneLatitude, longitude: zoneLongitude}
+);
+```
+5. Het updaten van states is async en een state mag dus niet gebaseerd zijn op een andere state.
 #### Bronnen
 - https://fb.me/react-warning-keys
 - https://medium.com/swlh/lets-create-mobile-app-with-react-native-and-firebase-6967a7946408
@@ -385,7 +402,11 @@ longitude: marker.location.longitude
 - https://blog.kiprosh.com/react-native-custom-google-maps-with-track-location/
 - https://stackoverflow.com/questions/53120972/how-to-call-loading-function-with-react-useeffect-only-once  
 - https://aboutreact.com/react-native-calculate-distance-between-two-locations/
+- https://www.youtube.com/watch?v=PRGHWgTydyQ  
 - https://www.codegrepper.com/code-examples/javascript/firestore+delete+document+and+subcollection
+- https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
+- https://stackoverflow.com/questions/36085726/why-is-setstate-in-reactjs-async-instead-of-sync
+
 
 ### Database structuur
 Zones -> Cars, Openinghours
@@ -425,12 +446,13 @@ Inleveren: 24/7
 ### Planning
 #### 14 Januari:
 - zonedata weergeven op homescreen: 3 dichtsbijzijnde zones + extra data bij click op marker
-- zonesScreen maken (zones zoeken, filteren, ...)  
-- mapview bij standalone app correct instellen: https://docs.expo.dev/versions/latest/sdk/map-view/  
-- firestore database security rules
+- zonesScreen maken (zones zoeken, filteren, ...) 
+- data lokaal opslaan met AsyncStorage
 - Auto's toevoegen aan zones en weergeven (aantal# op Homescreen en lijst op ZoneDetailScreen)
-- dichtsbijzijnde zones weergeven voor gebruiker
 - userdata weergeven op HomeScreen
+- userLocatie updaten bij veranderen positie (luisteren naar event?)
+- mapview bij standalone app correct instellen: https://docs.expo.dev/versions/latest/sdk/map-view/
+- firestore database security rules  
 - eens bekijken hoe Realm ineen zit en of dit kan helpen
 #### 15 Januari:
 - Transactie starten vanuit gelesecteerde auto
