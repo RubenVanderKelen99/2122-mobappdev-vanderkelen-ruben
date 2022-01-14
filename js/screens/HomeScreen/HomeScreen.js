@@ -4,6 +4,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { Button, TextInput } from 'react-native-paper';
 import { Icon } from 'react-native-elements';
 import { auth } from '../../firebase';
+import { db } from '../../firebase';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 import styles from '../styles';
@@ -18,25 +19,24 @@ const HomeScreen = ({ navigation }) => {
 
     const mapViewRef = createRef();
 
-    const [markers, setMarkers] = useState(
-    [{
-    title: 'test',
-    description: 'description',
-    coordinate: {
-    latitude: 51.04807886707637,
-    longitude: 3.7296714985957045
-    }},
-    {
-    title: 'test2',
-    description: 'description',
-    coordinate: {
-    latitude: 51.05807886707637,
-    longitude: 3.7296714985957045
-    }},
-    ]);
+    const [markers, setMarkers] = useState([]);
 
     useEffect(() => {
         (async () => {
+            const zonesRef = db.collection('zones');
+            const snapshot = await zonesRef.get();
+            //data telkens pushen naar faqs, faqs eerst leegmaken
+            setMarkers(markers => []);
+            var zones = [];
+            snapshot.forEach(doc => {
+                console.log(doc.id, '=>', doc.data());
+                const zoneData = doc.data();
+                zoneData.id = doc.id;
+                //markers.push(zoneData);
+                zones.push(zoneData);
+                setMarkers(markers => markers.concat(zoneData));
+            });
+
             let { status } = await Location.requestForegroundPermissionsAsync();
             if (status !== 'granted') {
                 setErrorMsg('Permission to access location was denied');
@@ -59,8 +59,8 @@ const HomeScreen = ({ navigation }) => {
         let currentRegion={
             latitude: currentLatitude,
             longitude: currentLongitude,
-            latitudeDelta: 0.1,
-            longitudeDelta: 0.15,
+            latitudeDelta: 0.05,
+            longitudeDelta: 0.10,
         }
         //console.log(currentRegion);
         //console.log(mapViewRef);
@@ -90,21 +90,25 @@ const HomeScreen = ({ navigation }) => {
                 initialRegion={{
                 latitude: currentLatitude,
                 longitude: currentLongitude,
-                latitudeDelta: 0.1,
-                longitudeDelta: 0.15,
+                latitudeDelta: 0.05,
+                longitudeDelta: 0.10,
                 }}
                 showsUserLocation={true}
                 showsMyLocationButton={false}
                 ref={mapViewRef}
                 >
-                {markers.map((marker, index) => (
+            {markers.map((marker) => (
                     <Marker
-                      key={index}
-                      coordinate={marker.coordinate}
-                      title={marker.title}
-                      description={marker.description}
+                      key={marker.id}
+                      coordinate={{
+                      latitude: marker.location.latitude,
+                      longitude: marker.location.longitude
+                      }}
+                      title={marker.name}
+                      description={marker.id}
                     />
                   ))}
+
                 </MapView>
                 }
             </View>

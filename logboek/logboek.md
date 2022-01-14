@@ -343,6 +343,7 @@ setFaqs(faqs => faqs.concat(doc.data()))
 UI HomeScreen finale versie. <br/>
 Gebruikersdata opslaan in firestore database. <br/>
 Zones (met auto's & openingsuren) in firestore database steken. <br/>
+Zones uit firestore weergeven op de Mapview. <br/>
 #### Problemen
 1. Bij het weergeven van de FAQ komt er:
 ```    
@@ -350,20 +351,31 @@ Warning: Each child in a list should have a unique "key" prop.
 Check the render method of `FAQScreen`. See https://fb.me/react-warning-keys for more information.
 ```
 2. Bij het teruggaan op sommige schermen verschijnt er een error:
-```       
+```   
 The action 'GO_BACK' was not handled by any navigator.
 Is there any screen to go back to?
 This is a development-only warning and won't be shown in production.
 ```
+3. De data uit firebase kan niet rechtstreeks gebruikt worden om markers op de mapview weer te geven, error zegt:
+```     
+Warning: Failed prop type: Invalid prop `coordinate` of type `number` supplied to `MapMarker`, expected `object`.
+```
 #### Opgelost
 1. ?
 2. Eerst controleren of de navigatie terugkan en zo niet: terug naar HomeScreen
-```    
+``` 
 if (navigation.canGoBack())
    navigation.goBack()
 else
    navigation.navigate('home')
-```    
+```
+3. De Coordinate-prop van de Marker moet expliciet opgesplitst worden:
+```       
+coordinate={{
+latitude: marker.location.latitude,
+longitude: marker.location.longitude
+}}
+```
 #### Bronnen
 - https://fb.me/react-warning-keys
 - https://medium.com/swlh/lets-create-mobile-app-with-react-native-and-firebase-6967a7946408
@@ -375,12 +387,10 @@ else
 ### Database structuur
 Zones -> Cars, Openinghours
 Zone:
-id - number 
 location (lat + lng) - geopoint
 name - string
 
 Cars:
-id - string (auto-generated)
 name - string
 seats - number
 doors - number
