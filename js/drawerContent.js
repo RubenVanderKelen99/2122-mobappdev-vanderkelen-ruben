@@ -50,14 +50,14 @@ export function DrawerContent(props) {
                         <DrawerItem
                             icon={({color, size}) => (
                                 <Icon
-                                    name="account-outline"
+                                    name="map-marker-outline"
                                     color={color}
                                     size={size}
                                     type='material-community'
                                 />
                             )}
-                            label="Profile"
-                            onPress={() => {props.navigation.navigate('History')}}
+                            label="Zones"
+                            onPress={() => {props.navigation.navigate('Zones')}}
                         />
 
                         <DrawerItem

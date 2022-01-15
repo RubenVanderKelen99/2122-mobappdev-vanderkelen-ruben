@@ -345,6 +345,7 @@ Gebruikersdata opslaan in firestore database. <br/>
 Zones (met auto's & openingsuren) in firestore database steken. <br/>
 Watcher op locatiedata van gebruiker (luisterd naar locatie-updates) met cleanup. <br/>
 Zones uit firestore weergeven op de Mapview, afstand tussen gebruikerslocatie & zones berekenen en weergeven. <br/>
+Aanmaken ZonesScreen en opzetten routering. <br/>
 #### Problemen
 1. Bij het weergeven van de FAQ komt er:
 ```    
@@ -392,7 +393,7 @@ zoneData.distance = getDistance(
 {latitude: zoneLatitude, longitude: zoneLongitude}
 );
 ```
-5. Het updaten van states is async en een state mag dus niet gebaseerd zijn op een andere state.
+5. Het updaten van states is async en een state mag dus niet gebaseerd zijn op een andere state. Oplossing: in UseEffect luisteren naar veranderingen in state.
 #### Bronnen
 - https://fb.me/react-warning-keys
 - https://medium.com/swlh/lets-create-mobile-app-with-react-native-and-firebase-6967a7946408
@@ -406,6 +407,7 @@ zoneData.distance = getDistance(
 - https://www.codegrepper.com/code-examples/javascript/firestore+delete+document+and+subcollection
 - https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
 - https://stackoverflow.com/questions/36085726/why-is-setstate-in-reactjs-async-instead-of-sync
+- https://stackoverflow.com/questions/62035096/react-native-call-function-when-a-specific-state-changes
 
 
 ### Database structuur
@@ -450,10 +452,8 @@ Inleveren: 24/7
 - data lokaal opslaan met AsyncStorage
 - Auto's toevoegen aan zones en weergeven (aantal# op Homescreen en lijst op ZoneDetailScreen)
 - userdata weergeven op HomeScreen
-- userLocatie updaten bij veranderen positie (luisteren naar event?)
 - mapview bij standalone app correct instellen: https://docs.expo.dev/versions/latest/sdk/map-view/
-- firestore database security rules  
-- eens bekijken hoe Realm ineen zit en of dit kan helpen
+- firestore database security rules
 #### 15 Januari:
 - Transactie starten vanuit gelesecteerde auto
 - Transacties in firestore steken
@@ -463,7 +463,7 @@ Inleveren: 24/7
 - Beveiligde authenticatie en autorisatie: OAuth2, OpenID Connect, JWT etc. (vereiste) nog bekijken
 - updaten naar Playstore (version code in app.json naar 2 (1 -> 2))
 #### 16 Januari:
-- data sync nog eens bekijken (realm?) voor minder requests
+- data sync nog eens bekijken
 - laatste aanpassingen, testen van app/bugfixing
 - Deadline is om 20u -> finale push naar git
 #### Als er nog extra tijd is:

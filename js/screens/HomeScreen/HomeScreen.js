@@ -41,7 +41,7 @@ const HomeScreen = ({ navigation }) => {
     }, []);
 
 
-    // This code is for it to run whenever your variable, timerOn, changes
+    // Code will run whenever variable locationData changes
     useEffect(() => {
         console.log(1);
 
@@ -49,7 +49,7 @@ const HomeScreen = ({ navigation }) => {
             console.log(2);
             getMarkers();
         }
-    }, [locationData]); // The second parameters are the variables this useEffect is listening to for changes.
+    }, [locationData]); // The second parameter(s) are the variables this useEffect is listening to for changes.
 
 
     const signOut = () => {
@@ -58,41 +58,37 @@ const HomeScreen = ({ navigation }) => {
     }
 
     const getMarkers = async () => {
-        //if(locationData !== null) {
-            const zonesRef = db.collection('zones');
-            const snapshot = await zonesRef.get();
-            //data telkens pushen naar markers, markers eerst leegmaken
-            //setMarkers(markers => []);
-            var zones = [];
-            var zoneLatitude;
-            var zoneLongitude;
-            var distance;
-            snapshot.forEach(doc => {
-                //console.log(doc.id, '=>', doc.data());
-                const zoneData = doc.data();
-                zoneData.id = doc.id;
-                zoneLatitude = doc.data().location.latitude
-                zoneLongitude = doc.data().location.longitude
-                distance = getDistance(
-                {latitude: locationData.coords.latitude, longitude: locationData.coords.longitude},
-                {latitude: zoneLatitude, longitude: zoneLongitude}
-                );
-                zoneData.distance = distance;
-                zones.push(zoneData);
-                //deze data nu eerst opslaan in async storage en dan pas naar state setten
-                //setMarkers(markers => markers.concat(zoneData));
+        const zonesRef = db.collection('zones');
+        const snapshot = await zonesRef.get();
+        //data telkens pushen naar markers, markers eerst leegmaken
+        //setMarkers(markers => []);
+        var zones = [];
+        var zoneLatitude;
+        var zoneLongitude;
+        var distance;
+        snapshot.forEach(doc => {
+            //console.log(doc.id, '=>', doc.data());
+            const zoneData = doc.data();
+            zoneData.id = doc.id;
+            zoneLatitude = doc.data().location.latitude
+            zoneLongitude = doc.data().location.longitude
+            distance = getDistance(
+            {latitude: locationData.coords.latitude, longitude: locationData.coords.longitude},
+            {latitude: zoneLatitude, longitude: zoneLongitude}
+            );
+            zoneData.distance = distance;
+            zones.push(zoneData);
+            //deze data nu eerst opslaan in async storage en dan pas naar state setten
             });
-            setMarkers(zones);
-            //console.log(markers);
-            //console.log(zones);
-        //}
+        setMarkers(zones);
+        //console.log(markers);
+        //console.log(zones);
     }
 
     const updateUserLocation = async () => {
     console.log('new location');
     let locationNew = await Location.getCurrentPositionAsync({});
     await setLocation(locationNew);
-    //getMarkers();
     }
 
     const toUserLocation = () => {
@@ -102,8 +98,6 @@ const HomeScreen = ({ navigation }) => {
             latitudeDelta: 0.05,
             longitudeDelta: 0.10,
         }
-        //console.log(currentRegion);
-        //console.log(mapViewRef);
         mapViewRef.current.animateToRegion(currentRegion, 1000);
     }
 
@@ -156,59 +150,62 @@ const HomeScreen = ({ navigation }) => {
             <Text style={styles.locationHeaderSub}>Welkom gebruiker</Text>
             <Text style={styles.locationHeaderMain}>Een locatie zoeken</Text>
 
-            <TouchableOpacity>
-                <TextInput
-                    placeholder='Zoek een stad of een plaats'
-                    style={styles.locationInput}
-                    left={<TextInput.Icon name="map-search" color="orange" />}
-                    theme={{colors: {primary: 'orange'}}}
-                    selectionColor='orange'
-                    onChangeText={text => setSearchLocation(text)}
-                    value={searchLocation}
-                />
+            <TextInput
+                placeholder='Zoek een stad of een plaats'
+                style={styles.locationInput}
+                left={<TextInput.Icon name="map-search" color="orange" />}
+                theme={{colors: {primary: 'orange'}}}
+                selectionColor='orange'
+                onChangeText={text => setSearchLocation(text)}
+                value={searchLocation}
+            />
 
-            </TouchableOpacity>
-
-            {markers[2] !== undefined &&
+            {markers && markers.length > 0 &&
             <ScrollView>
-            <TouchableOpacity>
-                <View style={styles.locationRow}>
-                    <View style={styles.locationRowLeft}>
-                        <Icon name="location-pin" type='material' size={30} color="#ABABAB" style={styles.locationIcon}/>
-                        <Text style={styles.locationName}>{markers[0].name.substring(0, 22)}</Text>
+                <TouchableOpacity
+                onPress={() => {navigation.navigate('Zones')}}
+                >
+                    <View style={styles.locationRow}>
+                        <View style={styles.locationRowLeft}>
+                            <Icon name="location-pin" type='material' size={30} color="#ABABAB" style={styles.locationIcon}/>
+                            <Text style={styles.locationName}>{markers[0].name.substring(0, 22)}</Text>
+                        </View>
+                        <View style={styles.locationRowRight}>
+                            <Text style={styles.locationDistance}>{markers[0].distance/1000} km</Text>
+                            <Icon name="chevron-right" size={30} style={styles.moreIcon} />
+                        </View>
                     </View>
-                    <View style={styles.locationRowRight}>
-                        <Text style={styles.locationDistance}>{markers[0].distance/1000} km</Text>
-                        <Icon name="chevron-right" size={30} style={styles.moreIcon} />
-                    </View>
-                </View>
-            </TouchableOpacity>
+                </TouchableOpacity>
 
-            <TouchableOpacity>
-                <View style={styles.locationRow}>
-                    <View style={styles.locationRowLeft}>
-                        <Icon name="location-pin" type='material' size={30} color="#ABABAB" style={styles.locationIcon}/>
-                        <Text style={styles.locationName}>{markers[1].name.substring(0, 22)}</Text>
+                <TouchableOpacity
+                onPress={() => {navigation.navigate('Zones')}}
+                >
+                    <View style={styles.locationRow}>
+                        <View style={styles.locationRowLeft}>
+                            <Icon name="location-pin" type='material' size={30} color="#ABABAB" style={styles.locationIcon}/>
+                            <Text style={styles.locationName}>{markers[1].name.substring(0, 22)}</Text>
+                        </View>
+                        <View style={styles.locationRowRight}>
+                            <Text style={styles.locationDistance}>{markers[1].distance/1000} km</Text>
+                            <Icon name="chevron-right" size={30} style={styles.moreIcon} />
+                        </View>
                     </View>
-                    <View style={styles.locationRowRight}>
-                        <Text style={styles.locationDistance}>{markers[1].distance/1000} km</Text>
-                        <Icon name="chevron-right" size={30} style={styles.moreIcon} />
-                    </View>
-                </View>
-            </TouchableOpacity>
+                </TouchableOpacity>
 
-            <TouchableOpacity>
-                <View style={styles.locationRow}>
-                    <View style={styles.locationRowLeft}>
-                        <Icon name="location-pin" type='material' size={30} color="#ABABAB" style={styles.locationIcon}/>
-                        <Text style={styles.locationName}>{markers[2].name.substring(0, 22)}</Text>
+                <TouchableOpacity
+                onPress={() => {navigation.navigate('Zones')}}
+                >
+                    <View style={styles.locationRow}>
+                        <View style={styles.locationRowLeft}>
+                            <Icon name="location-pin" type='material' size={30} color="#ABABAB" style={styles.locationIcon}/>
+                            <Text style={styles.locationName}>{markers[2].name.substring(0, 22)}</Text>
+                        </View>
+                        <View style={styles.locationRowRight}>
+                            <Text style={styles.locationDistance}>{markers[2].distance/1000} km</Text>
+                            <Icon name="chevron-right" size={30} style={styles.moreIcon} />
+                        </View>
                     </View>
-                    <View style={styles.locationRowRight}>
-                        <Text style={styles.locationDistance}>{markers[2].distance/1000} km</Text>
-                        <Icon name="chevron-right" size={30} style={styles.moreIcon} />
-                    </View>
-                </View>
-            </TouchableOpacity>
+                </TouchableOpacity>
             </ScrollView>
             }
 
