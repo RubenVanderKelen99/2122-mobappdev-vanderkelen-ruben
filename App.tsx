@@ -8,6 +8,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { LoginScreen, HomeScreen, RegistrationScreen, CompleteProfileScreen, HistoryScreen, PromotionsScreen, FAQScreen, AboutScreen, ZonesScreen } from './js/screens'
 import { db } from './js/firebase';
 import { auth } from './js/firebase';
+import DataAccess from './js/localDataStore';
 import { DrawerContent } from './js/drawerContent';
 
 LogBox.ignoreLogs(['Setting a timer']);
@@ -44,6 +45,7 @@ export default function App() {
                         const userData = document.data()
                         setUser(userData)
                         setSignedIn(true)
+                        DataAccess.saveUserData(userData);
                     })
                 .catch((error) => {
                     alert(error)

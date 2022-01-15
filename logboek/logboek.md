@@ -346,6 +346,7 @@ Zones (met auto's & openingsuren) in firestore database steken. <br/>
 Watcher op locatiedata van gebruiker (luisterd naar locatie-updates) met cleanup. <br/>
 Zones uit firestore weergeven op de Mapview, afstand tussen gebruikerslocatie & zones berekenen en weergeven. <br/>
 Aanmaken ZonesScreen en opzetten routering. <br/>
+Data lokaal opslaan met AsyncStorage. <br/>
 #### Problemen
 1. Bij het weergeven van de FAQ komt er:
 ```    
@@ -408,6 +409,9 @@ zoneData.distance = getDistance(
 - https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
 - https://stackoverflow.com/questions/36085726/why-is-setstate-in-reactjs-async-instead-of-sync
 - https://stackoverflow.com/questions/62035096/react-native-call-function-when-a-specific-state-changes
+- https://github.com/react-native-async-storage/async-storage
+- https://react-native-async-storage.github.io/async-storage/docs/install/
+- https://www.youtube.com/watch?v=PRGHWgTydyQ&t=720s
 
 
 ### Database structuur
@@ -446,15 +450,13 @@ Inleveren: 24/7
 ### To-do
 - Bij updaten play store: version code in app.json naar 2 (1 -> 2)
 ### Planning
-#### 14 Januari:
+#### 15 Januari:
 - zonedata weergeven op homescreen: 3 dichtsbijzijnde zones + extra data bij click op marker
-- zonesScreen maken (zones zoeken, filteren, ...) 
-- data lokaal opslaan met AsyncStorage
-- Auto's toevoegen aan zones en weergeven (aantal# op Homescreen en lijst op ZoneDetailScreen)
-- userdata weergeven op HomeScreen
+- zonesScreen maken (zones zoeken, filteren, ...)
+- Auto's toevoegen aan zones en weergeven (aantal# op Homescreen en lijst op ZoneDetailScreen) via AsyncStorage
 - mapview bij standalone app correct instellen: https://docs.expo.dev/versions/latest/sdk/map-view/
 - firestore database security rules
-#### 15 Januari:
+- structuur andere files bekijken
 - Transactie starten vanuit gelesecteerde auto
 - Transacties in firestore steken
 - Reminder voor Transacties (ophalen/leveren) in agenda ?

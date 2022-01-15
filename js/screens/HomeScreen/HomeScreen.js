@@ -5,6 +5,7 @@ import { Button, TextInput } from 'react-native-paper';
 import { Icon } from 'react-native-elements';
 import { auth } from '../../firebase';
 import { db } from '../../firebase';
+import DataAccess from '../../localDataStore';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 import { getDistance } from 'geolib';
@@ -12,6 +13,7 @@ import styles from '../styles';
 
 const HomeScreen = ({ navigation }) => {
 
+    const [userData, setUserData] = useState(null);
     const [locationData, setLocation] = useState(null);
     const [errorMsg, setErrorMsg] = useState('');
     const [searchLocation, setSearchLocation] = useState('');
@@ -22,6 +24,8 @@ const HomeScreen = ({ navigation }) => {
 
     useEffect(() => {
         (async () => {
+
+            setUserData(await DataAccess.getUserData());
             let { status } = await Location.requestForegroundPermissionsAsync();
             if (status !== 'granted') {
                 setErrorMsg('Permission to access location was denied');
@@ -102,7 +106,7 @@ const HomeScreen = ({ navigation }) => {
     }
 
     return (
-        <View style={styles.container}>
+        <View style={styles.homeContainer}>
             <View style={styles.mapViewContainer}>
                 <TouchableOpacity
                     style={styles.roundButtonMenu}
@@ -147,7 +151,7 @@ const HomeScreen = ({ navigation }) => {
                 }
             </View>
 
-            <Text style={styles.locationHeaderSub}>Welkom gebruiker</Text>
+            <Text style={styles.locationHeaderSub}>Welkom {userData ? userData.username : 'gebruiker'}</Text>
             <Text style={styles.locationHeaderMain}>Een locatie zoeken</Text>
 
             <TextInput

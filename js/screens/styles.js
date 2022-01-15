@@ -8,10 +8,15 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         alignItems: 'center',
+        paddingTop: Constants.statusBarHeight,
+    },
+    homeContainer: {
+        flex: 1,
+        flexDirection: 'column',
+        alignItems: 'center',
     },
     scrollContainer: {
         width: '100%',
-        maxWidth: 500,
     },
     authFormContainer: {
         paddingTop: Constants.statusBarHeight,
@@ -113,7 +118,7 @@ const styles = StyleSheet.create({
     },
     headerContainer: {
         flexDirection: 'row',
-        justifyContent: 'flex-start',
+        alignSelf: 'flex-start',
         alignItems: 'center',
     },
     headerBackButton: {
@@ -122,7 +127,7 @@ const styles = StyleSheet.create({
         marginRight: 20,
     },
     headerTitle: {
-        alignSelf: 'flex-end',
+        alignSelf: 'center',
         fontFamily:'Roboto',
         fontWeight: 'bold',
         fontSize: 22,

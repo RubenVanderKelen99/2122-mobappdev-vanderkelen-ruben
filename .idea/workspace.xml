@@ -12,14 +12,19 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Afstand tussen gebruikerslocatie &amp; zones berekenen en weergeven">
-      <change afterPath="$PROJECT_DIR$/js/screens/ZonesScreen/ZonesScreen.js" afterDir="false" />
+    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Aanmaken ZonesScreen.js en opzetten routering">
+      <change afterPath="$PROJECT_DIR$/js/localDataStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/drawerContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/drawerContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/AboutScreen/AboutScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/AboutScreen/AboutScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/FAQScreen/FAQScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/FAQScreen/FAQScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/ZonesScreen/ZonesScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/ZonesScreen/ZonesScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/styles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logboek/logboek.md" beforeDir="false" afterPath="$PROJECT_DIR$/logboek/logboek.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +62,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Stage/HokaAppV4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Stage/HokaAppV3_old" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -129,13 +134,6 @@
       <workItem from="1633611686487" duration="81000" />
       <workItem from="1637921785275" duration="5000" />
       <workItem from="1640535056965" duration="52000" />
-    </task>
-    <task id="LOCAL-00002" summary="Installatie van NativeBase">
-      <created>1633444234725</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1633444234725</updated>
     </task>
     <task id="LOCAL-00003" summary="Verbinding maken met backend (API van Back4App) - werkt niet">
       <created>1633611402832</created>
@@ -473,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642211701676</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Aanmaken ZonesScreen.js en opzetten routering">
+      <created>1642254314039</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1642254314040</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,7 +502,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fix Expo" />
     <MESSAGE value="Stack Navigator Setup fix (import react-native-gesture-handler + install @react-native-masked-view/masked-view)" />
     <MESSAGE value="Implementatie drawer navigation" />
     <MESSAGE value="Aanmaak nieuwe schermen, Routering van drawer navigation afgewerkt" />
@@ -522,6 +526,7 @@
     <MESSAGE value="Update logboek.md: finale planning" />
     <MESSAGE value="Watch gebruikerslocatieupdates" />
     <MESSAGE value="Afstand tussen gebruikerslocatie &amp; zones berekenen en weergeven" />
-    <option name="LAST_COMMIT_MESSAGE" value="Afstand tussen gebruikerslocatie &amp; zones berekenen en weergeven" />
+    <MESSAGE value="Aanmaken ZonesScreen.js en opzetten routering" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aanmaken ZonesScreen.js en opzetten routering" />
   </component>
 </project>

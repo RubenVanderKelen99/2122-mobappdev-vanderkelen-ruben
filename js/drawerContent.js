@@ -1,14 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import { Button } from 'react-native-paper';
 import { auth } from './firebase';
 import { db } from './firebase';
+import DataAccess from './localDataStore';
 import { Icon } from 'react-native-elements';
 import styles from './screens/styles';
 import { Avatar, Title, Caption, Paragraph, Drawer, Text, TouchableRipple, Switch } from 'react-native-paper';
 import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
 
 export function DrawerContent(props) {
+
+    const [userData, setUserData] = useState(null);
+
+    useEffect(() => {
+        (async () => {
+            console.log("test");
+            setUserData(await DataAccess.getUserData());
+        })();
+    }, []); // The second parameter(s) are the variables this useEffect is listening to for changes.
+
 
     const signOut = () => {
         auth
@@ -27,8 +38,8 @@ export function DrawerContent(props) {
                                 size={40}
                             />
                             <View style={{marginLeft:15, flexDirection:'column'}}>
-                                <Title style={styles.drawerUsername}>Username</Title>
-                                <Caption style={styles.drawerMail}>user@email.com</Caption>
+                                <Title style={styles.drawerUsername}>{userData ? userData.username : 'Username'}</Title>
+                                <Caption style={styles.drawerMail}>{userData ? userData.email : 'email'}</Caption>
                             </View>
                         </View>
                     </View>

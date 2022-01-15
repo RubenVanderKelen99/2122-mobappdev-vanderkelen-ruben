@@ -15,21 +15,15 @@ const AboutScreen = ({ navigation }) => {
     }
 
     return (
-        <KeyboardAvoidingView style={styles.container}
-        behavior="height" enabled keyboardVerticalOffset={50}>
-            <ScrollView style={styles.scrollContainer}>
-                <View style={styles.authFormContainer}>
-                    <View style={styles.headerContainer}>
-                        <TouchableOpacity
-                            onPress={() => navBack()}
-                        >
-                            <Icon name={"arrow-back"} size={25} color={'#4F4F4F'} style={styles.headerBackButton}/>
-                        </TouchableOpacity>
-                        <Text style={styles.headerTitle}> About us </Text>
-                    </View>
-                </View>
-            </ScrollView>
-        </KeyboardAvoidingView>
+        <View style={styles.container}>
+            <View style={styles.headerContainer}>
+                <TouchableOpacity onPress={() => navBack()}>
+                    <Icon name={"arrow-back"} size={25} color={'#4F4F4F'} style={styles.headerBackButton}/>
+                </TouchableOpacity>
+                <Text style={styles.headerTitle}> About us </Text>
+            </View>
+
+        </View>
     )
 };
 
