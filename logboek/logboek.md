@@ -347,6 +347,7 @@ Watcher op locatiedata van gebruiker (luisterd naar locatie-updates) met cleanup
 Zones uit firestore weergeven op de Mapview, afstand tussen gebruikerslocatie & zones berekenen en weergeven. <br/>
 Aanmaken ZonesScreen en opzetten routering. <br/>
 Data lokaal opslaan met AsyncStorage. <br/>
+Userdata uit AsyncStorage weergeven op HomeScreen. <br/>
 #### Problemen
 1. Bij het weergeven van de FAQ komt er:
 ```    
@@ -412,6 +413,7 @@ zoneData.distance = getDistance(
 - https://github.com/react-native-async-storage/async-storage
 - https://react-native-async-storage.github.io/async-storage/docs/install/
 - https://www.youtube.com/watch?v=PRGHWgTydyQ&t=720s
+- https://stackoverflow.com/questions/47876754/query-firestore-database-for-document-id
 
 
 ### Database structuur

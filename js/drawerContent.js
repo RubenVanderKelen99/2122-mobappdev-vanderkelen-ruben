@@ -15,7 +15,6 @@ export function DrawerContent(props) {
 
     useEffect(() => {
         (async () => {
-            console.log("test");
             setUserData(await DataAccess.getUserData());
         })();
     }, []); // The second parameter(s) are the variables this useEffect is listening to for changes.

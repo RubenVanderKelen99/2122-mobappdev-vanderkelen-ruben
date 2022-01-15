@@ -12,19 +12,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Aanmaken ZonesScreen.js en opzetten routering">
-      <change afterPath="$PROJECT_DIR$/js/localDataStore.js" afterDir="false" />
+    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Data lokaal opslaan met AsyncStorage (localDataStore.js), userdata weergeven op HomeScreen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/drawerContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/drawerContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/AboutScreen/AboutScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/AboutScreen/AboutScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/FAQScreen/FAQScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/FAQScreen/FAQScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/localDataStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/localDataStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/ZonesScreen/ZonesScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/ZonesScreen/ZonesScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/styles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logboek/logboek.md" beforeDir="false" afterPath="$PROJECT_DIR$/logboek/logboek.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,13 +127,6 @@
       <workItem from="1633611686487" duration="81000" />
       <workItem from="1637921785275" duration="5000" />
       <workItem from="1640535056965" duration="52000" />
-    </task>
-    <task id="LOCAL-00003" summary="Verbinding maken met backend (API van Back4App) - werkt niet">
-      <created>1633611402832</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1633611402832</updated>
     </task>
     <task id="LOCAL-00004" summary="Verbinding maken met backend (API van Back4App) - werkt nog steeds niet">
       <created>1633617338499</created>
@@ -478,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642254314040</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Data lokaal opslaan met AsyncStorage (localDataStore.js), userdata weergeven op HomeScreen">
+      <created>1642263618533</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1642263618533</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -502,7 +495,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Stack Navigator Setup fix (import react-native-gesture-handler + install @react-native-masked-view/masked-view)" />
     <MESSAGE value="Implementatie drawer navigation" />
     <MESSAGE value="Aanmaak nieuwe schermen, Routering van drawer navigation afgewerkt" />
     <MESSAGE value="Toevoegen back button/header aan AboutScreen.js, FAQScreen.js, HistoryScreen.js &amp; PromotionsScreen.js" />
@@ -527,6 +519,7 @@
     <MESSAGE value="Watch gebruikerslocatieupdates" />
     <MESSAGE value="Afstand tussen gebruikerslocatie &amp; zones berekenen en weergeven" />
     <MESSAGE value="Aanmaken ZonesScreen.js en opzetten routering" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aanmaken ZonesScreen.js en opzetten routering" />
+    <MESSAGE value="Data lokaal opslaan met AsyncStorage (localDataStore.js), userdata weergeven op HomeScreen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Data lokaal opslaan met AsyncStorage (localDataStore.js), userdata weergeven op HomeScreen" />
   </component>
 </project>

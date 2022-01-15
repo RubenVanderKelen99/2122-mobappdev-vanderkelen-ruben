@@ -25,6 +25,7 @@ const HomeScreen = ({ navigation }) => {
     useEffect(() => {
         (async () => {
 
+            await DataAccess.setMarkers();
             setUserData(await DataAccess.getUserData());
             let { status } = await Location.requestForegroundPermissionsAsync();
             if (status !== 'granted') {
@@ -47,46 +48,21 @@ const HomeScreen = ({ navigation }) => {
 
     // Code will run whenever variable locationData changes
     useEffect(() => {
-        console.log(1);
+        (async () => {
+            console.log(1);
 
-        if(locationData !== null) {
-            console.log(2);
-            getMarkers();
-        }
+            if(locationData !== null) {
+                console.log(2);
+                setMarkers(await DataAccess.getMarkers());
+                await DataAccess.setZoneDistances(locationData.coords.latitude, locationData.coords.longitude);
+            }
+        })();
     }, [locationData]); // The second parameter(s) are the variables this useEffect is listening to for changes.
 
 
     const signOut = () => {
         auth
             .signOut()
-    }
-
-    const getMarkers = async () => {
-        const zonesRef = db.collection('zones');
-        const snapshot = await zonesRef.get();
-        //data telkens pushen naar markers, markers eerst leegmaken
-        //setMarkers(markers => []);
-        var zones = [];
-        var zoneLatitude;
-        var zoneLongitude;
-        var distance;
-        snapshot.forEach(doc => {
-            //console.log(doc.id, '=>', doc.data());
-            const zoneData = doc.data();
-            zoneData.id = doc.id;
-            zoneLatitude = doc.data().location.latitude
-            zoneLongitude = doc.data().location.longitude
-            distance = getDistance(
-            {latitude: locationData.coords.latitude, longitude: locationData.coords.longitude},
-            {latitude: zoneLatitude, longitude: zoneLongitude}
-            );
-            zoneData.distance = distance;
-            zones.push(zoneData);
-            //deze data nu eerst opslaan in async storage en dan pas naar state setten
-            });
-        setMarkers(zones);
-        //console.log(markers);
-        //console.log(zones);
     }
 
     const updateUserLocation = async () => {
@@ -175,7 +151,7 @@ const HomeScreen = ({ navigation }) => {
                             <Text style={styles.locationName}>{markers[0].name.substring(0, 22)}</Text>
                         </View>
                         <View style={styles.locationRowRight}>
-                            <Text style={styles.locationDistance}>{markers[0].distance/1000} km</Text>
+                            <Text style={styles.locationDistance}>xxx km</Text>
                             <Icon name="chevron-right" size={30} style={styles.moreIcon} />
                         </View>
                     </View>
@@ -190,7 +166,7 @@ const HomeScreen = ({ navigation }) => {
                             <Text style={styles.locationName}>{markers[1].name.substring(0, 22)}</Text>
                         </View>
                         <View style={styles.locationRowRight}>
-                            <Text style={styles.locationDistance}>{markers[1].distance/1000} km</Text>
+                            <Text style={styles.locationDistance}>xxx km</Text>
                             <Icon name="chevron-right" size={30} style={styles.moreIcon} />
                         </View>
                     </View>
@@ -205,7 +181,7 @@ const HomeScreen = ({ navigation }) => {
                             <Text style={styles.locationName}>{markers[2].name.substring(0, 22)}</Text>
                         </View>
                         <View style={styles.locationRowRight}>
-                            <Text style={styles.locationDistance}>{markers[2].distance/1000} km</Text>
+                            <Text style={styles.locationDistance}>xxx km</Text>
                             <Icon name="chevron-right" size={30} style={styles.moreIcon} />
                         </View>
                     </View>
