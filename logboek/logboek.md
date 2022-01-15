@@ -344,10 +344,12 @@ UI HomeScreen finale versie. <br/>
 Gebruikersdata opslaan in firestore database. <br/>
 Zones (met auto's & openingsuren) in firestore database steken. <br/>
 Watcher op locatiedata van gebruiker (luisterd naar locatie-updates) met cleanup. <br/>
-Zones uit firestore weergeven op de Mapview, afstand tussen gebruikerslocatie & zones berekenen en weergeven. <br/>
+Zones uit firestore weergeven op de Mapview. <br/>
 Aanmaken ZonesScreen en opzetten routering. <br/>
 Data lokaal opslaan met AsyncStorage. <br/>
 Userdata uit AsyncStorage weergeven op HomeScreen. <br/>
+Afstand tussen gebruikerslocatie & zones berekenen met AsyncStorage. <br/>
+Zones sorteren op afstand (van gebruikerslocatie). <br/>
 #### Problemen
 1. Bij het weergeven van de FAQ komt er:
 ```    
@@ -365,7 +367,12 @@ This is a development-only warning and won't be shown in production.
 Warning: Failed prop type: Invalid prop `coordinate` of type `number` supplied to `MapMarker`, expected `object`.
 ```
 4. Bij het berekenen van de afstand tussen 2 punten (user & zone) met getDistance() van geolib geeft deze NaN weer.
-5. Veel proberen met het zetten van states.
+5. Veel problemen bij het zetten van states.
+6. Het is niet mogelijk om functies van localDataStore.js in andere functies van de localDataStore aan te roepen.
+``` 
+Can't find variable: getSortedZonesWithDistance
+```
+7. Bij een locatieupdate wordt de callback functie in Location.watchPositionAsync() meerdere keren aangeroepen waardoor er enorm veel variabelen moeten berekend/gewijzigd worden.
 #### Opgelost
 1. ?
 2. Eerst controleren of de navigatie terugkan en zo niet: terug naar HomeScreen
@@ -396,6 +403,11 @@ zoneData.distance = getDistance(
 );
 ```
 5. Het updaten van states is async en een state mag dus niet gebaseerd zijn op een andere state. Oplossing: in UseEffect luisteren naar veranderingen in state.
+6. Door de functieaanroep anders the formuleren (this.function()) werkt dit wel.
+7. Kan opgelost worden door de accuracy van Location.watchPositionAsync op high te zetten.
+```   
+let locationUpdate = await Location.watchPositionAsync({accuracy: Location.Accuracy.High, ...);
+```
 #### Bronnen
 - https://fb.me/react-warning-keys
 - https://medium.com/swlh/lets-create-mobile-app-with-react-native-and-firebase-6967a7946408
@@ -414,6 +426,7 @@ zoneData.distance = getDistance(
 - https://react-native-async-storage.github.io/async-storage/docs/install/
 - https://www.youtube.com/watch?v=PRGHWgTydyQ&t=720s
 - https://stackoverflow.com/questions/47876754/query-firestore-database-for-document-id
+- https://www.w3schools.com/js/js_array_sort.asp
 
 
 ### Database structuur

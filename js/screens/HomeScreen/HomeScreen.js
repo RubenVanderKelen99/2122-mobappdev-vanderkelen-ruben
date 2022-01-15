@@ -21,11 +21,12 @@ const HomeScreen = ({ navigation }) => {
     const mapViewRef = createRef();
 
     const [markers, setMarkers] = useState([]);
+    const [zoneDistances, setZoneDistances] = useState([]);
 
     useEffect(() => {
         (async () => {
 
-            await DataAccess.setMarkers();
+            await DataAccess.setZones();
             setUserData(await DataAccess.getUserData());
             let { status } = await Location.requestForegroundPermissionsAsync();
             if (status !== 'granted') {
@@ -35,7 +36,7 @@ const HomeScreen = ({ navigation }) => {
 
             let location = await Location.getCurrentPositionAsync({});
             setLocation(location);
-            let locationUpdate = await Location.watchPositionAsync({accuracy: Location.Accuracy.Balanced, timeInterval: 5000, distanceInterval: 10}, updateUserLocation);
+            let locationUpdate = await Location.watchPositionAsync({accuracy: Location.Accuracy.High, timeInterval: 5000, distanceInterval: 10}, updateUserLocation);
 
             return async function cleanup() {
                 console.log('Remove tracking')
@@ -53,8 +54,9 @@ const HomeScreen = ({ navigation }) => {
 
             if(locationData !== null) {
                 console.log(2);
-                setMarkers(await DataAccess.getMarkers());
-                await DataAccess.setZoneDistances(locationData.coords.latitude, locationData.coords.longitude);
+                setMarkers(await DataAccess.getZones());
+                let zoneDistances = await DataAccess.setZoneDistances(locationData.coords.latitude, locationData.coords.longitude);
+                setZoneDistances(await DataAccess.getSortedZoneDistances(zoneDistances));
             }
         })();
     }, [locationData]); // The second parameter(s) are the variables this useEffect is listening to for changes.
@@ -140,7 +142,7 @@ const HomeScreen = ({ navigation }) => {
                 value={searchLocation}
             />
 
-            {markers && markers.length > 0 &&
+            {zoneDistances && zoneDistances.length > 0 &&
             <ScrollView>
                 <TouchableOpacity
                 onPress={() => {navigation.navigate('Zones')}}
@@ -148,10 +150,10 @@ const HomeScreen = ({ navigation }) => {
                     <View style={styles.locationRow}>
                         <View style={styles.locationRowLeft}>
                             <Icon name="location-pin" type='material' size={30} color="#ABABAB" style={styles.locationIcon}/>
-                            <Text style={styles.locationName}>{markers[0].name.substring(0, 22)}</Text>
+                            <Text style={styles.locationName}>{zoneDistances[0].name.substring(0, 21)}</Text>
                         </View>
                         <View style={styles.locationRowRight}>
-                            <Text style={styles.locationDistance}>xxx km</Text>
+                            <Text style={styles.locationDistance}>{zoneDistances[0].distance / 1000} km</Text>
                             <Icon name="chevron-right" size={30} style={styles.moreIcon} />
                         </View>
                     </View>
@@ -163,10 +165,10 @@ const HomeScreen = ({ navigation }) => {
                     <View style={styles.locationRow}>
                         <View style={styles.locationRowLeft}>
                             <Icon name="location-pin" type='material' size={30} color="#ABABAB" style={styles.locationIcon}/>
-                            <Text style={styles.locationName}>{markers[1].name.substring(0, 22)}</Text>
+                            <Text style={styles.locationName}>{zoneDistances[1].name.substring(0, 21)}</Text>
                         </View>
                         <View style={styles.locationRowRight}>
-                            <Text style={styles.locationDistance}>xxx km</Text>
+                            <Text style={styles.locationDistance}>{zoneDistances[1].distance / 1000} km</Text>
                             <Icon name="chevron-right" size={30} style={styles.moreIcon} />
                         </View>
                     </View>
@@ -178,10 +180,10 @@ const HomeScreen = ({ navigation }) => {
                     <View style={styles.locationRow}>
                         <View style={styles.locationRowLeft}>
                             <Icon name="location-pin" type='material' size={30} color="#ABABAB" style={styles.locationIcon}/>
-                            <Text style={styles.locationName}>{markers[2].name.substring(0, 22)}</Text>
+                            <Text style={styles.locationName}>{zoneDistances[2].name.substring(0, 21)}</Text>
                         </View>
                         <View style={styles.locationRowRight}>
-                            <Text style={styles.locationDistance}>xxx km</Text>
+                            <Text style={styles.locationDistance}>{zoneDistances[2].distance / 1000} km</Text>
                             <Icon name="chevron-right" size={30} style={styles.moreIcon} />
                         </View>
                     </View>
