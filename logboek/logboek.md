@@ -344,7 +344,7 @@ UI HomeScreen finale versie. <br/>
 Gebruikersdata opslaan in firestore database. <br/>
 Zones (met auto's & openingsuren) in firestore database steken. <br/>
 Watcher op locatiedata van gebruiker (luisterd naar locatie-updates) met cleanup. <br/>
-Zones uit firestore weergeven op de Mapview, 3 dichtsbijzijnde op HomeScreen. <br/>
+Zones uit firestore weergeven op de Mapview, afstand tussen gebruikerslocatie & zones berekenen en weergeven. <br/>
 #### Problemen
 1. Bij het weergeven van de FAQ komt er:
 ```    

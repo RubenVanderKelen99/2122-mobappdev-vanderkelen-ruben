@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, LogBox } from 'react-native';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -9,6 +9,8 @@ import { LoginScreen, HomeScreen, RegistrationScreen, CompleteProfileScreen, His
 import { db } from './js/firebase';
 import { auth } from './js/firebase';
 import { DrawerContent } from './js/drawerContent';
+
+LogBox.ignoreLogs(['Setting a timer']);
 
 const Drawer = createDrawerNavigator();
 

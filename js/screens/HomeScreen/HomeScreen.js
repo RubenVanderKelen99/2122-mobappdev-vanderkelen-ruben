@@ -32,29 +32,6 @@ const HomeScreen = ({ navigation }) => {
             setLocation(location);
             let locationUpdate = await Location.watchPositionAsync({accuracy: Location.Accuracy.Balanced, timeInterval: 5000, distanceInterval: 10}, updateUserLocation);
 
-            const zonesRef = db.collection('zones');
-            const snapshot = await zonesRef.get();
-            //data telkens pushen naar markers, markers eerst leegmaken
-            setMarkers(markers => []);
-            var zones = [];
-            var zoneLatitude;
-            var zoneLongitude;
-            var distance;
-            snapshot.forEach(doc => {
-                //console.log(doc.id, '=>', doc.data());
-                const zoneData = doc.data();
-                zoneData.id = doc.id;
-                setMarkers(markers => markers.concat(zoneData));
-            });
-
-            /*setMarkers(markers.concat(zones)
-                .sort((a, b) => a.distance > b.distance ? 1 : -1)
-            );*/
-
-
-            //setMarkers(markers.sort((a,b) => a.distance - b.distance));
-            //console.log(markers);
-
             return async function cleanup() {
                 console.log('Remove tracking')
                 await locationUpdate.remove();
@@ -63,20 +40,59 @@ const HomeScreen = ({ navigation }) => {
         })();
     }, []);
 
-    /*
+
     // This code is for it to run whenever your variable, timerOn, changes
     useEffect(() => {
-        console.log(locationData);
+        console.log(1);
+
+        if(locationData !== null) {
+            console.log(2);
+            getMarkers();
+        }
     }, [locationData]); // The second parameters are the variables this useEffect is listening to for changes.
-    */
+
+
     const signOut = () => {
         auth
             .signOut()
     }
 
+    const getMarkers = async () => {
+        //if(locationData !== null) {
+            const zonesRef = db.collection('zones');
+            const snapshot = await zonesRef.get();
+            //data telkens pushen naar markers, markers eerst leegmaken
+            //setMarkers(markers => []);
+            var zones = [];
+            var zoneLatitude;
+            var zoneLongitude;
+            var distance;
+            snapshot.forEach(doc => {
+                //console.log(doc.id, '=>', doc.data());
+                const zoneData = doc.data();
+                zoneData.id = doc.id;
+                zoneLatitude = doc.data().location.latitude
+                zoneLongitude = doc.data().location.longitude
+                distance = getDistance(
+                {latitude: locationData.coords.latitude, longitude: locationData.coords.longitude},
+                {latitude: zoneLatitude, longitude: zoneLongitude}
+                );
+                zoneData.distance = distance;
+                zones.push(zoneData);
+                //deze data nu eerst opslaan in async storage en dan pas naar state setten
+                //setMarkers(markers => markers.concat(zoneData));
+            });
+            setMarkers(zones);
+            //console.log(markers);
+            //console.log(zones);
+        //}
+    }
+
     const updateUserLocation = async () => {
+    console.log('new location');
     let locationNew = await Location.getCurrentPositionAsync({});
-    setLocation(locationNew);
+    await setLocation(locationNew);
+    //getMarkers();
     }
 
     const toUserLocation = () => {
@@ -121,7 +137,7 @@ const HomeScreen = ({ navigation }) => {
                 showsMyLocationButton={false}
                 ref={mapViewRef}
                 >
-            {markers.map((marker) => (
+                {markers.map((marker) => (
                     <Marker
                       key={marker.id}
                       coordinate={{
@@ -131,7 +147,7 @@ const HomeScreen = ({ navigation }) => {
                       title={marker.name}
                       description={marker.id}
                     />
-                  ))}
+                ))}
 
                 </MapView>
                 }
