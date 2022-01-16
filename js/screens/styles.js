@@ -88,6 +88,9 @@ const styles = StyleSheet.create({
         top: 0,
         left: 0,
     },
+    zoneMap: {
+        alignSelf: 'center',
+    },
     roundButtonMenu: {
         borderWidth:1,
         borderColor:'rgba(0,0,0,0.2)',
@@ -169,6 +172,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
     },
     locationInput: {
+        alignSelf: 'center',
         height: 40,
         width: Dimensions.get('window').width - 40,
         marginTop: 10,

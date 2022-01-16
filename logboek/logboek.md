@@ -373,6 +373,8 @@ Warning: Failed prop type: Invalid prop `coordinate` of type `number` supplied t
 Can't find variable: getSortedZonesWithDistance
 ```
 7. Bij een locatieupdate wordt de callback functie in Location.watchPositionAsync() meerdere keren aangeroepen waardoor er enorm veel variabelen moeten berekend/gewijzigd worden.
+8. De afstand van zones in de ZonesScreen verandert niet wanneer de userlocation verandert. Deze blijft hetzelfde zolang de app draait.
+9. De toolbaar van react-native-maps verschijnt niet (gebruikt om route te bepalen met Google Maps). Dit probleem is al sinds 2016 bekend maar er is nog geen echte oplossing (https://github.com/react-native-maps/react-native-maps/search?q=toolbar&type=issues).
 #### Opgelost
 1. ?
 2. Eerst controleren of de navigatie terugkan en zo niet: terug naar HomeScreen
@@ -408,6 +410,8 @@ zoneData.distance = getDistance(
 ```   
 let locationUpdate = await Location.watchPositionAsync({accuracy: Location.Accuracy.High, ...);
 ```
+8. Door gebruik te maken useFocusEffect van react-navigation kunnen er state updates gedaan worden wanneer het scherm gefocusd wordt.
+9. Door de MapView eenmalig te resizen werkt de toolbar.
 #### Bronnen
 - https://fb.me/react-warning-keys
 - https://medium.com/swlh/lets-create-mobile-app-with-react-native-and-firebase-6967a7946408
@@ -422,11 +426,14 @@ let locationUpdate = await Location.watchPositionAsync({accuracy: Location.Accur
 - https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
 - https://stackoverflow.com/questions/36085726/why-is-setstate-in-reactjs-async-instead-of-sync
 - https://stackoverflow.com/questions/62035096/react-native-call-function-when-a-specific-state-changes
+- https://github.com/manuelbieh/geolib  
 - https://github.com/react-native-async-storage/async-storage
 - https://react-native-async-storage.github.io/async-storage/docs/install/
 - https://www.youtube.com/watch?v=PRGHWgTydyQ&t=720s
 - https://stackoverflow.com/questions/47876754/query-firestore-database-for-document-id
 - https://www.w3schools.com/js/js_array_sort.asp
+- https://reactnavigation.org/docs/function-after-focusing-screen/
+- https://medium.com/nerd-for-tech/react-native-custom-search-bar-with-google-places-autocomplete-api-69b1c98de6a0
 
 
 ### Database structuur
@@ -466,10 +473,11 @@ Inleveren: 24/7
 - Bij updaten play store: version code in app.json naar 2 (1 -> 2)
 ### Planning
 #### 15 Januari:
-- zonedata weergeven op homescreen: 3 dichtsbijzijnde zones + extra data bij click op marker
+- zonedata weergeven op homescreen: extra data bij click op marker
 - zonesScreen maken (zones zoeken, filteren, ...)
 - Auto's toevoegen aan zones en weergeven (aantal# op Homescreen en lijst op ZoneDetailScreen) via AsyncStorage
 - mapview bij standalone app correct instellen: https://docs.expo.dev/versions/latest/sdk/map-view/
+- autocomplete bij search https://medium.com/nerd-for-tech/react-native-custom-search-bar-with-google-places-autocomplete-api-69b1c98de6a0  
 - firestore database security rules
 - structuur andere files bekijken
 - Transactie starten vanuit gelesecteerde auto

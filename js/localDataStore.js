@@ -25,10 +25,7 @@ let DataAccess = {
         try {
             const zonesRef = db.collection('zones');
             const snapshot = await zonesRef.get();
-            let zones = []; //was vroeger var !!!!!!!!!!!!!!!!!!!!!!!!!!!!! controleren als er iets niet werkt
-            //var zoneLatitude;
-            //var zoneLongitude;
-            //var distance;
+            let zones = [];
             snapshot.forEach(doc => {
                 const zoneData = doc.data();
                 zoneData.id = doc.id;
@@ -89,6 +86,28 @@ let DataAccess = {
     getSortedZoneDistances: async function() {
         try {
         const result = await AsyncStorage.getItem('sortedZoneDistances');
+        //console.log(JSON.parse(result));
+        return (JSON.parse(result))
+        } catch (err) {
+            console.log(err);
+        }
+    },
+    setSelectedZone: async function(id, distance) {
+        try {
+            const zonesRef = db.collection('zones').doc(id);
+            const doc = await zonesRef.get();
+            if (!doc.exists) {
+              console.log('Document does not exist');
+            } else {
+              await AsyncStorage.setItem('selectedZone', JSON.stringify(doc.data()));
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    },
+    getSelectedZone: async function() {
+        try {
+        const result = await AsyncStorage.getItem('selectedZone');
         //console.log(JSON.parse(result));
         return (JSON.parse(result))
         } catch (err) {

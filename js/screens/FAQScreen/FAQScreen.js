@@ -7,6 +7,7 @@ import { List } from 'react-native-paper';
 import styles from '../styles';
 
 const FAQScreen = ({ navigation }) => {
+
     const [faqs, setFaqs] = useState([]);
 
     useEffect(() => {

@@ -100,7 +100,7 @@ const HomeScreen = ({ navigation }) => {
                 <Icon name={"my-location"} type='material' size={30} color="gray" />
                 </TouchableOpacity>
 
-                {locationData !== null &&
+                { locationData !== null &&
                 <MapView
                 style={styles.map}
                 initialRegion={{
@@ -139,56 +139,57 @@ const HomeScreen = ({ navigation }) => {
                 theme={{colors: {primary: 'orange'}}}
                 selectionColor='orange'
                 onChangeText={text => setSearchLocation(text)}
+                onSubmitEditing={() => navigation.navigate('Zones', {searchLocation})}
                 value={searchLocation}
             />
 
             {zoneDistances && zoneDistances.length > 0 &&
-            <ScrollView>
-                <TouchableOpacity
-                onPress={() => {navigation.navigate('Zones')}}
-                >
-                    <View style={styles.locationRow}>
-                        <View style={styles.locationRowLeft}>
-                            <Icon name="location-pin" type='material' size={30} color="#ABABAB" style={styles.locationIcon}/>
-                            <Text style={styles.locationName}>{zoneDistances[0].name.substring(0, 21)}</Text>
+                <ScrollView>
+                    <TouchableOpacity
+                    onPress={() => {navigation.navigate('Zones')}}
+                    >
+                        <View style={styles.locationRow}>
+                            <View style={styles.locationRowLeft}>
+                                <Icon name="location-pin" type='material' size={30} color="#ABABAB" style={styles.locationIcon}/>
+                                <Text style={styles.locationName}>{zoneDistances[0].name.length < 20 ? zoneDistances[0].name : zoneDistances[0].name.substring(0, 20) + "..."}</Text>
+                            </View>
+                            <View style={styles.locationRowRight}>
+                                <Text style={styles.locationDistance}>{(zoneDistances[0].distance / 1000) < 1 ? (zoneDistances[0].distance) + " m" : (zoneDistances[0].distance / 1000) + " km"}</Text>
+                                <Icon name="chevron-right" size={30} style={styles.moreIcon} />
+                            </View>
                         </View>
-                        <View style={styles.locationRowRight}>
-                            <Text style={styles.locationDistance}>{zoneDistances[0].distance / 1000} km</Text>
-                            <Icon name="chevron-right" size={30} style={styles.moreIcon} />
-                        </View>
-                    </View>
-                </TouchableOpacity>
+                    </TouchableOpacity>
 
-                <TouchableOpacity
-                onPress={() => {navigation.navigate('Zones')}}
-                >
-                    <View style={styles.locationRow}>
-                        <View style={styles.locationRowLeft}>
-                            <Icon name="location-pin" type='material' size={30} color="#ABABAB" style={styles.locationIcon}/>
-                            <Text style={styles.locationName}>{zoneDistances[1].name.substring(0, 21)}</Text>
+                    <TouchableOpacity
+                    onPress={() => {navigation.navigate('Zones')}}
+                    >
+                        <View style={styles.locationRow}>
+                            <View style={styles.locationRowLeft}>
+                                <Icon name="location-pin" type='material' size={30} color="#ABABAB" style={styles.locationIcon}/>
+                                <Text style={styles.locationName}>{zoneDistances[1].name.length < 20 ? zoneDistances[1].name : zoneDistances[1].name.substring(0, 20) + "..."}</Text>
+                            </View>
+                            <View style={styles.locationRowRight}>
+                                <Text style={styles.locationDistance}>{(zoneDistances[1].distance / 1000) < 1 ? (zoneDistances[1].distance) + " m" : (zoneDistances[1].distance / 1000) + " km"}</Text>
+                                <Icon name="chevron-right" size={30} style={styles.moreIcon} />
+                            </View>
                         </View>
-                        <View style={styles.locationRowRight}>
-                            <Text style={styles.locationDistance}>{zoneDistances[1].distance / 1000} km</Text>
-                            <Icon name="chevron-right" size={30} style={styles.moreIcon} />
-                        </View>
-                    </View>
-                </TouchableOpacity>
+                    </TouchableOpacity>
 
-                <TouchableOpacity
-                onPress={() => {navigation.navigate('Zones')}}
-                >
-                    <View style={styles.locationRow}>
-                        <View style={styles.locationRowLeft}>
-                            <Icon name="location-pin" type='material' size={30} color="#ABABAB" style={styles.locationIcon}/>
-                            <Text style={styles.locationName}>{zoneDistances[2].name.substring(0, 21)}</Text>
+                    <TouchableOpacity
+                    onPress={() => {navigation.navigate('Zones')}}
+                    >
+                        <View style={styles.locationRow}>
+                            <View style={styles.locationRowLeft}>
+                                <Icon name="location-pin" type='material' size={30} color="#ABABAB" style={styles.locationIcon}/>
+                                <Text style={styles.locationName}>{zoneDistances[2].name.length < 20 ? zoneDistances[2].name : zoneDistances[2].name.substring(0, 20) + "..."}</Text>
+                            </View>
+                            <View style={styles.locationRowRight}>
+                                <Text style={styles.locationDistance}>{(zoneDistances[2].distance / 1000) < 1 ? (zoneDistances[2].distance) + " m" : (zoneDistances[2].distance / 1000) + " km"}</Text>
+                                <Icon name="chevron-right" size={30} style={styles.moreIcon} />
+                            </View>
                         </View>
-                        <View style={styles.locationRowRight}>
-                            <Text style={styles.locationDistance}>{zoneDistances[2].distance / 1000} km</Text>
-                            <Icon name="chevron-right" size={30} style={styles.moreIcon} />
-                        </View>
-                    </View>
-                </TouchableOpacity>
-            </ScrollView>
+                    </TouchableOpacity>
+                </ScrollView>
             }
 
         </View>
