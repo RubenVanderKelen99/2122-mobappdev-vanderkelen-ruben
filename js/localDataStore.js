@@ -116,6 +116,13 @@ let DataAccess = {
             console.log(err);
         }
     },
+    removeSelectedZone: async function() {
+        try {
+        await AsyncStorage.removeItem('selectedZone')
+        } catch (err) {
+            console.log(err);
+        }
+    },
     getCarsFromSelectedZone: async function(zone) {
         try {
             const carsRef = db.collection('zones').doc(zone.id).collection('cars');

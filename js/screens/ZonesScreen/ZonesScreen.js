@@ -5,7 +5,6 @@ import { auth } from '../../firebase';
 import { db } from '../../firebase';
 import DataAccess from '../../localDataStore';
 import { Icon } from 'react-native-elements';
-import { useFocusEffect } from '@react-navigation/native';
 import { decimalToSexagesimal } from 'geolib';
 import MapView, { Marker } from 'react-native-maps';
 import styles from '../styles';
@@ -18,11 +17,16 @@ const ZonesScreen = ({ navigation }) => {
 
     const [toolbarHackHeight, setToolbarHackHeight] = useState(0);
 
-    useFocusEffect(() => {
-        (async () => {
-            setZoneDistances(await DataAccess.getSortedZoneDistances(zoneDistances));
-        })();
-    });
+    useEffect(() => {
+        const focusSubscription = navigation.addListener('focus', async () => {
+          setZoneDistances(await DataAccess.getSortedZoneDistances(zoneDistances));
+          setSelectedZone(await DataAccess.getSelectedZone());
+          console.log("test");
+        });
+
+        return focusSubscription;
+    }, [navigation]);
+
 
     // Code will run whenever variable selectZone changes
     useEffect(() => {
@@ -35,15 +39,27 @@ const ZonesScreen = ({ navigation }) => {
 
 
     function navBack() {
-    if (navigation.canGoBack())
-       navigation.goBack()
-    else
-       navigation.navigate('Home')
+        if(selectedZone !== null) {
+            removeSelectedZone();
+        }
+        else{
+            if (navigation.canGoBack()) {
+                navigation.goBack()
+            }
+            else {
+               navigation.navigate('Home')
+            }
+        }
     }
 
     async function getSelectedZone(id, distance) {
         await DataAccess.setSelectedZone(id, distance);
         setSelectedZone(await DataAccess.getSelectedZone());
+    }
+
+    async function removeSelectedZone() {
+        await DataAccess.removeSelectedZone();
+        setSelectedZone(null);
     }
 
     function showToolBarHack() {
@@ -60,7 +76,7 @@ const ZonesScreen = ({ navigation }) => {
     <View style={styles.container}>
         <View style={styles.headerContainer}>
             <TouchableOpacity
-            onPress={() => navBack()}
+            onPress={() => {navBack()}}
             >
                 <Icon name={"arrow-back"} size={25} color={'#4F4F4F'} style={styles.headerBackButton}/>
             </TouchableOpacity>

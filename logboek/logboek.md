@@ -443,12 +443,13 @@ let locationUpdate = await Location.watchPositionAsync({accuracy: Location.Accur
 ### Planning
 #### 16 Januari:
 - zoeken op zoneScreen met autocomplete bij search https://medium.com/nerd-for-tech/react-native-custom-search-bar-with-google-places-autocomplete-api-69b1c98de6a0
-- zonescreen verplaatsen naar stack? ZoneList, ZoneDetails, CarDetails, Rent
+#### 17:30
 - Transactie starten vanuit gelesecteerde auto
 - Transacties in firestore steken
 - Reminder voor Transacties (ophalen/leveren) in agenda ?
 - Handelingen bevestigen op tijdstip
 - Alle transacties (actief, voltooid, geanulleerd) weergeven op HistoryScreen
+#### 19:00  
 - data verwijderen uit AsyncStorage bij logout, ...
 - wat doen bij location.permission.denied?  
 - firestore database security rules

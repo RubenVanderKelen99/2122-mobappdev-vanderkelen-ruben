@@ -65,9 +65,9 @@ const HomeScreen = ({ navigation }) => {
     }
 
     const updateUserLocation = async () => {
-    console.log('new location');
-    let locationNew = await Location.getCurrentPositionAsync({});
-    await setLocation(locationNew);
+        console.log('new location');
+        let locationNew = await Location.getCurrentPositionAsync({});
+        await setLocation(locationNew);
     }
 
     const toUserLocation = () => {
@@ -79,6 +79,12 @@ const HomeScreen = ({ navigation }) => {
         }
         mapViewRef.current.animateToRegion(currentRegion, 1000);
     }
+
+    const goToZoneDetails = async (id, distance) => {
+        await DataAccess.setSelectedZone(id, distance);
+        navigation.navigate('Zones');
+    }
+
 
     return (
         <View style={styles.homeContainer}>
@@ -142,7 +148,7 @@ const HomeScreen = ({ navigation }) => {
             {zoneDistances && zoneDistances.length > 0 &&
                 <ScrollView>
                     <TouchableOpacity
-                    onPress={() => {navigation.navigate('Zones')}}
+                    onPress={() => {goToZoneDetails(zoneDistances[0].id, zoneDistances[0].distance)}}
                     >
                         <View style={styles.locationRow}>
                             <View style={styles.locationRowLeft}>
@@ -157,7 +163,7 @@ const HomeScreen = ({ navigation }) => {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                    onPress={() => {navigation.navigate('Zones')}}
+                    onPress={() => {goToZoneDetails(zoneDistances[1].id, zoneDistances[1].distance)}}
                     >
                         <View style={styles.locationRow}>
                             <View style={styles.locationRowLeft}>
@@ -172,7 +178,7 @@ const HomeScreen = ({ navigation }) => {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                    onPress={() => {navigation.navigate('Zones')}}
+                    onPress={() => {goToZoneDetails(zoneDistances[2].id, zoneDistances[2].distance)}}
                     >
                         <View style={styles.locationRow}>
                             <View style={styles.locationRowLeft}>
