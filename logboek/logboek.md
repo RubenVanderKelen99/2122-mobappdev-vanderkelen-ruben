@@ -453,6 +453,17 @@ trunks - number
 status (true = available, false = in use/unavailable) - boolean
 price (per day) - number
 
+name
+seats
+doors
+transmission
+a/c
+gps
+trunks
+status
+price
+
+
 Voorbeelden die hergebruikt kunnen worden:
 Citroën C1
 4
@@ -473,9 +484,8 @@ Inleveren: 24/7
 - Bij updaten play store: version code in app.json naar 2 (1 -> 2)
 ### Planning
 #### 15 Januari:
-- zonedata weergeven op homescreen: extra data bij click op marker
-- zonesScreen maken (zones zoeken, filteren, ...)
-- Auto's toevoegen aan zones en weergeven (aantal# op Homescreen en lijst op ZoneDetailScreen) via AsyncStorage
+- zoeken op zoneScreen
+- zonescreen verplaatsen naar stack? ZoneList, ZoneDetails, CarDetails, Rent
 - mapview bij standalone app correct instellen: https://docs.expo.dev/versions/latest/sdk/map-view/
 - autocomplete bij search https://medium.com/nerd-for-tech/react-native-custom-search-bar-with-google-places-autocomplete-api-69b1c98de6a0  
 - firestore database security rules
@@ -492,6 +502,7 @@ Inleveren: 24/7
 - laatste aanpassingen, testen van app/bugfixing
 - Deadline is om 20u -> finale push naar git
 #### Als er nog extra tijd is:
+- zonedata weergeven op homescreen: extra data bij click op marker
 - app check voor firestore database: https://firebase.google.com/docs/app-check
 - Pushnotificaties voor gebeurtenissen (rit start, rit bijna gedaan, ...)
 - UserDetailsScreen: Details gebruiker weergeven, aanpasvelden

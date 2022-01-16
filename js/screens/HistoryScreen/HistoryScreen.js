@@ -37,8 +37,6 @@ const HistoryScreen = ({ navigation }) => {
                         </List.Accordion>
 
                     </List.Section>
-
-
                 </View>
             </ScrollView>
         </KeyboardAvoidingView>

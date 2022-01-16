@@ -99,7 +99,9 @@ let DataAccess = {
             if (!doc.exists) {
               console.log('Document does not exist');
             } else {
-              await AsyncStorage.setItem('selectedZone', JSON.stringify(doc.data()));
+              const zoneData = doc.data();
+              zoneData.id = doc.id;
+              await AsyncStorage.setItem('selectedZone', JSON.stringify(zoneData));
             }
         } catch (err) {
             console.log(err);
@@ -110,6 +112,22 @@ let DataAccess = {
         const result = await AsyncStorage.getItem('selectedZone');
         //console.log(JSON.parse(result));
         return (JSON.parse(result))
+        } catch (err) {
+            console.log(err);
+        }
+    },
+    getCarsFromSelectedZone: async function(zone) {
+        try {
+            const carsRef = db.collection('zones').doc(zone.id).collection('cars');
+            const snapshot = await carsRef.get();
+            let cars = [];
+            snapshot.forEach(doc => {
+                const carData = doc.data();
+                carData.id = doc.id;
+                cars.push(carData);
+            });
+            //await AsyncStorage.setItem('carsData', JSON.stringify(cars));
+            return(cars);
         } catch (err) {
             console.log(err);
         }

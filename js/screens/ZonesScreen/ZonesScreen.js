@@ -13,7 +13,8 @@ import styles from '../styles';
 const ZonesScreen = ({ navigation }) => {
 
     const [zoneDistances, setZoneDistances] = useState([]);
-    const [selectedZone, setSelectedZone] = useState('');
+    const [selectedZone, setSelectedZone] = useState(null);
+    const [cars, setCars] = useState(null);
 
     const [toolbarHackHeight, setToolbarHackHeight] = useState(0);
 
@@ -21,8 +22,17 @@ const ZonesScreen = ({ navigation }) => {
         (async () => {
             setZoneDistances(await DataAccess.getSortedZoneDistances(zoneDistances));
         })();
-
     });
+
+    // Code will run whenever variable selectZone changes
+    useEffect(() => {
+        (async () => {
+            if(selectedZone !== null) {
+                setCars(await DataAccess.getCarsFromSelectedZone(selectedZone));
+            }
+        })();
+    }, [selectedZone]); // The second parameter(s) are the variables this useEffect is listening to for changes.
+
 
     function navBack() {
     if (navigation.canGoBack())
@@ -57,7 +67,7 @@ const ZonesScreen = ({ navigation }) => {
             <Text style={styles.headerTitle}> Zones </Text>
         </View>
 
-        { zoneDistances && zoneDistances.length > 0 && selectedZone === '' &&
+        { zoneDistances && zoneDistances.length > 0 && selectedZone === null &&
             <ScrollView>
                 <TextInput
                 placeholder='Zoek een stad of een plaats'
@@ -85,7 +95,7 @@ const ZonesScreen = ({ navigation }) => {
             </ScrollView>
         }
 
-        { selectedZone !== '' &&
+        { selectedZone !== null &&
             <View>
                 <Text>{selectedZone.name}</Text>
                 <Text>Latitude: {decimalToSexagesimal(selectedZone.location.latitude)} {'\n'}Longitude: {decimalToSexagesimal(selectedZone.location.longitude)} </Text>
@@ -113,10 +123,23 @@ const ZonesScreen = ({ navigation }) => {
 
                 <Text>Opening Hours: {'\n'}Hand-in: {selectedZone.open.handin} {'\n'}Pick-up: {'\n'}Weekdays: {selectedZone.open.pickup.weekdays} {'\n'}Weekend: {selectedZone.open.pickup.weekend}</Text>
 
+                { cars !== null &&
+                    <Text>Cars: {cars.length} available</Text>
+                }
+
+                <Button
+                    mode="contained"
+                    compact={false}
+                    icon="car-arrow-right"
+                    color="orange"
+                    labelStyle={{ color: "white", fontSize: 16 }}
+                    style={styles.submitButton}
+                >
+                Rent-a-car
+                </Button>
+
             </View>
         }
-
-
     </View>
     )
 };

@@ -12,13 +12,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Zones sorteren op afstand (van gebruikerslocatie)">
+    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Data weergeven van geselecteerd zone op ZonesScreen.js, Toolbarfix voor MapView">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/localDataStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/localDataStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/FAQScreen/FAQScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/FAQScreen/FAQScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/HistoryScreen/HistoryScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/HistoryScreen/HistoryScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/screens/ZonesScreen/ZonesScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/ZonesScreen/ZonesScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/styles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logboek/logboek.md" beforeDir="false" afterPath="$PROJECT_DIR$/logboek/logboek.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -129,13 +128,6 @@
       <workItem from="1633611686487" duration="81000" />
       <workItem from="1637921785275" duration="5000" />
       <workItem from="1640535056965" duration="52000" />
-    </task>
-    <task id="LOCAL-00006" summary=" Setup React-Native Firebase &amp; aanmaken routering">
-      <created>1633703172515</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1633703172515</updated>
     </task>
     <task id="LOCAL-00007" summary="Implementatie UI HomeScreen, LoginScreen &amp; RegistratieScreen">
       <created>1634026355052</created>
@@ -473,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642279200270</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Data weergeven van geselecteerd zone op ZonesScreen.js, Toolbarfix voor MapView">
+      <created>1642294121690</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1642294121691</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,7 +496,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Toevoegen back button/header aan AboutScreen.js, FAQScreen.js, HistoryScreen.js &amp; PromotionsScreen.js" />
     <MESSAGE value="Implementatie logica van drawer navigation in drawerContent.js" />
     <MESSAGE value="FAQScreen.js met List.Accordion" />
     <MESSAGE value="MapView en gebruikerslocatie op HomeScreen.js" />
@@ -522,6 +520,7 @@
     <MESSAGE value="Data lokaal opslaan met AsyncStorage (localDataStore.js), userdata weergeven op HomeScreen" />
     <MESSAGE value="Afstand tussen gebruikerslocatie &amp; zones berekenen met AsyncStorage" />
     <MESSAGE value="Zones sorteren op afstand (van gebruikerslocatie)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Zones sorteren op afstand (van gebruikerslocatie)" />
+    <MESSAGE value="Data weergeven van geselecteerd zone op ZonesScreen.js, Toolbarfix voor MapView" />
+    <option name="LAST_COMMIT_MESSAGE" value="Data weergeven van geselecteerd zone op ZonesScreen.js, Toolbarfix voor MapView" />
   </component>
 </project>

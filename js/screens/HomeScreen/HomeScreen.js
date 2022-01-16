@@ -50,10 +50,7 @@ const HomeScreen = ({ navigation }) => {
     // Code will run whenever variable locationData changes
     useEffect(() => {
         (async () => {
-            console.log(1);
-
             if(locationData !== null) {
-                console.log(2);
                 setMarkers(await DataAccess.getZones());
                 let zoneDistances = await DataAccess.setZoneDistances(locationData.coords.latitude, locationData.coords.longitude);
                 setZoneDistances(await DataAccess.getSortedZoneDistances(zoneDistances));
