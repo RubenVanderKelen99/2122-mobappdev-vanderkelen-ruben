@@ -356,7 +356,7 @@ Aanmaken OrderScreen en opzetten routering. <br/>
 MapView voor gebruik bij standalone app correct instellen. <br/>
 App-bundle maken en play-store listing updaten. <br/>
 Uitwerking administratiepaneel. <br/>
-Orderscreen: kiezen zone & auto uit zone. <br/>
+Orderscreen: kiezen zone (begin- en eindzone) & auto uit zone/ start- & eind-datum d.m.v datetimepicker. <br/>
 #### Problemen
 1. Bij het weergeven van de FAQ komt er:
 ```    
@@ -383,7 +383,7 @@ Can't find variable: getSortedZonesWithDistance
 8. De afstand van zones in de ZonesScreen verandert niet wanneer de userlocation verandert. Deze blijft hetzelfde zolang de app draait.
 9. De toolbaar van react-native-maps verschijnt niet (gebruikt om route te bepalen met Google Maps). Dit probleem is al sinds 2016 bekend maar er is nog geen echte oplossing (https://github.com/react-native-maps/react-native-maps/search?q=toolbar&type=issues).
 #### Opgelost
-1. ?
+1. Door telkens een key mee te geven kan deze error voorkomen worden.
 2. Eerst controleren of de navigatie terugkan en zo niet: terug naar HomeScreen
 ``` 
 if (navigation.canGoBack())
@@ -450,7 +450,6 @@ let locationUpdate = await Location.watchPositionAsync({accuracy: Location.Accur
 ### Planning
 #### 16 Januari:
 #### 17:30
-- Transactie starten vanuit gelesecteerde auto
 - Transacties in firestore steken
 - Reminder voor Transacties (ophalen/leveren) in agenda ?
 - Handelingen bevestigen op tijdstip

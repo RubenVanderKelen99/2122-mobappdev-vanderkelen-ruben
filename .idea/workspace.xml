@@ -12,12 +12,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Aanmaken OrderScreen.js en opzetten routering.">
+    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Orderscreen.js kiezen zone &amp; auto uit zone.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/localDataStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/localDataStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/screens/OrderScreen/OrderScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/OrderScreen/OrderScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/ZonesScreen/ZonesScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/ZonesScreen/ZonesScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logboek/logboek.md" beforeDir="false" afterPath="$PROJECT_DIR$/logboek/logboek.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,13 +127,6 @@
       <workItem from="1633611686487" duration="81000" />
       <workItem from="1637921785275" duration="5000" />
       <workItem from="1640535056965" duration="52000" />
-    </task>
-    <task id="LOCAL-00011" summary="Verbinding maken met firestore database">
-      <created>1634630303067</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1634630303067</updated>
     </task>
     <task id="LOCAL-00012" summary="Implementatie UI LoginScreen &amp; RegistratieScreen, opzetten routering, Forms met validatie via react-hook-form">
       <created>1634638535510</created>
@@ -471,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642341761083</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Orderscreen.js kiezen zone &amp; auto uit zone.">
+      <created>1642347076737</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1642347076737</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,7 +495,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="UI PromotionsScreen.js" />
     <MESSAGE value="Layout van UI mapview" />
     <MESSAGE value="Implementatie logica toUserLocation methode" />
     <MESSAGE value="Doorlopen stappen om App op playstore te krijgen" />
@@ -520,6 +519,7 @@
     <MESSAGE value="MapView voor gebruik bij standalone app correct instellen" />
     <MESSAGE value="Vanuit 3 dichstbijzijnde locaties op HomeScreen.js rechstreeks naar details op ZonesScreen.js" />
     <MESSAGE value="Aanmaken OrderScreen.js en opzetten routering." />
-    <option name="LAST_COMMIT_MESSAGE" value="Aanmaken OrderScreen.js en opzetten routering." />
+    <MESSAGE value="Orderscreen.js kiezen zone &amp; auto uit zone." />
+    <option name="LAST_COMMIT_MESSAGE" value="Orderscreen.js kiezen zone &amp; auto uit zone." />
   </component>
 </project>
