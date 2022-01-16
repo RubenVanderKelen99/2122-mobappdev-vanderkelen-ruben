@@ -132,6 +132,30 @@ let DataAccess = {
             console.log(err);
         }
     },
+    setAboutUs: async function() {
+        try {
+            const aboutRef = db.collection('about').doc('content');
+            const doc = await aboutRef.get();
+            if (!doc.exists) {
+              console.log('Document does not exist');
+            } else {
+              //console.log(JSON.stringify(doc.data()));
+              await AsyncStorage.setItem('aboutUsData', JSON.stringify(doc.data()));
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    },
+    getAboutUs: async function() {
+        try {
+        const result = await AsyncStorage.getItem('aboutUsData');
+        console.log(JSON.parse(result));
+        return (JSON.parse(result));
+        } catch (err) {
+            console.log(err);
+        }
+    },
+
 }
 
 module.exports = DataAccess;

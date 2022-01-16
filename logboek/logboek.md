@@ -348,6 +348,7 @@ Zones uit firestore weergeven op de Mapview. <br/>
 Aanmaken ZonesScreen en opzetten routering. <br/>
 Data lokaal opslaan met AsyncStorage. <br/>
 Userdata uit AsyncStorage weergeven op HomeScreen. <br/>
+AboutUsdata uit AsyncStorage weergeven op AboutScreen. <br/>
 Afstand tussen gebruikerslocatie & zones berekenen met AsyncStorage. <br/>
 Zones sorteren op afstand (van gebruikerslocatie). <br/>
 MapView voor gebruik bij standalone app correct instellen. (https://docs.expo.dev/versions/latest/sdk/map-view/) <br/>
@@ -440,19 +441,21 @@ let locationUpdate = await Location.watchPositionAsync({accuracy: Location.Accur
 ### To-do
 - Bij updaten play store: version code in app.json naar 2 (1 -> 2)
 ### Planning
-#### 15 Januari:
+#### 16 Januari:
 - zoeken op zoneScreen met autocomplete bij search https://medium.com/nerd-for-tech/react-native-custom-search-bar-with-google-places-autocomplete-api-69b1c98de6a0
 - zonescreen verplaatsen naar stack? ZoneList, ZoneDetails, CarDetails, Rent
-- firestore database security rules
-- structuur andere files bekijken
 - Transactie starten vanuit gelesecteerde auto
 - Transacties in firestore steken
 - Reminder voor Transacties (ophalen/leveren) in agenda ?
 - Handelingen bevestigen op tijdstip
 - Alle transacties (actief, voltooid, geanulleerd) weergeven op HistoryScreen
+- data verwijderen uit AsyncStorage bij logout, ...
+- wat doen bij location.permission.denied?  
+- firestore database security rules
+- structuur andere files bekijken
+  
 - Beveiligde authenticatie en autorisatie: OAuth2, OpenID Connect, JWT etc. (vereiste) nog bekijken
 - updaten naar Playstore (version code in app.json naar 2 (1 -> 2))
-#### 16 Januari:
 - data sync nog eens bekijken
 - laatste aanpassingen, testen van app/bugfixing
 - Deadline is om 20u -> finale push naar git
@@ -462,3 +465,4 @@ let locationUpdate = await Location.watchPositionAsync({accuracy: Location.Accur
 - Pushnotificaties voor gebeurtenissen (rit start, rit bijna gedaan, ...)
 - UserDetailsScreen: Details gebruiker weergeven, aanpasvelden
 - afbeeldingen toevoegen aan zones
+- Reminder voor Transacties (ophalen/leveren) in agenda ?
