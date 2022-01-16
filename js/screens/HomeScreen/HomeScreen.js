@@ -118,7 +118,6 @@ const HomeScreen = ({ navigation }) => {
                       longitude: marker.location.longitude
                       }}
                       title={marker.name}
-                      description={marker.id}
                     />
                 ))}
 

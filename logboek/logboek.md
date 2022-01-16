@@ -350,6 +350,7 @@ Data lokaal opslaan met AsyncStorage. <br/>
 Userdata uit AsyncStorage weergeven op HomeScreen. <br/>
 Afstand tussen gebruikerslocatie & zones berekenen met AsyncStorage. <br/>
 Zones sorteren op afstand (van gebruikerslocatie). <br/>
+MapView voor gebruik bij standalone app correct instellen. (https://docs.expo.dev/versions/latest/sdk/map-view/) <br/>
 #### Problemen
 1. Bij het weergeven van de FAQ komt er:
 ```    
@@ -436,58 +437,12 @@ let locationUpdate = await Location.watchPositionAsync({accuracy: Location.Accur
 - https://medium.com/nerd-for-tech/react-native-custom-search-bar-with-google-places-autocomplete-api-69b1c98de6a0
 
 
-### Database structuur
-Zones -> Cars, Openinghours
-Zone:
-location (lat + lng) - geopoint
-name - string
-
-Cars:
-name - string
-seats - number
-doors - number
-transmission (manual/automatic) - string
-a/c - boolean
-gps - boolean
-trunks - number
-status (true = available, false = in use/unavailable) - boolean
-price (per day) - number
-
-name
-seats
-doors
-transmission
-a/c
-gps
-trunks
-status
-price
-
-
-Voorbeelden die hergebruikt kunnen worden:
-Citroën C1
-4
-4
-manual
-true
-false
-1
-true
-49.32
-
-Openinghours:
-Ophalen: Tijdens openingsuren
-Inleveren: 24/7
-
-
 ### To-do
 - Bij updaten play store: version code in app.json naar 2 (1 -> 2)
 ### Planning
 #### 15 Januari:
-- zoeken op zoneScreen
+- zoeken op zoneScreen met autocomplete bij search https://medium.com/nerd-for-tech/react-native-custom-search-bar-with-google-places-autocomplete-api-69b1c98de6a0
 - zonescreen verplaatsen naar stack? ZoneList, ZoneDetails, CarDetails, Rent
-- mapview bij standalone app correct instellen: https://docs.expo.dev/versions/latest/sdk/map-view/
-- autocomplete bij search https://medium.com/nerd-for-tech/react-native-custom-search-bar-with-google-places-autocomplete-api-69b1c98de6a0  
 - firestore database security rules
 - structuur andere files bekijken
 - Transactie starten vanuit gelesecteerde auto
