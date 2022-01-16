@@ -73,6 +73,20 @@ export function DrawerContent(props) {
                         <DrawerItem
                             icon={({color, size}) => (
                                 <Icon
+                                    name="car-arrow-right"
+                                    color={color}
+                                    size={size}
+                                    type='material-community'
+                                />
+                            )}
+                            label="Rent-a-car"
+                            onPress={() => {props.navigation.navigate('Order')}}
+                        />
+
+
+                        <DrawerItem
+                            icon={({color, size}) => (
+                                <Icon
                                     name="history"
                                     color={color}
                                     size={size}

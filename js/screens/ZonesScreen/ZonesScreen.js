@@ -146,6 +146,7 @@ const ZonesScreen = ({ navigation }) => {
                 <Button
                     mode="contained"
                     compact={false}
+                    onPress={() => navigation.navigate('Order')}
                     icon="car-arrow-right"
                     color="orange"
                     labelStyle={{ color: "white", fontSize: 16 }}

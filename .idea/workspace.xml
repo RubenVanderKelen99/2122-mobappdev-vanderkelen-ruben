@@ -12,11 +12,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="AboutUsdata uit AsyncStorage weergeven op AboutScreen.js">
+    <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Vanuit 3 dichstbijzijnde locaties op HomeScreen.js rechstreeks naar details op ZonesScreen.js">
+      <change afterPath="$PROJECT_DIR$/js/screens/OrderScreen/OrderScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/localDataStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/localDataStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/drawerContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/drawerContent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/screens/ZonesScreen/ZonesScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/ZonesScreen/ZonesScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/screens/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logboek/logboek.md" beforeDir="false" afterPath="$PROJECT_DIR$/logboek/logboek.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,13 +129,6 @@
       <workItem from="1633611686487" duration="81000" />
       <workItem from="1637921785275" duration="5000" />
       <workItem from="1640535056965" duration="52000" />
-    </task>
-    <task id="LOCAL-00009" summary="Laatste commit met niet werkende User Authentication">
-      <created>1634199327502</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1634199327502</updated>
     </task>
     <task id="LOCAL-00010" summary="Aanmaak nieuw expo project">
       <created>1634629303992</created>
@@ -471,7 +466,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642301266561</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Vanuit 3 dichstbijzijnde locaties op HomeScreen.js rechstreeks naar details op ZonesScreen.js">
+      <created>1642340101715</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1642340101715</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,7 +497,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="MapView en gebruikerslocatie op HomeScreen.js" />
     <MESSAGE value="gebruikerslocatie correct weergeven op MapView" />
     <MESSAGE value="UI PromotionsScreen.js" />
     <MESSAGE value="Layout van UI mapview" />
@@ -520,6 +521,7 @@
     <MESSAGE value="Data weergeven van geselecteerd zone op ZonesScreen.js, Toolbarfix voor MapView" />
     <MESSAGE value="Auto's weergeven van geselecteerde zone op ZonesScreen.js" />
     <MESSAGE value="MapView voor gebruik bij standalone app correct instellen" />
-    <option name="LAST_COMMIT_MESSAGE" value="MapView voor gebruik bij standalone app correct instellen" />
+    <MESSAGE value="Vanuit 3 dichstbijzijnde locaties op HomeScreen.js rechstreeks naar details op ZonesScreen.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="Vanuit 3 dichstbijzijnde locaties op HomeScreen.js rechstreeks naar details op ZonesScreen.js" />
   </component>
 </project>

@@ -351,7 +351,11 @@ Userdata uit AsyncStorage weergeven op HomeScreen. <br/>
 AboutUsdata uit AsyncStorage weergeven op AboutScreen. <br/>
 Afstand tussen gebruikerslocatie & zones berekenen met AsyncStorage. <br/>
 Zones sorteren op afstand (van gebruikerslocatie). <br/>
-MapView voor gebruik bij standalone app correct instellen. (https://docs.expo.dev/versions/latest/sdk/map-view/) <br/>
+Vanuit 3 dichstbijzijnde locaties op HomeScreen.js rechstreeks naar details op ZonesScreen.js. <br/>
+Aanmaken OrderScreen en opzetten routering. <br/>
+MapView voor gebruik bij standalone app correct instellen. <br/>
+App-bundle maken en play-store listing updaten. <br/>
+Uitwerking administratiepaneel. <br/>
 #### Problemen
 1. Bij het weergeven van de FAQ komt er:
 ```    
@@ -436,6 +440,8 @@ let locationUpdate = await Location.watchPositionAsync({accuracy: Location.Accur
 - https://www.w3schools.com/js/js_array_sort.asp
 - https://reactnavigation.org/docs/function-after-focusing-screen/
 - https://medium.com/nerd-for-tech/react-native-custom-search-bar-with-google-places-autocomplete-api-69b1c98de6a0
+- https://reactnavigation.org/docs/use-focus-effect/
+- https://www.youtube.com/watch?v=05q7aEeye_0&list=PLk8gdrb2DmCjsRsDIwMBJdf350qKMiJ8R
 
 
 ### To-do
@@ -453,7 +459,7 @@ let locationUpdate = await Location.watchPositionAsync({accuracy: Location.Accur
 - data verwijderen uit AsyncStorage bij logout, ...
 - wat doen bij location.permission.denied?  
 - firestore database security rules
-- structuur andere files bekijken
+- styling andere files bekijken
   
 - Beveiligde authenticatie en autorisatie: OAuth2, OpenID Connect, JWT etc. (vereiste) nog bekijken
 - updaten naar Playstore (version code in app.json naar 2 (1 -> 2))

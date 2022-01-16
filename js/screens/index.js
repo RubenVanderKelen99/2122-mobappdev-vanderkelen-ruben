@@ -7,3 +7,4 @@ export { default as PromotionsScreen } from './PromotionsScreen/PromotionsScreen
 export { default as FAQScreen } from './FAQScreen/FAQScreen'
 export { default as AboutScreen } from './AboutScreen/AboutScreen'
 export { default as ZonesScreen } from './ZonesScreen/ZonesScreen'
+export { default as OrderScreen } from './OrderScreen/OrderScreen'
