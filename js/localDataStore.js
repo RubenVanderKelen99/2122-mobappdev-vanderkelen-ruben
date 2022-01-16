@@ -125,7 +125,23 @@ let DataAccess = {
     },
     getCarsFromSelectedZone: async function(zone) {
         try {
-            const carsRef = db.collection('zones').doc(zone.id).collection('cars');
+            const carsRef = db.collection('zones').doc(zone.id).collection('cars').orderBy('price', 'asc');
+            const snapshot = await carsRef.get();
+            let cars = [];
+            snapshot.forEach(doc => {
+                const carData = doc.data();
+                carData.id = doc.id;
+                cars.push(carData);
+            });
+            //await AsyncStorage.setItem('carsData', JSON.stringify(cars));
+            return(cars);
+        } catch (err) {
+            console.log(err);
+        }
+    },
+    getCarsFromZoneId: async function(id) {
+        try {
+            const carsRef = db.collection('zones').doc(id).collection('cars').orderBy('price', 'asc');
             const snapshot = await carsRef.get();
             let cars = [];
             snapshot.forEach(doc => {

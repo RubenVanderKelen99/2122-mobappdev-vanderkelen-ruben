@@ -19,9 +19,9 @@ const ZonesScreen = ({ navigation }) => {
 
     useEffect(() => {
         const focusSubscription = navigation.addListener('focus', async () => {
-          setZoneDistances(await DataAccess.getSortedZoneDistances(zoneDistances));
+          setZoneDistances(await DataAccess.getSortedZoneDistances());
           setSelectedZone(await DataAccess.getSelectedZone());
-          console.log("test");
+          console.log("focusListener ZoneScreen");
         });
 
         return focusSubscription;

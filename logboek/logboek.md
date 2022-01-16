@@ -356,6 +356,7 @@ Aanmaken OrderScreen en opzetten routering. <br/>
 MapView voor gebruik bij standalone app correct instellen. <br/>
 App-bundle maken en play-store listing updaten. <br/>
 Uitwerking administratiepaneel. <br/>
+Orderscreen: kiezen zone & auto uit zone. <br/>
 #### Problemen
 1. Bij het weergeven van de FAQ komt er:
 ```    
@@ -448,7 +449,6 @@ let locationUpdate = await Location.watchPositionAsync({accuracy: Location.Accur
 - Bij updaten play store: version code in app.json naar 2 (1 -> 2)
 ### Planning
 #### 16 Januari:
-- zoeken op zoneScreen met autocomplete bij search https://medium.com/nerd-for-tech/react-native-custom-search-bar-with-google-places-autocomplete-api-69b1c98de6a0
 #### 17:30
 - Transactie starten vanuit gelesecteerde auto
 - Transacties in firestore steken
@@ -458,15 +458,14 @@ let locationUpdate = await Location.watchPositionAsync({accuracy: Location.Accur
 #### 19:00  
 - data verwijderen uit AsyncStorage bij logout, ...
 - wat doen bij location.permission.denied?  
-- firestore database security rules
-- styling andere files bekijken
-  
 - Beveiligde authenticatie en autorisatie: OAuth2, OpenID Connect, JWT etc. (vereiste) nog bekijken
-- updaten naar Playstore (version code in app.json naar 2 (1 -> 2))
-- data sync nog eens bekijken
+- styling andere files bekijken
 - laatste aanpassingen, testen van app/bugfixing
+- data sync nog eens bekijken
+- updaten naar Playstore (version code in app.json naar 2 (1 -> 2))
 - Deadline is om 20u -> finale push naar git
 #### Als er nog extra tijd is:
+- zoeken op zoneScreen met autocomplete bij search https://medium.com/nerd-for-tech/react-native-custom-search-bar-with-google-places-autocomplete-api-69b1c98de6a0
 - zonedata weergeven op homescreen: extra data bij click op marker
 - app check voor firestore database: https://firebase.google.com/docs/app-check
 - Pushnotificaties voor gebeurtenissen (rit start, rit bijna gedaan, ...)
