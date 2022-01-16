@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, ScrollView, KeyboardAvoidingView } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, KeyboardAvoidingView, Alert } from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
 import { auth } from '../../firebase';
 import { db } from '../../firebase';
@@ -12,12 +12,12 @@ const OrderScreen = ({ navigation }) => {
 
     const [currentStep, setCurrentStep] = useState(1);
     const [zoneDistances, setZoneDistances] = useState([]);
-    const [startZone, setStartZone] = useState('');
+    const [startZone, setStartZone] = useState([]);
     const [cars, setCars] = useState([]);
-    const [selectedCar, setSelectedCar] = useState('');
+    const [selectedCar, setSelectedCar] = useState([]);
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
-    const [endZone, setEndZone] = useState('');
+    const [endZone, setEndZone] = useState([]);
 
     useEffect(() => {
         const focusSubscription = navigation.addListener('focus', async () => {
@@ -32,37 +32,50 @@ const OrderScreen = ({ navigation }) => {
 
 
     function navBack() {
-        if (navigation.canGoBack())
-            navigation.goBack()
-        else
-            navigation.navigate('Home')
+        Alert.alert(
+              "Are you sure you want to cancel this order ?",
+              "Press cancell to return to home, continue to continue",
+              [
+                {
+                  text: "Cancel",
+                  onPress: () => navigation.navigate('Home'),
+                },
+                {
+                text: "Continue",
+                onPress: () => console.log("Continue Pressed") ,
+                }
+              ]
+        );
     }
 
-    async function updateOrderStatus(value) {
+    async function updateOrderStatus(value1, value2, value3) {
         switch(currentStep) {
           case 1:
             console.log('Step 1: Setting startzone');
-            setStartZone(value);
-            setCars(await DataAccess.getCarsFromZoneId(value));
+            setStartZone([value1, value2]);
+            setCars(await DataAccess.getCarsFromZoneId(value1));
+            console.log(startZone);
             break;
           case 2:
             console.log('Step 2: Setting car');
-            setSelectedCar(value);
+            setSelectedCar([value1, value2, value3]);
             break;
           case 3:
             console.log('Step 3: Setting start date');
-            setStartDate(value);
+            setStartDate(value1);
             break;
           case 4:
             console.log('Step 4: Setting end date');
-            setEndDate(value);
+            setEndDate(value1);
             break;
           case 5:
-            console.log('Step 5: Setting hand-in zone')
-            setEndZone(value);
+            console.log('Step 5: Setting hand-in zone');
+            setEndZone([value1, value2]);
             break;
           case 6:
-            console.log('Step 6: Order confirmed: push to firestore')
+            console.log('Step 6: Order confirmed: push to firestore');
+
+            navigation.navigate('Home');
             break;
           default:
             console.log('Something went wrong here');
@@ -77,7 +90,22 @@ const OrderScreen = ({ navigation }) => {
     };
 
     const onChangeEndDate = (event, selectedDate) => {
+        console.log(selectedDate);
         updateOrderStatus(selectedDate);
+    };
+
+    const emptyValues = () => {
+        setCurrentStep(1);
+        setStartZone('');
+        setEndZone('');
+        setStartDate(new Date());
+        setEndDate(new Date());
+        setSelectedCar('');
+    };
+
+    const pushOrder = async () => {
+        await DataAccess.pushOrder(startZone[0],endZone[0],selectedCar[0],0);
+        emptyValues();
     };
 
 
@@ -104,7 +132,7 @@ const OrderScreen = ({ navigation }) => {
                             //value={searchLocation}
                             />
                             {zoneDistances.map((zoneDistance)  =>
-                                <TouchableOpacity key={zoneDistance.id} onPress={() => updateOrderStatus(zoneDistance.id)}>
+                                <TouchableOpacity key={zoneDistance.id} onPress={() => updateOrderStatus(zoneDistance.id, zoneDistance.name)}>
                                     <View style={styles.locationRow}>
                                         <View style={styles.locationRowLeft}>
                                             <Icon name="location-pin" type='material' size={30} color="#ABABAB" style={styles.locationIcon}/>
@@ -137,7 +165,7 @@ const OrderScreen = ({ navigation }) => {
                             //value={searchLocation}
                             />
                             {cars.map((car)  =>
-                                <TouchableOpacity key={car.id} onPress={() => updateOrderStatus(car.id)}>
+                                <TouchableOpacity key={car.id} onPress={() => updateOrderStatus(car.id, car.name, car.price)}>
                                     <View style={styles.locationRow}>
                                         <View style={styles.locationRowLeft}>
                                             <Icon name="car-arrow-right" type='material-community' size={30} color="#ABABAB" style={styles.locationIcon}/>
@@ -160,7 +188,7 @@ const OrderScreen = ({ navigation }) => {
                     <Text>Select pick-up date</Text>
                     <DateTimePicker
                         testID="dateTimePickerStart"
-                        value={startDate}
+                        value={new Date()}
                         minimumDate={Date.parse(new Date())}
                         mode="date"
                         is24Hour={true}
@@ -174,9 +202,9 @@ const OrderScreen = ({ navigation }) => {
                 <View>
                     <Text>Select hand-in date</Text>
                     <DateTimePicker
-                        testID="dateTimePickerEnd"
-                        value={endDate}
-                        minimumDate={startDate}
+                        testID="dateTimePickerStart"
+                        value={new Date()}
+                        minimumDate={Date.parse(new Date())}
                         mode="date"
                         is24Hour={true}
                         display="default"
@@ -200,7 +228,7 @@ const OrderScreen = ({ navigation }) => {
                             //value={searchLocation}
                             />
                             {zoneDistances.map((zoneDistance)  =>
-                                <TouchableOpacity key={zoneDistance.id} onPress={() => updateOrderStatus(zoneDistance.id)}>
+                                <TouchableOpacity key={zoneDistance.id} onPress={() => updateOrderStatus(zoneDistance.id, zoneDistance.name)}>
                                     <View style={styles.locationRow}>
                                         <View style={styles.locationRowLeft}>
                                             <Icon name="location-pin" type='material' size={30} color="#ABABAB" style={styles.locationIcon}/>
@@ -218,10 +246,42 @@ const OrderScreen = ({ navigation }) => {
                 </View>
             }
 
-            { currentStep === 4 &&
+            { currentStep === 6 &&
                 <View>
                     <Text>Confirm your order</Text>
-                    <Text> test </Text>
+                    <Text>Car: {selectedCar[1]} </Text>
+                    <Text>Price: € {selectedCar[2]}/dag{'\n'}</Text>
+
+                    <Text>Pick-up zone: {startZone[1]}</Text>
+                    <Text>Pick-up date: {Date.parse(startDate)}{'\n'}</Text>
+
+                    <Text>Hand-in zone: {endZone[1]}</Text>
+                    <Text>Hand-in date: {Date.parse(endDate)}{'\n'}</Text>
+
+                    <Button
+                        mode="contained"
+                        compact={false}
+                        onPress={() => navBack()}
+                        icon="close"
+                        color="red"
+                        labelStyle={{ color: "white", fontSize: 16 }}
+                        style={styles.submitButton}
+                    >
+                    Cancel order
+                    </Button>
+
+                    <Button
+                        mode="contained"
+                        compact={false}
+                        onPress={() => updateOrderStatus(0)}
+                        icon="check"
+                        color="green"
+                        labelStyle={{ color: "white", fontSize: 16 }}
+                        style={styles.submitButton}
+                    >
+                    Place order
+                    </Button>
+
                 </View>
             }
 

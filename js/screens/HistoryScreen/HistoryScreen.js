@@ -16,8 +16,6 @@ const HistoryScreen = ({ navigation }) => {
     }
 
     return (
-        <KeyboardAvoidingView style={styles.container}
-        behavior="height" enabled keyboardVerticalOffset={50}>
             <ScrollView style={styles.scrollContainer}>
                 <View style={styles.authFormContainer}>
                     <View style={styles.headerContainer}>
@@ -39,7 +37,6 @@ const HistoryScreen = ({ navigation }) => {
                     </List.Section>
                 </View>
             </ScrollView>
-        </KeyboardAvoidingView>
     )
 };
 

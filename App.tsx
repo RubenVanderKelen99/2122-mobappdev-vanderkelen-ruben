@@ -46,12 +46,14 @@ export default function App() {
                         const userData = document.data()
                         setUser(userData)
                         setSignedIn(true)
-                        DataAccess.saveUserData(userData);
+                        DataAccess.saveUserData(userData)
                     })
                 .catch((error) => {
                     alert(error)
                 })
             } else {
+                DataAccess.removeUserData()
+                DataAccess.removeSelectedZone()
                 setSignedIn(false)
             }
          });

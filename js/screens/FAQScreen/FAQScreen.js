@@ -33,8 +33,7 @@ const FAQScreen = ({ navigation }) => {
 
 
     return (
-            <ScrollView style={styles.scrollContainer}>
-                <View style={styles.container}>
+            <ScrollView style={styles.scrollContainer1}>
                     <View style={styles.headerContainer}>
                         <TouchableOpacity
                             onPress={() => navBack()}
@@ -53,7 +52,7 @@ const FAQScreen = ({ navigation }) => {
                         </List.Accordion>
                         )}
                     </List.Section>
-                </View>
+
             </ScrollView>
     )
 };

@@ -30,7 +30,7 @@ const HomeScreen = ({ navigation }) => {
             setUserData(await DataAccess.getUserData());
             let { status } = await Location.requestForegroundPermissionsAsync();
             if (status !== 'granted') {
-                setErrorMsg('Permission to access location was denied');
+                alert('Permission to access location was denied');
                 return;
             }
 

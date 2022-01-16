@@ -354,9 +354,9 @@ Zones sorteren op afstand (van gebruikerslocatie). <br/>
 Vanuit 3 dichstbijzijnde locaties op HomeScreen.js rechstreeks naar details op ZonesScreen.js. <br/>
 Aanmaken OrderScreen en opzetten routering. <br/>
 MapView voor gebruik bij standalone app correct instellen. <br/>
-App-bundle maken en play-store listing updaten. <br/>
 Uitwerking administratiepaneel. <br/>
 Orderscreen: kiezen zone (begin- en eindzone) & auto uit zone/ start- & eind-datum d.m.v datetimepicker. <br/>
+App-bundle maken en play-store listing updaten. <br/>
 #### Problemen
 1. Bij het weergeven van de FAQ komt er:
 ```    
@@ -442,28 +442,21 @@ let locationUpdate = await Location.watchPositionAsync({accuracy: Location.Accur
 - https://reactnavigation.org/docs/function-after-focusing-screen/
 - https://medium.com/nerd-for-tech/react-native-custom-search-bar-with-google-places-autocomplete-api-69b1c98de6a0
 - https://reactnavigation.org/docs/use-focus-effect/
+- https://github.com/react-native-datetimepicker/datetimepicker  
 - https://www.youtube.com/watch?v=05q7aEeye_0&list=PLk8gdrb2DmCjsRsDIwMBJdf350qKMiJ8R
 
-
 ### To-do
-- Bij updaten play store: version code in app.json naar 2 (1 -> 2)
 ### Planning
-#### 16 Januari:
-#### 17:30
+#### Niet gelukt:
 - Transacties in firestore steken
 - Reminder voor Transacties (ophalen/leveren) in agenda ?
 - Handelingen bevestigen op tijdstip
 - Alle transacties (actief, voltooid, geanulleerd) weergeven op HistoryScreen
-#### 19:00  
-- data verwijderen uit AsyncStorage bij logout, ...
-- wat doen bij location.permission.denied?  
-- Beveiligde authenticatie en autorisatie: OAuth2, OpenID Connect, JWT etc. (vereiste) nog bekijken
 - styling andere files bekijken
-- laatste aanpassingen, testen van app/bugfixing
-- data sync nog eens bekijken
+- werken met dummydata by locatiepermissie geweigerd
 - updaten naar Playstore (version code in app.json naar 2 (1 -> 2))
 - Deadline is om 20u -> finale push naar git
-#### Als er nog extra tijd is:
+#### Als er nog extra tijd was:
 - zoeken op zoneScreen met autocomplete bij search https://medium.com/nerd-for-tech/react-native-custom-search-bar-with-google-places-autocomplete-api-69b1c98de6a0
 - zonedata weergeven op homescreen: extra data bij click op marker
 - app check voor firestore database: https://firebase.google.com/docs/app-check

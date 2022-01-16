@@ -18,6 +18,10 @@ const styles = StyleSheet.create({
     scrollContainer: {
         width: '100%',
     },
+    scrollContainer1: {
+            width: '100%',
+            paddingTop: Constants.statusBarHeight,
+    },
     authFormContainer: {
         paddingTop: Constants.statusBarHeight,
     },

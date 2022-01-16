@@ -24,8 +24,6 @@ const PromotionsScreen = ({ navigation }) => {
     }
 
     return (
-        <KeyboardAvoidingView style={styles.container}
-        behavior="height" enabled keyboardVerticalOffset={50}>
             <ScrollView style={styles.scrollContainer}>
                 <View style={styles.authFormContainer}>
                     <View style={styles.headerContainer}>
@@ -74,7 +72,6 @@ const PromotionsScreen = ({ navigation }) => {
 
                 </View>
             </ScrollView>
-        </KeyboardAvoidingView>
     )
 };
 

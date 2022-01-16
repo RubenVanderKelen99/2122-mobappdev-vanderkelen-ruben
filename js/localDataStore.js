@@ -178,6 +178,16 @@ let DataAccess = {
             console.log(err);
         }
     },
+    pushOrder: async function() {
+        console.log(pushOrder)
+    },
+    removeUserData: async function() {
+        try {
+        await AsyncStorage.removeItem('userData');
+        } catch (err) {
+            console.log(err);
+        }
+    },
 
 }
 
