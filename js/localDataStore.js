@@ -178,8 +178,26 @@ let DataAccess = {
             console.log(err);
         }
     },
-    pushOrder: async function() {
-        console.log(pushOrder)
+    pushOrder: async function(startZone, car, startDate, endZone) {
+        try {
+            const userData = await this.getUserData();
+            const userId = userData.id;
+            //console.log(startZone + ' ' + car + ' ' + startDate + ' ' + endZone);
+            const ordersRef = db.collection('users/' + userId + '/orders');
+            ordersRef
+            .doc()
+            .set({
+                   startZone,
+                   car,
+                   startDate,
+                   endZone,
+                   status: 0,
+            });
+            console.log('succes');
+            return;
+        } catch (err) {
+            console.log(err);
+        }
     },
     removeUserData: async function() {
         try {
@@ -188,7 +206,24 @@ let DataAccess = {
             console.log(err);
         }
     },
-
+    getOrderHistory: async function() {
+    try {
+        const userData = await this.getUserData();
+        const userId = userData.id;
+        const orderHistoryRef = db.collection('users').doc(userId).collection('orders');
+        const snapshot = await orderHistoryRef.get();
+        let orders = [];
+        snapshot.forEach(doc => {
+            const orderData = doc.data();
+            orderData.id = doc.id;
+            orders.push(orderData);
+        });
+        console.log(orders);
+        return(orders);
+    } catch (err) {
+        console.log(err)
+    }
+    },
 }
 
 module.exports = DataAccess;

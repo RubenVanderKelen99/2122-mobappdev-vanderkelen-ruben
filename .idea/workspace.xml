@@ -14,16 +14,13 @@
   <component name="ChangeListManager">
     <list default="true" id="11c4bd86-c06f-417f-a8e1-756b6c565e05" name="Default Changelist" comment="Orderscreen.js kiezen zone (begin- en eindzone) &amp; auto uit zone/ start- &amp; eind-datum d.m.v datetimepicker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/localDataStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/localDataStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/screens/FAQScreen/FAQScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/FAQScreen/FAQScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/screens/HistoryScreen/HistoryScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/HistoryScreen/HistoryScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/HomeScreen/HomeScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/screens/OrderScreen/OrderScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/OrderScreen/OrderScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/PromotionsScreen/PromotionsScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/PromotionsScreen/PromotionsScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/screens/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/screens/styles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logboek/logboek.md" beforeDir="false" afterPath="$PROJECT_DIR$/logboek/logboek.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +62,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -133,6 +130,7 @@
       <workItem from="1633611686487" duration="81000" />
       <workItem from="1637921785275" duration="5000" />
       <workItem from="1640535056965" duration="52000" />
+      <workItem from="1646730455749" duration="120000" />
     </task>
     <task id="LOCAL-00013" summary="User authenticatie (Login, Registratie en Logout), validatie/formchecking inputvelden (email, wachtwoord en controle-wachtwoord)">
       <created>1634646139544</created>

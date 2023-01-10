@@ -44,7 +44,7 @@ const FAQScreen = ({ navigation }) => {
                     </View>
                     <List.Section>
                         {faqs.map((faq)  =>
-                        <List.Accordion theme={{ colors: { primary: 'orange' }}} title={faq.question}>
+                        <List.Accordion key={faq.id} theme={{ colors: { primary: 'orange' }}} title={faq.question}>
                             <List.Item
                             titleNumberOfLines={10}
                             title={faq.anwser}

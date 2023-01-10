@@ -5,6 +5,7 @@ import { auth } from '../../firebase';
 import { db } from '../../firebase';
 import DataAccess from '../../localDataStore';
 import { Icon } from 'react-native-elements';
+import Moment from 'moment';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import styles from '../styles';
 
@@ -16,8 +17,8 @@ const OrderScreen = ({ navigation }) => {
     const [cars, setCars] = useState([]);
     const [selectedCar, setSelectedCar] = useState([]);
     const [startDate, setStartDate] = useState(new Date());
-    const [endDate, setEndDate] = useState(new Date());
     const [endZone, setEndZone] = useState([]);
+    const [dateUpdated, setDateUpdated] = useState(0);
 
     useEffect(() => {
         const focusSubscription = navigation.addListener('focus', async () => {
@@ -62,19 +63,19 @@ const OrderScreen = ({ navigation }) => {
             break;
           case 3:
             console.log('Step 3: Setting start date');
-            setStartDate(value1);
+            if (dateUpdated === 0) {
+                setDateUpdated(1);
+                setStartDate(value1);
+            }
             break;
           case 4:
-            console.log('Step 4: Setting end date');
-            setEndDate(value1);
-            break;
-          case 5:
-            console.log('Step 5: Setting hand-in zone');
+            console.log('Step 4: Setting hand-in zone');
+            setDateUpdated(0);
             setEndZone([value1, value2]);
             break;
-          case 6:
-            console.log('Step 6: Order confirmed: push to firestore');
-
+          case 5:
+            console.log('Step 5: Order confirmed: push to firestore');
+            DataAccess.pushOrder(startZone[0], selectedCar[0], Moment(startDate).format("YYYY-MM-DD"), endZone[0]);
             navigation.navigate('Home');
             break;
           default:
@@ -86,11 +87,6 @@ const OrderScreen = ({ navigation }) => {
     }
 
     const onChangeStartDate = (event, selectedDate) => {
-        updateOrderStatus(selectedDate);
-    };
-
-    const onChangeEndDate = (event, selectedDate) => {
-        console.log(selectedDate);
         updateOrderStatus(selectedDate);
     };
 
@@ -115,7 +111,7 @@ const OrderScreen = ({ navigation }) => {
                 <TouchableOpacity onPress={() => navBack()}>
                     <Icon name={"arrow-back"} size={25} color={'#4F4F4F'} style={styles.headerBackButton}/>
                 </TouchableOpacity>
-                <Text style={styles.headerTitle}>Step {currentStep}/6</Text>
+                <Text style={styles.headerTitle}>Step {currentStep}/5</Text>
             </View>
             { currentStep === 1 &&
                 <View>
@@ -200,21 +196,6 @@ const OrderScreen = ({ navigation }) => {
 
             { currentStep === 4 &&
                 <View>
-                    <Text>Select hand-in date</Text>
-                    <DateTimePicker
-                        testID="dateTimePickerStart"
-                        value={new Date()}
-                        minimumDate={Date.parse(new Date())}
-                        mode="date"
-                        is24Hour={true}
-                        display="default"
-                        onChange={onChangeEndDate}
-                    />
-                </View>
-            }
-
-            { currentStep === 5 &&
-                <View>
                     <Text> Select hand-in zone </Text>
                     { zoneDistances && zoneDistances.length > 0 &&
                         <ScrollView>
@@ -246,17 +227,17 @@ const OrderScreen = ({ navigation }) => {
                 </View>
             }
 
-            { currentStep === 6 &&
+
+            { currentStep === 5 &&
                 <View>
                     <Text>Confirm your order</Text>
                     <Text>Car: {selectedCar[1]} </Text>
                     <Text>Price: € {selectedCar[2]}/dag{'\n'}</Text>
 
                     <Text>Pick-up zone: {startZone[1]}</Text>
-                    <Text>Pick-up date: {Date.parse(startDate)}{'\n'}</Text>
+                    <Text>Pick-up date: {Moment(startDate).format('DD-MM-YYYY')}{'\n'}</Text>
 
                     <Text>Hand-in zone: {endZone[1]}</Text>
-                    <Text>Hand-in date: {Date.parse(endDate)}{'\n'}</Text>
 
                     <Button
                         mode="contained"

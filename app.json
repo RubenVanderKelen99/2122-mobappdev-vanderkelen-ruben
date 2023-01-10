@@ -2,7 +2,7 @@
   "expo": {
     "name": "Lift4You",
     "slug": "madLift4You",
-    "version": "1.0.1",
+    "version": "1.0.3",
     "orientation": "portrait",
     "icon": "./assets/icon1.png",
     "splash": {
@@ -21,14 +21,14 @@
     },
     "android": {
       "package": "com.mad.lift4you",
-      "versionCode": 2,
+      "versionCode": 4,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon1.png",
         "backgroundColor": "#ffffff"
       },
       "config": {
         "googleMaps": {
-          "apiKey": "AIzaSyCkuUQqPrsWBbSn_S-WMmTFU-5CeXmbMQw"
+          "apiKey": "***REMOVED***"
         }
       }
     },
